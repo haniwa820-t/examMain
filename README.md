@@ -46,11 +46,11 @@
 
 ## 歴史
 
-- [プリント⑫](history/term2/print1.html)
-- [プリント④](history/term2/print2.html)
-- [プリント⑤](history/term2/print3.html)
-- [前提知識](history/term2/print4.html)
-- [プリント①](history/term2/print5.html)
+- [⑫革命の時代の到来](history/term2/print1.html)
+- [④自由主義と国民主義の進展](history/term2/print2.html)
+- [⑤帝国主義の成立と列強の情勢](history/term2/print3.html)
+- [日本史前提知識](history/term2/print4.html)
+- [①開国と開港](history/term2/print5.html)
 
 ## 英語IR
 
