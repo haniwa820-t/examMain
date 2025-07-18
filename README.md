@@ -5,6 +5,7 @@
 	- [テスト日程](#テスト日程)
 	- [歴史](#歴史)
 	- [英語IR](#英語ir)
+	- [テスト](#テスト)
 
 ## 今週の日課
 
@@ -55,3 +56,6 @@
 
 - [試験範囲単語一覧](english/term2/wordlist.html)
 - [ランダム英単語](english/term2/tangotyou.html)
+
+## テスト
+[テスト](test.md)
