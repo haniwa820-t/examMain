@@ -3,6 +3,7 @@
 - [テスト対策](#テスト対策)
 	- [テスト日程](#テスト日程)
 	- [歴史](#歴史)
+	- [英語IR](#英語ir)
 
 ## テスト日程
 
@@ -28,3 +29,8 @@
 - [プリント⑤](history/term2/print3.html)
 - [前提知識](history/term2/print4.html)
 - [プリント①](history/term2/print5.html)
+
+## 英語IR
+
+- [試験範囲単語一覧](english/term2/01eng_wordlist.html)
+- [ランダム英単語](english/term2/tangotyou.html)
