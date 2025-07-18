@@ -1,0 +1,150 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        body {
+            width: 95%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+            background-color: #f3f3f3;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[イギリスの産業革命]</h3>
+    <h4>〇背景</h4>
+    ・植民地争奪での勝利→広大な海外市場<br>
+    ・毛織物工業,諸産業の発達→豊かな資本の蓄積<br>
+    ・大地主の農地囲い込み→農民の多くが労働者に<br>
+    ・アジア物産の流入→綿織物の需要増大,綿工業の発達<br>
+    ・石炭<br>
+    ・鉄などの資源が存在<br>
+    <h4>〇展開</h4>
+    ・自然科学や技術の進歩→生産技術の発明→工業生産に貢献<br>
+    ・ケイの飛び杼の発明→紡績<br>
+    ・綿布のための機械の発明・改良<br>
+    ・ワットが
+    <span class="toggle-text" data-original-text="蒸気機関" onclick="toggleText(this)"></span>
+    を改良→動力として利用<br>
+    ・木綿工業の発達→諸産業の発達(
+    <span class="toggle-text" data-original-text="機械工業" onclick="toggleText(this)"></span>
+    ・
+    <span class="toggle-text" data-original-text="鉄工業" onclick="toggleText(this)"></span>
+    ・
+    <span class="toggle-text" data-original-text="石炭業" onclick="toggleText(this)"></span>
+    )<br>
+    <h4>〇運輸</h4>
+    ・交通の大変革<br>
+    ・大量の原料,製品の輸送が必要→道路<br>
+    ・運河の建設進展<br>
+    ・
+    <span class="toggle-text" data-original-text="蒸気船" onclick="toggleText(this)"></span>
+    の試作＝アメリカ人のフルトン<br>
+    ・
+    <span class="toggle-text" data-original-text="蒸気機関車" onclick="toggleText(this)"></span>
+    の実用化＝イギリス人のスティーヴンソン<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[産業革命の影響とその波及]</h3>
+    <h4>〇産業革命がもたらした社会的変化</h4>
+    ・工場制度の成立→大量生産による安い商品の供給家内工業<br>
+    ・手工業の衰退＝大工場を経営する
+    <span class="toggle-text" data-original-text="資本家" onclick="toggleText(this)"></span>
+    の台頭<br>
+    ・機械制工場生産の確立,工業化の進展→農業中心から工業中心の社会へ変化＝
+    <span class="toggle-text" data-original-text="資本主義社会" onclick="toggleText(this)"></span>
+    の到来※資本主義＝資本家が多数の労働者を同一の職場に集中し,協業に基づく分業によって生産を行わせ,労働者に賃金を支払い,生産物を売却して利潤を得るという生産方式<br>
+    ・
+    <span class="toggle-text" data-original-text="都市化" onclick="toggleText(this)"></span>
+    の進行＝都市における急激な人口増加→都市環境の劣悪化<br>
+    ・資本家の利潤追求→
+    <span class="toggle-text" data-original-text="社会問題" onclick="toggleText(this)"></span>
+    ・
+    <span class="toggle-text" data-original-text="労働問題" onclick="toggleText(this)"></span>
+    の発生※女性や子どもの長時間<br>
+    ・低賃金労働など<br>
+    <h4>〇世界の工場
+        <span class="toggle-text" data-original-text="イギリス" onclick="toggleText(this)"></span>
+    </h4>
+    ・世界で最初の産業革命→イギリスが抜きん出た工業力を持ち,良質で安価な商品を大量輸出＝
+    <span class="toggle-text" data-original-text="世界の工場" onclick="toggleText(this)"></span>
+    と呼ばれる<br>
+    <h4>〇世界の一体化の進行</h4>
+    ・交通手段の発達→世界の一体化→資本主義経済が世界に拡大<br>
+    ・19世紀末までに西欧諸国やアメリカ合衆国,ロシア,日本に産業革命が波及<br>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

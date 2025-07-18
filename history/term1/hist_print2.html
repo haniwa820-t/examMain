@@ -1,0 +1,188 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[ウィーン体制とその動揺]</h3>
+    <h4>〇ウィーン会議(1814～1815年)</h4>
+    ・
+    <span class="toggle-text" data-original-text="ウィーン会議" onclick="toggleText(this)"></span>
+    ＝フランス革命～ナポレオン戦争の戦後処理<br>
+    ・主催者(議長)＝オーストリア外相
+    <span class="toggle-text" data-original-text="メッテルニヒ" onclick="toggleText(this)"></span>
+    ,オスマン帝国以外の全ヨーロッパ諸国が参加<br>
+    ・基本原則＝
+    <span class="toggle-text" data-original-text="正統主義" onclick="toggleText(this)"></span>
+    ：フランス革命前の王朝と旧制度の復活をめざす
+    <span class="toggle-text" data-original-text="勢力均衡" onclick="toggleText(this)"></span>
+    ：有力諸国間の力の均衡をはかろうとするフランス<br>
+    <h4>〇ウィーン体制の成立</h4>
+    ・ウィーン会議によってうまれた復古的な国際秩序→自由主義<br>
+    ・ナショナリズム(国民主義)の動きを抑圧,維持するために列強が協力<br>
+    ・維持の仕組み＝
+    <span class="toggle-text" data-original-text="神聖同盟" onclick="toggleText(this)"></span>
+    ：キリスト教精神に基づく君主間の同盟
+    <span class="toggle-text" data-original-text="四国同盟" onclick="toggleText(this)"></span>
+    ：英・露・墺<br>
+    ・普間で革命抑圧のため<br>
+    <h4>〇自由主義運動(すべて失敗)</h4>
+    ・1810年代以降,自由主義的憲法の制定や国家の統一を求める<br>
+    ドイツ＝大学生の団体ブルシェンシャフトが自由と統一を求める<br>
+    イタリア＝秘密結社カルボナリが憲法制定を求め<br>
+    スペイン＝自由主義的将校が憲法復活を求める<br>
+    ロシア＝自由主義的貴族の組織デカブリストが憲法制定を求める<br>
+    ※ギリシアは英・仏露の支援を得てオスマン帝国から独立を達成<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[七月革命とその影響]</h3>
+    ・ウィーン会議により,ブルボン朝が復活(ルイ18世,シャルル10世)→貴族<br>
+    ・聖職者を重視する反動的政治(平民からの重税)<br>
+    ・1830年7月末にパリで革命が発生(
+    <span class="toggle-text" data-original-text="七月革命" onclick="toggleText(this)"></span>
+    ),シャルル10世の亡命→王家の親戚で自由主義者の
+    <span class="toggle-text" data-original-text="ルイ＝フィリップ" onclick="toggleText(this)"></span>
+    を国王へ＝
+    <span class="toggle-text" data-original-text="七月王政" onclick="toggleText(this)"></span>
+    の成立(制限選挙制＋立憲君主制)<br>
+    <h4>〇革命の影響</h4>
+    ・ベルギー＝オランダからの分離<br>
+    ・独立を達成<br>
+    ・イタリア＝イタリアの統一をかかげる政治結社
+    <span class="toggle-text" data-original-text="青年イタリア" onclick="toggleText(this)"></span>
+    を結成<br>
+    ・ポーランド＝独立運動がおこるが,ロシア軍に鎮圧される<br>
+    ・ドイツ＝1834年にドイツ関税同盟が発足し,経済的な統一が進む<br>
+    <h3>[イギリスの諸改革]</h3>
+    <h4>〇自由主義的な改革の進行</h4>
+    ・カトリック教徒解放法(1829年)＝カトリック教徒への差別撤廃<br>
+    ・
+    <span class="toggle-text" data-original-text="第1回選挙法改正" onclick="toggleText(this)"></span>
+    (1832年)＝有産市民が選挙権を獲得→発言力増大⇔労働者は不満<br>
+    ・
+    <span class="toggle-text" data-original-text="チャーティスト運動" onclick="toggleText(this)"></span>
+    (1830年代)→男性普通選挙,議員の財産資格の廃止などを要求<br>
+    <h4>〇自由貿易の推進</h4>
+    ・東インド会社の中国貿易独占権の廃止(1834年)<br>
+    ・穀物法(1846年),航海法(1849年)の廃止<br>
+    <h4>〇労働問題への対処</h4>
+    ・工場法制定(1833年)＝年少者の労働時間の制限<br>
+    ・短縮<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[社会主義思想の成立]</h3>
+    <h4>〇社会主義</h4>
+    ・
+    <span class="toggle-text" data-original-text="平等" onclick="toggleText(this)"></span>
+    を原則とする考え⇔資本主義＝競争を原則とする考え産業革命→貧富の差の拡大→貧富の格差をなくすには？私有財産を否定すればいい＝生産手段(工場や土地)の社会的共有(社会主義思想)<br>
+    <h4>〇社会主義者</h4>
+    ・イギリス＝オーウェン：工場法制定に尽力<br>
+    ・フランス＝サン＝シモンとフーリエ：労働者を保護する新しい社会秩序の樹立(空想的社会主義)ルイ=ブラン：生産の国家統制プルードン：政治的権威を否定する無政府主義<br>
+    ・ドイツ＝
+    <span class="toggle-text" data-original-text="マルクス" onclick="toggleText(this)"></span>
+    と
+    <span class="toggle-text" data-original-text="ユンゲル" onclick="toggleText(this)"></span>
+    ：世界の歴史を科学的に分析して,資本主義の没落を主張(科学的社会主義)労働者の政権獲得と国際的団結による社会主義社会の実現＝マルクス主義(『共産党宣言』(1848年)に要約)※暴力で革命実行を目指す/資本主義・国王<br>
+    ・貴族などの否定や宗教の否定も<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[1848年革命とその影響]</h3>
+    <h4>〇二月革命</h4>
+    ・七月王政下,一部の富裕層へ富が集中中小市民の改善要求(選挙権拡大要求)→弾圧<br>
+    ・1848年2月にパリで革命発生(
+    <span class="toggle-text" data-original-text="二月革命" onclick="toggleText(this)"></span>
+    )→国王ルイ＝フィリップの亡命<br>
+    ・共和政の臨時政府成立(
+    <span class="toggle-text" data-original-text="第二共和政" onclick="toggleText(this)"></span>
+    )→社会主義者の政府参加,国立作業場の設立,男性普通選挙が実現⇒失敗,強い指導者が必要,ルイ＝ナポレオンの台頭へ<br>
+    <h4>〇1848年革命</h4>
+    ・二月革命の影響を受け、ヨーロッパ各地で革命<br>
+    ・民族運動(
+    <span class="toggle-text" data-original-text="諸国民の春" onclick="toggleText(this)"></span>
+    )＝ウィーン体制の崩壊へ<br>
+    ・
+    <span class="toggle-text" data-original-text="三月革命" onclick="toggleText(this)"></span>
+    ＝ドイツ各地で発生：ウィーン(オーストリア)での蜂起→メッテルニヒの失脚ベルリン(ドイツ)での蜂起→自由主義的内閣の成立ベーメン,ハンガリー,イタリアでの民族運動の高揚→すべて鎮圧ドイツ統一と憲法制定の動き＝
+    <span class="toggle-text" data-original-text="フランクフルト国民議会" onclick="toggleText(this)"></span>
+    開催(1848～49年)<br>
+    <h4>〇1848年後の動き</h4>
+    ・王権や保守主義の態勢を立て直し,革命側も内部分裂→革命運動が抑えられる<br>
+    ・フランス＝保守派が総選挙で大勝し,労働者の蜂起を鎮圧<br>
+    ・ドイツ＝オーストリア：皇帝軍が革命勢力を鎮圧し,ハンガリーなどの分離を防ぐプロイセン：国王大権などを定めた憲法の発表フランクフルト国民議会＝大ドイツ主義と小ドイツ主義の対立の結果,統一は実現できずに解散<br>
+    ・イタリア＝北イタリアをオーストリアが支配する状況が続く<br>
+
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

@@ -1,0 +1,354 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: solid 2px orange;
+            /*表全体を線で囲う*/
+            font-size: 18px;
+        }
+
+        table th,
+        table td {
+            border: dashed 1px orange;
+            /**/
+            /*破線 1px オレンジ*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <table aligin="center">
+        <tr>
+            <td>1.replace</td>
+            <td><span class="toggle-text" data-original-text="～を取り替える" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>2.provide</td>
+            <td><span class="toggle-text" data-original-text="～を提供する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>3.accept</td>
+            <td><span class="toggle-text" data-original-text="～を受け入れる" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>4.degree</td>
+            <td><span class="toggle-text" data-original-text="程度" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>5.increase</td>
+            <td><span class="toggle-text" data-original-text="増える" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>6.extra</td>
+            <td><span class="toggle-text" data-original-text="余分な" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>7.account</td>
+            <td><span class="toggle-text" data-original-text="～を占める" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>8.alike</td>
+            <td><span class="toggle-text" data-original-text="よく似て" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>9.identity</td>
+            <td><span class="toggle-text" data-original-text="身元" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>10.resemble</td>
+            <td><span class="toggle-text" data-original-text="～に似ている" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>11.neighborhood</td>
+            <td><span class="toggle-text" data-original-text="近隣" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>12.accustomed</td>
+            <td><span class="toggle-text" data-original-text="慣れている" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>13.aim</td>
+            <td><span class="toggle-text" data-original-text="ねらい" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>14.arrange</td>
+            <td><span class="toggle-text" data-original-text="～を手配する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>15.confirm</td>
+            <td><span class="toggle-text" data-original-text="～を確認する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>16.ensure</td>
+            <td><span class="toggle-text" data-original-text="～を確保する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>17.launch</td>
+            <td><span class="toggle-text" data-original-text="～を始める" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>18.struggle</td>
+            <td><span class="toggle-text" data-original-text="もがく" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>19.accomplish</td>
+            <td><span class="toggle-text" data-original-text="～を達成する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>20.acquire</td>
+            <td><span class="toggle-text" data-original-text="～を獲得する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>21.characteristic</td>
+            <td><span class="toggle-text" data-original-text="特徴" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>22.chief</td>
+            <td><span class="toggle-text" data-original-text="主要な" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>23.neutral</td>
+            <td><span class="toggle-text" data-original-text="中立の" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>24.permanent</td>
+            <td><span class="toggle-text" data-original-text="永久の" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>25.content</td>
+            <td><span class="toggle-text" data-original-text="満足して" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>26.delight</td>
+            <td><span class="toggle-text" data-original-text="喜び" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>27.fortunate</td>
+            <td><span class="toggle-text" data-original-text="幸運な" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>28.generous</td>
+            <td><span class="toggle-text" data-original-text="心の広い" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>29.sympathy</td>
+            <td><span class="toggle-text" data-original-text="同情" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>30.forgive</td>
+            <td><span class="toggle-text" data-original-text="～を許す" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>31.available</td>
+            <td><span class="toggle-text" data-original-text="利用できる" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>32.contain</td>
+            <td><span class="toggle-text" data-original-text="～を含む" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>33.maintain</td>
+            <td><span class="toggle-text" data-original-text="～を維持する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>34.obvious</td>
+            <td><span class="toggle-text" data-original-text="明らかな" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>35.occupy</td>
+            <td><span class="toggle-text" data-original-text="～を占める" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>36.require</td>
+            <td><span class="toggle-text" data-original-text="～を必要とする" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>37.steady</td>
+            <td><span class="toggle-text" data-original-text="安定した" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>38.differ</td>
+            <td><span class="toggle-text" data-original-text="違う" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>39.alternative</td>
+            <td><span class="toggle-text" data-original-text="代わりの" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>40.involve</td>
+            <td><span class="toggle-text" data-original-text="～を伴う" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>41.typical</td>
+            <td><span class="toggle-text" data-original-text="特有の" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>42.unite</td>
+            <td><span class="toggle-text" data-original-text="～を統合させる" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>43.various</td>
+            <td><span class="toggle-text" data-original-text="さまざまな" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>44.emphasize</td>
+            <td><span class="toggle-text" data-original-text="～を強調する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>45.absolutely</td>
+            <td><span class="toggle-text" data-original-text="絶対に" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>46.fold</td>
+            <td><span class="toggle-text" data-original-text="～を折りたたむ" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>47.trigger</td>
+            <td><span class="toggle-text" data-original-text="～を引き起こす" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>48.remove</td>
+            <td><span class="toggle-text" data-original-text="～を取り除く" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>49.accompany</td>
+            <td><span class="toggle-text" data-original-text="～といっしょに行く" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>50.guarantee</td>
+            <td><span class="toggle-text" data-original-text="～を保証する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>51.mutual</td>
+            <td><span class="toggle-text" data-original-text="相互の" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>52.brief</td>
+            <td><span class="toggle-text" data-original-text="短い" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>53.immediately</td>
+            <td><span class="toggle-text" data-original-text="ただちに" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>54.temporary</td>
+            <td><span class="toggle-text" data-original-text="臨時の" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>55.urgent</td>
+            <td><span class="toggle-text" data-original-text="緊急の" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>56.apparent</td>
+            <td><span class="toggle-text" data-original-text="明らかな" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>57.aspect</td>
+            <td><span class="toggle-text" data-original-text="側面" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>58.frequent</td>
+            <td><span class="toggle-text" data-original-text="頻繁な" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>59.slight</td>
+            <td><span class="toggle-text" data-original-text="わずかな" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>60.curious</td>
+            <td><span class="toggle-text" data-original-text="知りたがる" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>61.honest</td>
+            <td><span class="toggle-text" data-original-text="正直な" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>62.register</td>
+            <td><span class="toggle-text" data-original-text="～を登録する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>63.reject</td>
+            <td><span class="toggle-text" data-original-text="～を拒絶する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>64.gain</td>
+            <td><span class="toggle-text" data-original-text="～を得る" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>65.obtain</td>
+            <td><span class="toggle-text" data-original-text="～を取得す" onclick="toggleText(this)"></span></td>
+        </tr>
+    </table>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

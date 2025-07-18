@@ -1,0 +1,126 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: solid 2px orange;
+            /*表全体を線で囲う*/
+            font-size: 18px;
+        }
+
+        table th,
+        table td {
+            border: dashed 1px orange;
+            /**/
+            /*破線 1px オレンジ*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <table aligin="center">
+        <tr>
+            <td>1.replace</td>
+            <td><span class="toggle-text" data-original-text="～を取り替える" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>2.provide</td>
+            <td><span class="toggle-text" data-original-text="～を提供する" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>3.accept</td>
+            <td><span class="toggle-text" data-original-text="～を受け入れる" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>4.degree</td>
+            <td><span class="toggle-text" data-original-text="程度" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>5.increase</td>
+            <td><span class="toggle-text" data-original-text="増える" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>6.extra</td>
+            <td><span class="toggle-text" data-original-text="余分な" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>7.account</td>
+            <td><span class="toggle-text" data-original-text="～を占める" onclick="toggleText(this)"></span></td>
+        </tr>
+        <tr>
+            <td>8.alike</td>
+            <td><span class="toggle-text" data-original-text="よく似て" onclick="toggleText(this)"></span></td>
+        </tr>
+    </table>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

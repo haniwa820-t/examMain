@@ -1,0 +1,246 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+            font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: solid 2px orange;
+            /*表全体を線で囲う*/
+            font-size: 18px;
+        }
+
+        table th,
+        table td {
+            border: dashed 1px orange;
+            /**/
+            /*破線 1px オレンジ*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h2>基本データ型</h2>
+
+    <table aligin="center">
+        <tr>
+            <td><span class="toggle-text" data-original-text="byte" onclick="toggleText(this)"></span>型</td>
+            <td>8ビット符号つき整数</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="short" onclick="toggleText(this)"></span>型</td>
+            <td>16ビット符号つき整数</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="int" onclick="toggleText(this)"></span>型</td>
+            <td>32ビット符号つき整数</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="long" onclick="toggleText(this)"></span>型</td>
+            <td>64ビット符号つき整数</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="float" onclick="toggleText(this)"></span>型</td>
+            <td>32ビット浮動小数点数</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="double" onclick="toggleText(this)"></span>型</td>
+            <td>64ビット浮動小数点数</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="char" onclick="toggleText(this)"></span>型</td>
+            <td>16ビットUnicode文字</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="boolean" onclick="toggleText(this)"></span>型</td>
+            <td>1ビット真偽値</td>
+        </tr>
+        
+    </table>
+    
+    <p>※String型は基本データ型ではない！<br>（基本データ型じゃないので最初は大文字と覚えたら良い？）<br>あと基本データ型じゃないので==での比較ができません(上の基本データ型は全て==で比較できます)</p>
+
+
+    <h2>printf文の書式指定</h2>
+
+    <table aligin="center">
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="d" onclick="toggleText(this)"></span></td>
+            <td>整数を10進数で出力</td>
+        </tr>
+
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="f" onclick="toggleText(this)"></span></td>
+            <td>実数を浮動小数点数で出力</td>
+        </tr>
+
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="e" onclick="toggleText(this)"></span></td>
+            <td>実数を指数形式で出力</td>
+        </tr>
+
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="c" onclick="toggleText(this)"></span></td>
+            <td>文字を出力</td>
+        </tr>
+
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="s" onclick="toggleText(this)"></span></td>
+            <td>文字列を出力</td>
+        </tr>
+        
+    </table>
+
+    <h2>printf文の幅指定つき書式指定</h2>
+
+    <table aligin="center">
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="8d" onclick="toggleText(this)"></span></td>
+            <td>8桁の10進数で出力</td>
+        </tr>
+
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="-8d" onclick="toggleText(this)"></span></td>
+            <td>左寄せで8桁の10進数で出力</td>
+        </tr>
+
+        <tr>
+            <td>%<span class="toggle-text" data-original-text="10.5f" onclick="toggleText(this)"></span></td>
+            <td>浮動小数点数を幅10桁で出力、小数点以下は5桁で出力</td>
+        </tr>
+
+        <tr>
+            <td>%<span class="toggle-text" data-original-text=".5f" onclick="toggleText(this)"></span></td>
+            <td>整数部は必要幅、小数点以下は5桁で出力</td>
+        </tr>
+        
+    </table>
+
+    <h2>String型のメソッド</h2>
+
+    <table aligin="center">
+        <tr>
+            <td><span class="toggle-text" data-original-text="length()" onclick="toggleText(this)"></span></td>
+            <td>文字列の長さを取得するメソッド(戻り値:int)</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="equals()" onclick="toggleText(this)"></span></td>
+            <td>文字列どうしを比較するメソッド(等しいか否かを判定)(戻り値:boolean)</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="charAt()" onclick="toggleText(this)"></span></td>
+            <td>文字列の指定されたインデックスにある文字を取得するメソッド</td>
+        </tr>
+
+    </table>
+
+    <h2>エスケープ文字（特殊な働きをする記号）</h2>
+
+    <table aligin="center">
+        <tr>
+            <td><span class="toggle-text" data-original-text="\n" onclick="toggleText(this)"></span></td>
+            <td>改行したい時</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="\t" onclick="toggleText(this)"></span></td>
+            <td>タブで揃えたい時</td>
+        </tr>
+    </table> 
+
+    <p>※\の入力方法…option(左下)押しながら¥(右上)</p>
+
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = " ".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "";
+                for (let hitomoji of original) {
+                    if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                        el.textContent += "　";
+                    } else {
+                        el.textContent += " ";
+                    }
+                }
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "";
+                    for (let hitomoji of original) {
+                        if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                            el.textContent += "　";
+                        } else {
+                            el.textContent += " ";
+                        }
+                    }
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

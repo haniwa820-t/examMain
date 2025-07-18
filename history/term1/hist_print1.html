@@ -1,0 +1,198 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[フランス革命の始まり]</h3>
+    <h4>〇アンシャン＝レジーム下のフランス社会</h4>
+    ・
+    <span class="toggle-text" data-original-text="アンシャン＝レジーム" onclick="toggleText(this)"></span>
+    (旧制度)＝革命前のフランスの政治<br>
+    ・社会体制の総称<br>
+    ・特権身分＝第一身分の
+    <span class="toggle-text" data-original-text="聖職者" onclick="toggleText(this)"></span>
+    と第二身分の
+    <span class="toggle-text" data-original-text="貴族" onclick="toggleText(this)"></span>
+    免税などの特権を認められた身分,総人口の2％ほど<br>
+    ・
+    <span class="toggle-text" data-original-text="第三身分" onclick="toggleText(this)"></span>
+    ＝人口の9割以上をしめる平民その大部分が農民：領主への地代や税の負担に苦しむ商工業者など：商工業の発達で経済力を高めたが，その待遇に不満,啓蒙思想に共鳴<br>
+    ・
+    <span class="toggle-text" data-original-text="啓蒙思想" onclick="toggleText(this)"></span>
+    ＝合理的<br>
+    ・批判的精神に基づき,中世以来のキリスト教会によって代表される伝統的権威や旧来の考えを批判し,人間性を解放して社会の進歩<br>
+    ・改善を図ろうとした<br>
+    <h4>〇革命の勃発</h4>
+    ・背景＝イギリスとのたび重なる戦争による国家財政のいきづまり→財政再建のため,
+    <span class="toggle-text" data-original-text="三部会" onclick="toggleText(this)"></span>
+    の開催※特権身分への課税が目的<br>
+    ・1789年5月＝三部会の開催→議決方法をめぐり特権身分と第三身分が対立<br>
+    ・同年6月＝第三身分が
+    <span class="toggle-text" data-original-text="国民議会" onclick="toggleText(this)"></span>
+    を宣言→
+    <span class="toggle-text" data-original-text="球戯場の誓い" onclick="toggleText(this)"></span>
+    で憲法制定をめざす国民議会が憲法起草を開始,国王と保守的貴族は議会を弾圧<br>
+    ・同年7月＝パリ民衆によるバスティーユ牢獄襲撃→全国的に農民蜂起が発生(大恐怖)<br>
+    <h4>〇国民議会の動き</h4>
+    ・封建的特権の廃止(1789年8月)＝領主裁判権や教会への十分の一税を無償廃止※封建地代は有償廃止→土地を獲得できない多くの農民は革命の進行を支持<br>
+    ・人権宣言の採択(同年8月)＝人間の自由<br>
+    ・平等,国民主権,言論の自由,私有財産の不可侵などをうたう<br>
+    ・諸改革の実施(1790年)＝全国の行政区画の改編，教会財産の没収，ギルドの廃止(営業の自由)，度量衡統一(メートル法)の方針など<br>
+    ・ヴァレンヌ逃亡事件(1791年6月)＝国王一家のオーストリア亡命計画→失敗,民衆の信頼を失う<br>
+    ・1781年憲法発布(同年9月)＝一院制の立憲君主政<br>
+    ・制限選挙制を制定→国民議会は解散,
+    <span class="toggle-text" data-original-text="立法議会" onclick="toggleText(this)"></span>
+    を招集<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[立憲君主政と対外戦争]</h3>
+    ・立法議会(1791年10月)＝立憲君主派と共和派の
+    <span class="toggle-text" data-original-text="ジロンド派" onclick="toggleText(this)"></span>
+    (資本家(ブルジョワ)が支持母体)が対立国内外の反革命の動きが活発化→ジロンド派が勢力をのばす<br>
+    ・ジロンド派政権(1792年春)＝オーストリア(王党派や亡命貴族を支援)に宣戦→フランス革命戦争勃発オーストリア<br>
+    ・プロイセン軍がフランスに侵入<br>
+    ・8月10日事件＝パリ民衆と義勇軍が宮殿を襲撃→王権を停止,立法議会の解散<br>
+    <h3>[共和政と恐怖政治]</h3>
+    ・
+    <span class="toggle-text" data-original-text="国民公会" onclick="toggleText(this)"></span>
+    (1792年9月)＝男性普通選挙により成立,王政の廃止と共和政樹立を宣言＝
+    <span class="toggle-text" data-original-text="第一共和政" onclick="toggleText(this)"></span>
+    ※直前にヴァルミーでフランス軍がプロイセン軍に勝利,ベルギー地方も占領へルイ16世を処刑(1793年1月)<br>
+    ・
+    <span class="toggle-text" data-original-text="第1回対仏大同盟" onclick="toggleText(this)"></span>
+    ＝イギリス首相ピットの提唱でフランス包囲網が成立→
+    <span class="toggle-text" data-original-text="ジャコバン派" onclick="toggleText(this)"></span>
+    (急進共和主義)の勢力増大<br>
+    <h4>〇ジャコバン派の独裁</h4>
+    ・開始(1793年6月)＝ジロンド派を追放,国民の一体性を強めるための改革を推進
+    <span class="toggle-text" data-original-text="ロベスピエール" onclick="toggleText(this)"></span>
+    たちの公安委員会が中心→反対派を多数処刑(
+    <span class="toggle-text" data-original-text="恐怖政治" onclick="toggleText(this)"></span>
+    )<br>
+    ・急進的施策の強行＝都市民衆や農民の支持獲得を図る：1793年憲法の制定,封建地代の無償廃止,物価統制など<br>
+    ・没落＝戦局が好転し,対外的危機が遠のく→小土地所有農民や価格統制をきらう市民層が保守化
+    <span class="toggle-text" data-original-text="テルミドール9日のクーデター" onclick="toggleText(this)"></span>
+    (1794年7月)<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[総裁政府の成立とナポレオンの登場]</h3>
+    ・1795年憲法制定＝穏健共和派が制限選挙制を復活→
+    <span class="toggle-text" data-original-text="総裁政府" onclick="toggleText(this)"></span>
+    を樹立⇔国内の動揺収まらず富裕な市民層(ブルジョワ)や土地所有農民は革命の成果定着と社会の安定を望む→
+    <span class="toggle-text" data-original-text="ナポレオン＝ボナパルト" onclick="toggleText(this)"></span>
+    の登場へ<br>
+    ・ナポレオン＝イタリア遠征でオーストリア軍に勝利し台頭,エジプトにも遠征(1798年)<br>
+    ・
+    <span class="toggle-text" data-original-text="第2回対仏大同盟" onclick="toggleText(this)"></span>
+    成立(1799年まで)＝総裁政府が国民の支持失う→ナポレオンが帰国<br>
+    ・革命の終了(同年11月)＝ナポレオンが総裁政府打倒(
+    <span class="toggle-text" data-original-text="ブリュメール18日のクーデター" onclick="toggleText(this)"></span>
+    )
+    <span class="toggle-text" data-original-text="統領政府" onclick="toggleText(this)"></span>
+    を樹立→第一統領として事実上の独裁権掌握<br>
+    ・統領政府＝外政：オーストリアを破って第2回対仏大同盟を解体革命以来対立していた教皇と和解(1801年)，イギリスとも講和(アミアンの和約(1802年))内政：国内政治の安定と財政の好転フランス銀行の設立，商工業の振興，公教育制度の確立
+    <span class="toggle-text" data-original-text="ナポレオン法典" onclick="toggleText(this)"></span>
+    (民法典)の発布(1804年3月)→革命の成果を定着<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[ナポレオンの帝国]</h3>
+    ・国民投票を実施(1804年)→皇帝
+    <span class="toggle-text" data-original-text="ナポレオン一世" onclick="toggleText(this)"></span>
+    と称し,
+    <span class="toggle-text" data-original-text="第一帝政" onclick="toggleText(this)"></span>
+    を開始<br>
+    ・1805年＝
+    <span class="toggle-text" data-original-text="第3回対仏大同盟" onclick="toggleText(this)"></span>
+    の結成(イギリス<br>
+    ・ロシア<br>
+    ・オーストリア)：トラファルガーの海戦→イギリスに敗北アウステルリッツの戦い(三帝会戦)→オーストリア<br>
+    ・ロシア連合軍に勝利<br>
+    ・1806年＝
+    <span class="toggle-text" data-original-text="ライン同盟" onclick="toggleText(this)"></span>
+    の結成(1806年)→神聖ローマ帝国が消滅プロイセン<br>
+    ・ロシア連合軍を撃破：ティルジット条約(1807年)→ポーランドにワルシャワ大公国を建設
+    <span class="toggle-text" data-original-text="大陸封鎖令" onclick="toggleText(this)"></span>
+    発布→イギリスを締め出し，大陸市場の独占はかる<br>
+    ・1807年～＝スペイン・ポルトガルを占領※ナポレオンの大陸制覇：兄弟を諸国の王につける,ハプスブルク家の皇女と結婚(1810年)<br>
+    ・被征服地へのナポレオン法典の導入＝フランス革命の成果が波及<br>
+    <h4>〇没落</h4>
+    ・ナポレオン支配下の諸地域における民族的自覚(ナショナリズム)の高まり→ナポレオン支配への反発<br>
+    ・ロシアの大陸封鎖令無視→遠征するも失敗(1812年)諸国の連合軍が解放戦争を展開1813年＝ライプツィヒの戦い(諸国民戦争)→解放戦争の同盟軍に敗北1814年＝同盟軍のパリ占領→ナポレオン退位→エルバ島へ流刑ブルボン朝が復活：ルイ18世が即位1815年＝皇帝復位→
+    <span class="toggle-text" data-original-text="ワーテルローの戦い" onclick="toggleText(this)"></span>
+    で大敗→セントヘレナ島へ流刑<br>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

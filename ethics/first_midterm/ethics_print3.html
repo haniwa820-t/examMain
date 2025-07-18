@@ -1,0 +1,279 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>I.パウロの回心と伝道</h3>
+    <p>
+        パリサイ派の熱心な信者であった
+        <span class="toggle-text" data-original-text="パウロ" onclick="toggleText(this)"></span>
+        がキリスト教徒への弾圧に赴く途中で、光とともに復活したイエスの声に逢い、キリスト教徒となる。←パウロの
+        <span class="toggle-text" data-original-text="回心" onclick="toggleText(this)"></span><br>
+        ↓<br>
+        以後、ローマ帝国各地で熱心に伝道、ネロ帝の迫害により殉教<br>
+    </p>
+    <p>
+        ※パウロの伝道←
+        <span class="toggle-text" data-original-text="罪の意識" onclick="toggleText(this)"></span>
+        が強く、イエスによる贖罪を意識<br>
+        神によって創造された人
+        <span class="toggle-text" data-original-text="アダムとイヴ" onclick="toggleText(this)"></span>
+        が神との約束を裏切る(
+        <span class="toggle-text" data-original-text="原罪" onclick="toggleText(this)"></span>
+        )ことでエデンから追放<br>
+        ↓<br>
+        神は人すべての原罪を負うて、処刑される=
+        <span class="toggle-text" data-original-text="贖罪" onclick="toggleText(this)"></span><br>
+        ↓<br>
+        「人が義とされるのは、ただ信仰による」=
+        <span class="toggle-text" data-original-text="信仰義認説" onclick="toggleText(this)"></span><br>
+        ⇨
+        <span class="toggle-text" data-original-text="信仰と希望と愛" onclick="toggleText(this)"></span>
+        =キリスト教の三元徳に依って生きる<br>
+    </p>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>Ⅱ.キリスト教団の発展</h3>
+    <p>
+        多神教的なローマ帝国では皇帝崇拝が求められる。<br>
+        唯一信仰であるユダヤ教・キリスト教は皇帝の神格化を否定<br>
+        ↓<br>
+        迫害を逃れるために地下墳墓=
+        <span class="toggle-text" data-original-text="カタコンベ" onclick="toggleText(this)"></span>
+        で集会・活動、信者を増やす。<br>
+        ↓<br>
+        303年、コンスタンティヌス帝が
+        <span class="toggle-text" data-original-text="ミラノ" onclick="toggleText(this)"></span>
+        勅令を出してキリスト教公認<br>
+        ↓<br>
+        <span class="toggle-text" data-original-text="325" onclick="toggleText(this)"></span>
+        年、
+        <span class="toggle-text" data-original-text="コンスタンティヌス" onclick="toggleText(this)"></span>
+        帝が教義の統一を図る目的で
+        <span class="toggle-text" data-original-text="ニケーア公会議" onclick="toggleText(this)"></span>
+        を主催。<br>
+        <span class="toggle-text" data-original-text="三位一体" onclick="toggleText(this)"></span>
+        説を主張する
+        <span class="toggle-text" data-original-text="アタナシウス" onclick="toggleText(this)"></span>
+        派を正統する一方で、イエスの神性を認めない
+        <span class="toggle-text" data-original-text="アリウス" onclick="toggleText(this)"></span>
+        派が異端として追放される。<br>
+        以後、帝国領域から追放されたアリウス派は
+        <span class="toggle-text" data-original-text="ゲルマン" onclick="toggleText(this)"></span>
+        民族に伝道<br>
+        ↓<br>
+        392年、
+        <span class="toggle-text" data-original-text="テオドシウス" onclick="toggleText(this)"></span>
+        帝がキリスト教をローマ帝国の国教とする。<br>
+        帝国各地に中核教会が設けられる。<br>
+        5本山=
+        <span class="toggle-text" data-original-text="ローマ・コンスタンティノープル\n・アンティオキア・エルサレム・アレクサンドリア"
+            onclick="toggleText(this)"></span>
+        など<br>
+        中でもコンスタンティノープル教会とローマ教会が首位権を巡って争う<br>
+    </p>
+    <p>
+        このころ、
+        <span class="toggle-text" data-original-text="教父" onclick="toggleText(this)"></span>
+        とよばれるキリスト教神学者が教義の確立に努めた。<br>
+        アウグスティヌス『
+        <span class="toggle-text" data-original-text="告白" onclick="toggleText(this)"></span>
+        』『
+        <span class="toggle-text" data-original-text="神の国" onclick="toggleText(this)"></span>
+        』<br>
+        エウセビオス『教会史』<br>
+        ↓<br>
+        431年
+        <span class="toggle-text" data-original-text="エフェソス" onclick="toggleText(this)"></span>
+        公会議 ビザンツ帝国のテオドシウス2世が主催<br>
+        <span class="toggle-text" data-original-text="ネストリウス" onclick="toggleText(this)"></span>
+        派を異端として追放、中国で
+        <span class="toggle-text" data-original-text="景" onclick="toggleText(this)"></span>
+        教として布教<br>
+        ↓<br>
+        451年
+        <span class="toggle-text" data-original-text="カルケドン" onclick="toggleText(this)"></span>
+        公会議 ローマ教皇レオ1世が主催<br>
+        単性論が異端とされ追放。<br>
+    </p>
+    <h3>一神教における正義とは</h3>
+    <span class="toggle-text" data-original-text="唯一絶対の神が認める正義" onclick="toggleText(this)"></span><br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>Ⅲ.イスラム教の成立</h3>
+    <p>
+        アラビア半島→交易の中継地として古来より栄える。セム系のアラブ人が隊商による交易を展開。<br>
+        宗教としては多神教を信仰し、神々の像を祭祀隊商として祀った。<br>
+        その中心は、
+        <span class="toggle-text" data-original-text="メッカ" onclick="toggleText(this)"></span>
+        の
+        <span class="toggle-text" data-original-text="カーバ" onclick="toggleText(this)"></span>
+        神殿におかれた。<br>
+    </p>
+    <p>
+        610年頃 <span class="toggle-text" data-original-text="ムハンマド" onclick="toggleText(this)"></span>
+        が唯一神
+        <span class="toggle-text" data-original-text="アッラー" onclick="toggleText(this)"></span>
+        の啓示を大天使ガブリエルを通じて受けたとしてイスラム教を説く。聖典『
+        <span class="toggle-text" data-original-text="クルアーン" onclick="toggleText(this)"></span>
+        』=『コーラン』<br>
+        ↓<br>
+        富の独占や多神教に対する批判を展開したため迫害を受ける。<br>
+        ↓<br>
+        622年 メッカ市民の迫害をさけて
+        <span class="toggle-text" data-original-text="メディナ" onclick="toggleText(this)"></span>
+        =(ヤスリブ)に移住←
+        <span class="toggle-text" data-original-text="ヒジュラ" onclick="toggleText(this)"></span>
+        =(聖遷)<br>
+        この年がイスラム暦元年<br>
+        イスラム教徒の共同体であるウンマをつくり結束<br>
+        ↓<br>
+        630年 ムハンマドがイスラム教徒=
+        <span class="toggle-text" data-original-text="ムスリム" onclick="toggleText(this)"></span>
+        を率いてメッカを攻略<br>
+        カーバ神殿をイスラムの神殿に定める。<br>
+        イスラム教の三大聖地 <span class="toggle-text" data-original-text="メッカ・メディナ・イェルサレム" onclick="toggleText(this)"></span><br>
+        翌年、アラビア半島を統一<br>
+    </p>
+    <p>
+        632年 ムハンマドの死後、ムスリム全員で「神の使徒の後継者」=
+        <span class="toggle-text" data-original-text="カリフ" onclick="toggleText(this)"></span>
+        を選ぶ。<br>
+        第4代カリフの
+        <span class="toggle-text" data-original-text="アリー" onclick="toggleText(this)"></span>
+        までを正統カリフ時代とよぶ。<br>
+        ↓<br>
+        ジハード(聖戦)を行いイラク、シリア、エジプトなどに勢力を拡大<br>
+        各地にミスル(軍営都市)を建設<br>
+        被征服民から人頭税=
+        <span class="toggle-text" data-original-text="ジズヤ" onclick="toggleText(this)"></span>
+        と土地税=
+        <span class="toggle-text" data-original-text="ハラージュ" onclick="toggleText(this)"></span>
+        を徴収<br>
+        キリスト・ユダヤ教徒は「啓典の民」と呼ばれ、ジズヤを払う限り、信仰や財産を保障された。<br>
+        「剣か税かコーランか」<br>
+        ↓<br>
+        642年 <span class="toggle-text" data-original-text="ニハーヴァンド" onclick="toggleText(this)"></span>
+        の戦い<br>
+        イスラム軍がイラク・イランを支配したササン朝軍を破る。651年、ササン朝を開く<br>
+        ↓<br>
+        アリーの支持者がウマイヤ朝に反発、アリーの子孫のみがカリフになれるとする
+        <span class="toggle-text" data-original-text="シーア" onclick="toggleText(this)"></span>
+        派になる。(シーア派の指導者はイマームと呼ばれる)<br>
+    </p>
+    <p>
+        一方でムアーウィヤのカリフ就任を認める多数派が
+        <span class="toggle-text" data-original-text="スンナ" onclick="toggleText(this)"></span>
+        派<br>
+    </p>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>Ⅳ.イスラム教の教義</h3>
+    <p>
+        唯一絶対の神である
+        <span class="toggle-text" data-original-text="アッラー" onclick="toggleText(this)"></span>
+        へ帰依する者をムスリムと呼称<br>
+        ムハンマドはモーゼやイエスに続く最後の
+        <span class="toggle-text" data-original-text="預言者" onclick="toggleText(this)"></span>
+        であり、ムハンマドがアッラーより授けられた啓示を死後にまとめたものが『
+        <span class="toggle-text" data-original-text="クルアーン" onclick="toggleText(this)"></span>
+        』<br>
+        また、ムハンマドの言行録が「
+        <span class="toggle-text" data-original-text="ハディース" onclick="toggleText(this)"></span>
+        」で、「ハディース」に基づく範例を
+        <span class="toggle-text" data-original-text="スンナ" onclick="toggleText(this)"></span><br>
+        ↓<br>
+        『クルアーン』や「ハディース」に基づくイスラム法を
+        <span class="toggle-text" data-original-text="シャリーア" onclick="toggleText(this)"></span>
+        と呼ぶ<br>
+    </p>
+    <p>
+        ※ムスリムの義務<br>
+        <span class="toggle-text" data-original-text="六信五行" onclick="toggleText(this)"></span><br>
+        <span class="toggle-text" data-original-text="六信" onclick="toggleText(this)"></span>
+        →イスラム教において信じるべき六つの信仰の柱<br>
+        神・天使・啓典・預言者・来世・天命<br>
+        <span class="toggle-text" data-original-text="五行" onclick="toggleText(this)"></span>
+        →信仰告白(シャハーダ)・礼拝(サラート)・断食(サウム)・喜捨(ザカート)・巡礼(ハッジ)<br>
+    </p>
+    <p>
+        信仰は内面の問題ではなく社会実践が重要→信仰とウンマを守る
+        <span class="toggle-text" data-original-text="ジハード" onclick="toggleText(this)"></span>
+        も責務<br>
+    </p>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: solid 2px orange;
+            /*表全体を線で囲う*/
+            font-size: 18px;
+        }
+
+        table th,
+        table td {
+            border: dashed 1px orange;
+            /**/
+            /*破線 1px オレンジ*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <h3>インドの思想文化と仏教の成立</h3>
+    <h4>南アジアの宗教</h4>
+    1947年8月イギリス植民地であったインドが独立。
+    宗教対立からヒンドゥー国家・イスラム国家に分かれて独立。
+    インド・ネパール←「ヒンドゥー教」。
+    パキスタン・バングラデシュ←「イスラム教」。
+    ブータン←「大乗仏教」。
+    スリランカ←「小乗仏教」
+    <h4>インダス文明とアーリア人の侵入</h4>
+    ①インダス文明。
+    BC2500年頃「インダス」河中・下流域でインダス文明成立。
+    黒人系「ドラヴィダ」人の文明。
+    インダス川中流kら下流域にかけて「モヘンジョダロ」に代表される都市を建設。
+    「青銅器」文明段階に属し、焼きレンガで作られた年プランを持つ。
+    ↓。
+    BC1800年頃、文明衰退。
+    ②アーリア人の侵入。BC1500年頃、白人系「アーリア」人が中央アジアから「カイバル」峠をへて。
+    インダス川上流域のパンジャブ地方2侵入、馬と戦車からなる軍事力で先住民を支配←。
+    半農半牧の生活を営み「牛」や火を神聖視し、祭儀を執り行う。
+    諸神の
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>
+
+</html>

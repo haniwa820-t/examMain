@@ -1,0 +1,354 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        body {
+            max-width: 80%;
+            margin: 0 auto 50 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                max-width: 95%;
+                padding: 10px;
+            }
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333333;
+            color: #e0e0e0;
+            border: 2px solid #555555;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .light-mode .theme-toggle {
+            background-color: #f0f0f0;
+            color: #333333;
+            border-color: #cccccc;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .toggle-text {
+            display: inline-block;
+            background-color: #2d2d2d;
+            color: #ffa500;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+            font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .light-mode .toggle-text {
+            background-color: #fff3cd;
+            color: #d35400;
+        }
+
+        button {
+            background-color: #2d2d2d;
+            color: #ffa500;
+            font-weight: bold;
+            border: 2px solid #555555;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .light-mode button {
+            background-color: #fff3cd;
+            color: #d35400;
+            border-color: #d35400;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        table {
+            border-collapse: collapse;
+            border: solid 2px #ffa500;
+            /*表全体を線で囲う*/
+            font-size: 18px;
+            background-color: #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .light-mode table {
+            border-color: orange;
+            background-color: #ffffff;
+        }
+
+        table th,
+        table td {
+            border: dashed 1px #ffa500;
+            /*破線 1px オレンジ*/
+            padding: 8px 12px;
+            transition: border-color 0.3s ease;
+        }
+
+        .light-mode table th,
+        .light-mode table td {
+            border-color: orange;
+        }
+
+        table th {
+            background-color: #333333;
+            color: #ffa500;
+            font-weight: bold;
+        }
+
+        .light-mode table th {
+            background-color: #f8f8f8;
+            color: #d35400;
+        }
+
+        h1 {
+            color: #ffa500;
+            text-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+            transition: color 0.3s ease;
+        }
+
+        .light-mode h1 {
+            color: #d35400;
+            text-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<h2>歴史(日本史)前提知識プリント</h2>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[アジアの国際秩序]</h3>
+・清中心の国際秩序</br>
+＝東アジア，東南アジアの各国・各民族は
+<span class="toggle-text" data-original-text="中国" onclick="toggleText(this)"></span>
+を中心にたがいに交易</br>
+→各国は清の皇帝から国王に任命され，従属(
+<span class="toggle-text" data-original-text="冊封体制" onclick="toggleText(this)"></span>
+)</br>
+：
+<span class="toggle-text" data-original-text="朝貢貿易" onclick="toggleText(this)"></span>
+の形式,国内支配のよりどころ(ベトナム・朝鮮・琉球)</br>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[列強のアジア進出]</h3>
+・背景に
+<span class="toggle-text" data-original-text="産業革命" onclick="toggleText(this)"></span>
+の進展</br>
+＝製品を大量生産するため大量の
+<span class="toggle-text" data-original-text="原料" onclick="toggleText(this)"></span>
+が必要</br>
+大量生産した製品を売るため大規模な
+<span class="toggle-text" data-original-text="市場" onclick="toggleText(this)"></span>
+が必要</br>
+→南アジア，東南アジア，東アジアに進出</br>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[アヘン戦争と清の危機]</h3>
+・1840年,
+<span class="toggle-text" data-original-text="アヘン戦争" onclick="toggleText(this)"></span>
+開始(清vs.イギリス),イギリスが勝利</br>
+＝背景に,イギリス，インド，清の
+<span class="toggle-text" data-original-text="三角貿易" onclick="toggleText(this)"></span>
+(清にアヘンが,銀がイギリスへ)</br>
+・1842年,
+<span class="toggle-text" data-original-text="南京条約" onclick="toggleText(this)"></span>
+</br>
+＝清はイギリスに
+<span class="toggle-text" data-original-text="香港" onclick="toggleText(this)"></span>
+を割譲</br>
+広州，上海などを開港</br>
+・1856年,アロー号事件</br>
+→戦争開始へ：清vsイギリス・フランス</br>
+＝イギリス・フランスが勝利</br>
+・1860年,北京条約</br>
+＝清はイギリスに九竜半島を割譲</br>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[列強のアジアでの勢力(19世紀)]</h3>
+・イギリス</br>
+＝
+<span class="toggle-text" data-original-text="インド" onclick="toggleText(this)"></span>
+，マレー半島(現在のマレーシア，シンガポール)，香港，九竜半島</br>
+・フランス</br>
+＝
+<span class="toggle-text" data-original-text="インドシナ半島" onclick="toggleText(this)"></span>
+(＝現在のベトナム，ラオス，カンボジア)</br>
+・ロシア</br>
+＝
+<span class="toggle-text" data-original-text="沿海州" onclick="toggleText(this)"></span>
+，黒竜江以北</br>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[「内憂外患」の情勢]</h3>
+・1830年代,凶作→深刻な飢饉,百姓一揆も増加</br>
+・1837年,
+<span class="toggle-text" data-original-text="大塩平八郎の乱" onclick="toggleText(this)"></span>
+＝大坂町奉行所の元与力，大塩平八郎が蜂起</br>
+→鎮圧されるも，幕府に衝撃</br>
+・1837年,モリソン号事件＝アメリカ商船モリソン号が日本人漂流者を送還</br>
+→幕府は撃退</br>
+※
+<span class="toggle-text" data-original-text="異国船打払令" onclick="toggleText(this)"></span>
+(1828年)のため</br>
+＝中国，オランダ船をのぞき外国船の上陸を許さず理由を問わず撃退する</br>
+→対応を批判した蘭学者の渡辺崋山と高野長英を処罰(
+<span class="toggle-text" data-original-text="蛮社の獄" onclick="toggleText(this)"></span>
+)</br>
+・
+<span class="toggle-text" data-original-text="内憂外患" onclick="toggleText(this)"></span>
+への危機感</br>
+内憂＝飢饉，百姓一揆，反乱が続く危機</br>
+外患＝外国船が開国をせまる危機</br>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[天保の改革]</h3>
+・1841～43年,老中
+<span class="toggle-text" data-original-text="水野忠邦" onclick="toggleText(this)"></span>
+の
+<span class="toggle-text" data-original-text="天保の改革" onclick="toggleText(this)"></span>
+＝厳しい倹約令</br>
+・
+<span class="toggle-text" data-original-text="人返し令" onclick="toggleText(this)"></span>
+＝江戸に流入した農民を帰村させる</br>
+・株仲間(＝幕府が公認した同業者組合)の解散</br>
+＝物価下落が目的→流通が混乱し，物価上昇</br>
+・上知令＝江戸・大坂周辺の幕府直轄化が目的→強い批判のために撤回</br>
+※改革は失敗，幕府の権威が衰退へ</br>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[雄藩の登場]</h3>
+・
+<span class="toggle-text" data-original-text="雄藩" onclick="toggleText(this)"></span>
+(勢力の強い藩)は財政難の克服と領地の防衛に苦慮</br>
+・薩摩藩</br>
+＝調所広郷による改革：砂糖の専売強化，清との密貿易,集成館で兵器などを製造</br>
+・長州藩</br>
+＝村田清風による改革：下関通過の商船へ金融事業</br>
+・諸藩で独自の改革</br>
+＝有能な中・下層武士による藩政改革で富国強兵政策に成功</br>
+薩摩藩，長州藩，
+<span class="toggle-text" data-original-text="水戸" onclick="toggleText(this)"></span>
+藩，
+<span class="toggle-text" data-original-text="肥前" onclick="toggleText(this)"></span>
+藩，
+<span class="toggle-text" data-original-text="土佐" onclick="toggleText(this)"></span>
+藩など</br>
+→雄藩として幕末政治で指導的な役割</br>
+
+<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+<h3>[対外危機の深まり]</h3>
+・アヘン戦争での清の敗北→幕府に衝撃</br>
+・1842年，
+<span class="toggle-text" data-original-text="薪水給与令" onclick="toggleText(this)"></span>
+＝漂着した外国船に燃料や食料・水の補給を認める</br>
+異国船打払令を廃止</br>
+・1844年，オランダ国王の親書＝幕府に開国を勧告→幕府は拒否</br>
+
+<script>
+	// 初期化：全てを非表示（空白）に
+	document.addEventListener("DOMContentLoaded", () => {
+		document.querySelectorAll(".toggle-text").forEach(el => {
+			const original = el.dataset.originalText;
+			for (let hitomoji of original) {
+				if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+					el.textContent += "　";
+				} else {
+					el.textContent += " ";
+				}
+			}
+		});
+	});
+
+	// 個別トグル
+	function toggleText(el) {
+		const original = el.dataset.originalText;
+		if (el.textContent.trim() === "") {
+			el.textContent = original;
+		} else {
+			el.textContent = "";
+			for (let hitomoji of original) {
+				if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+					el.textContent += "　";
+				} else {
+					el.textContent += " ";
+				}
+			}
+		}
+	}
+
+	// 全体の表示状態を保持
+	let allVisible = false;
+
+	// 一括表示/非表示トグル
+	function toggleAll() {
+		const elements = document.querySelectorAll(".toggle-text");
+		const button = document.getElementById("toggleAllButton");
+
+		elements.forEach(el => {
+			const original = el.dataset.originalText;
+			if (allVisible) {
+				el.textContent = "";
+				for (let hitomoji of original) {
+					if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+						el.textContent += "　";
+					} else {
+						el.textContent += " ";
+					}
+				}
+			} else {
+				el.textContent = original; // 表示に
+			}
+		});
+
+		allVisible = !allVisible;
+		button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+	}
+	//ダーク/ライトモード
+	function toggleTheme() {
+		const body = document.body;
+		const themeBtn = document.querySelector('.theme-toggle');
+
+		if (body.classList.contains('light-mode')) {
+			body.classList.remove('light-mode');
+			themeBtn.textContent = '🌙';
+		} else {
+			body.classList.add('light-mode');
+			themeBtn.textContent = '☀️';
+		}
+	}
+</script>
+
+</body>

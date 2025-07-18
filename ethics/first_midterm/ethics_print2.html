@@ -1,0 +1,282 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>I.古代オリエントにおける宗教観</h3>
+    <p>
+        メソポタミア文明やエジプト文明が成立した地域を総称してオリエント世界と呼ぶ。<br>
+        オリエント世界の宗教は基本的にはさまざまな神々が活躍する
+        <span class="toggle-text" data-original-text="多神教" onclick="toggleText(this)"></span>
+        である。<br>
+    </p>
+
+    <h4>A.メソポタミア文明と宗教</h4>
+    <p>
+       メソポタミア→
+       <span class="toggle-text" data-original-text="チグリス河" onclick="toggleText(this)"></span>
+       ・
+       <span class="toggle-text" data-original-text="ユーフラテス河" onclick="toggleText(this)"></span>
+       両河流域地方を指す。<br>
+       北部に肥沃な三角地帯を抱え、南部では灌漑農業が早くから発達<br>
+    </p>
+    <p>
+        BC3000年頃、
+        <span class="toggle-text" data-original-text="シュメール" onclick="toggleText(this)"></span>
+        人がメソポタミア南部に城壁によって囲まれた都市国家を建設<br>
+        都市には守護神として信仰される神があり、壮大な神殿=
+        <span class="toggle-text" data-original-text="ジッグラト" onclick="toggleText(this)"></span>
+        を建設<br>
+        ↓<br>
+        エンリルやマルドューク、イナンナなど多くの神が信仰の対象となる。<br>
+        ↑<br>
+        <span class="toggle-text" data-original-text="ギルガメシュ" onclick="toggleText(this)"></span>
+        叙事詩や旧約聖書に記録される。<br>
+        文字→
+        <span class="toggle-text" data-original-text="粘土版" onclick="toggleText(this)"></span>
+        に
+        <span class="toggle-text" data-original-text="楔形" onclick="toggleText(this)"></span>
+        文字で記録。<br>
+        また、天文記録や暦法が発達。<br>
+        <span class="toggle-text" data-original-text="太陰" onclick="toggleText(this)"></span>
+        暦を採用→
+        <span class="toggle-text" data-original-text="一週七日" onclick="toggleText(this)"></span>
+        制や六十進法を定める<br>
+    </p>
+    <p>
+        BC18C頃、古バビロニア王国のハンムラビ王が全メソポタミアを統一<br>
+        シュメール法を基に
+        <span class="toggle-text" data-original-text="ハンムラビ" onclick="toggleText(this)"></span>
+        法典を制定<br>
+        ハンムラビ法典の特徴→
+        <span class="toggle-text" data-original-text="身分法・同害復讐法" onclick="toggleText(this)"></span><br>
+    </p>
+
+    <h4>B.エジブト文明と宗教</h4>
+    <p>
+        <span class="toggle-text" data-original-text="ナイル" onclick="toggleText(this)"></span>
+        川流域に成立した文明で、ナイル川の増水を利用して農業を行う。<br>
+        メソポタミアとほぼ同時期に農耕開始、各地に小規模の都市国家(ノモス)が成立<br>
+        BC3000年頃、ナルメル王がエジプトを統一。<br>
+        王のことを
+        <span class="toggle-text" data-original-text="ファラオ" onclick="toggleText(this)"></span><br>
+        太陽を司る現人神と考える。<br>
+        霊魂の不滅と死後の世界の存在を信じ、ミイラを作成、死後の審判に備えるため、
+        <span class="toggle-text" data-original-text="死者の書" onclick="toggleText(this)"></span>
+        を作成<br>
+    </p>
+    <p>
+        エジプト統一王国を3期(古王国・中王国・新王国)に分けて考えるが、なかでも古王国時代には王墓として
+        <span class="toggle-text" data-original-text="ピラミッド" onclick="toggleText(this)"></span>
+        の築造が行われる。<br>
+        ↓<br>
+        後、神官の力が増大してピラミッドに替わって神殿建築に力が注がれるようになる。<br>
+    </p>
+    <p>
+        BC14C、
+        <span class="toggle-text" data-original-text="アメンホテプ4世" onclick="toggleText(this)"></span>
+        が即位、宗教改革を行う。都をテーベから
+        <span class="toggle-text" data-original-text="テル＝エル＝アマルナ" onclick="toggleText(this)"></span>
+        に遷都<br>
+        多神教を廃し、唯一神である
+        <span class="toggle-text" data-original-text="アトン" onclick="toggleText(this)"></span>
+        のみを信仰するよう強制、王子自身も自らの名を
+        <span class="toggle-text" data-original-text="イクナートン" onclick="toggleText(this)"></span>
+        に改称<br>
+    </p>
+    <p>
+        イクナートンの死により宗教改革挫折。
+        <span class="toggle-text" data-original-text="ツタンカーメン" onclick="toggleText(this)"></span>
+        が即位。多神教復活<br>
+    </p>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    
+    <h3>Ⅱ.ユダヤ教・キリスト教の成立</h4>
+    <p>
+        ユダヤ教・キリスト教・イスラム教はそれぞれ唯一絶対の神を信仰する
+        <span class="toggle-text" data-original-text="一神教" onclick="toggleText(this)"></span>
+        であり、また本来同じ神を信仰する兄弟宗教である。<br>
+        それぞれの宗教の開祖であるモーゼ・イエス・ムハンマドは
+        <span class="toggle-text" data-original-text="預言者" onclick="toggleText(this)"></span>
+        と呼ばれる<br>
+    </p>
+
+    <h4>A.ユダヤ教の成立</h4>
+    <p>
+        セム系の遊牧民である
+        <span class="toggle-text" data-original-text="ヘブライ" onclick="toggleText(this)"></span>
+        人がパレスチナやエジプトに移住<br>
+        エジプトに住んだ者は新王国の圧政に苦しみ、BC13C
+        <span class="toggle-text" data-original-text="モーゼ" onclick="toggleText(this)"></span>
+        に率られエジプトを脱出。<br>
+        ↓<br>
+        途中、モーゼが
+        <span class="toggle-text" data-original-text="シナイ" onclick="toggleText(this)"></span>
+        山で
+        <span class="toggle-text" data-original-text="ヤハウェ" onclick="toggleText(this)"></span>
+        と呼ばれる唯一神より、神との契約の証として
+        <span class="toggle-text" data-original-text="十戒" onclick="toggleText(this)"></span>
+        を授かる→出エジプト<br>
+        《ヤハウェとの契約》<br>
+        唯一絶対の神であるヤハウェのみを信仰し十戒に基づく掟
+        <span class="toggle-text" data-original-text="律法(トーラ)" onclick="toggleText(this)"></span>
+        を守る限り神によって選ばれたる民として祝福が授けられる←
+        <span class="toggle-text" data-original-text="選民" onclick="toggleText(this)"></span>
+        思想<br>
+    </p>
+    <p>
+        BC11C末、ヘブライ統一王国がパレスチナに建国される 都
+        <span class="toggle-text" data-original-text="エルサレム" onclick="toggleText(this)"></span><br>
+        第二代
+        <span class="toggle-text" data-original-text="ダヴィデ" onclick="toggleText(this)"></span>
+        王・三代
+        <span class="toggle-text" data-original-text="ソロモン" onclick="toggleText(this)"></span>
+        王の時代に繁栄するも後、分裂<br>
+        ↓<br>
+        北 イェルサレム王国→BC8C頃、アッシリアにより滅亡<br>
+        南 <span class="toggle-text" data-original-text="ユダ" onclick="toggleText(this)"></span>王国<br>
+        ユダ王国はBC586年、
+        <span class="toggle-text" data-original-text="新バビロニア" onclick="toggleText(this)"></span>
+        王国により滅亡<br>
+        住民の多くがバビロンに連れ去られる=
+        <span class="toggle-text" data-original-text="バビロン捕囚" onclick="toggleText(this)"></span><br>
+        預言者が、律法に従わない報いとしての亡国と神の救済としての救世主(
+        <span class="toggle-text" data-original-text="キリスト" onclick="toggleText(this)"></span>
+        )の誕生を人々に預言<br>
+        ヘブライ人の宗教観とメソポタミアの神話・捕囚による体験が融合<br>
+        ユダヤ教の教義が確立される『
+        <span class="toggle-text" data-original-text="旧約聖書" onclick="toggleText(this)"></span>
+        』<br>
+        ↓<br>
+        BC538年、新バビロニア王国がアケメネス朝の攻撃を受けて滅亡<br>
+        バビロンに強制移住させられていたヘブライ人がパレスチナへ帰還<br>
+        ↓<br>
+        神殿での礼拝を重視するサドカイ派や律法主義に基づくパリサイ派が強い影響力を持つ<br>
+    </p>
+
+    <h4>B.キリスト教の成立</h4>
+    <p>
+        BC4年頃、ローマ帝国支配下にあったパレスチナのナザレで、ヘブライ人の家庭に
+        <span class="toggle-text" data-original-text="イエス" onclick="toggleText(this)"></span>
+        が生まれる。 母
+        <span class="toggle-text" data-original-text="マリア" onclick="toggleText(this)"></span><br>
+        イエスの一族で、ユダヤ教の祭司達を批判していた
+        <span class="toggle-text" data-original-text="洗礼者ヨハネ" onclick="toggleText(this)"></span>
+        の影響を受けて、ユダヤ教の権威主義を否定。身分・民族・貧富の差を超えた神の愛=
+        <span class="toggle-text" data-original-text="アガペー" onclick="toggleText(this)"></span>
+        を説く。<br>
+        それゆえ神を信じること=
+        <span class="toggle-text" data-original-text="神への愛" onclick="toggleText(this)"></span>
+        を重視し、また同じ信仰を持つ者への愛=
+        <span class="toggle-text" data-original-text="隣人愛" onclick="toggleText(this)"></span>
+        を説き、信仰は最後の審判によって完結すると説いた。<br>
+        ↓<br>
+        低い身分のものを中心にイエスと信仰を共にする輪が広がる。<br>
+    </p>
+    <p>
+        イエスを支持するものはイエスを
+        <span class="toggle-text" data-original-text="キリスト(メシア)" onclick="toggleText(this)"></span>
+        =(救世主)とみなす。<br>
+        イエスの側近くに仕えた弟子を
+        <span class="toggle-text" data-original-text="使徒" onclick="toggleText(this)"></span>
+        とよぶ。<br>
+        ↓<br>
+        BC30年頃、イエスを警戒したユダヤ教の神官達が、イエスは叛逆を企てる者であるとしてローマの総督に訴える。<br>
+        イエス=キリスト、
+        <span class="toggle-text" data-original-text="エルサレム" onclick="toggleText(this)"></span>
+        郊外のゴルゴタの丘でローマ軍により処刑<br>
+        ↓<br>
+        母のマリアなどにより遺体が収容されて、洞窟墓に収められるも、落雷の後消える。<br>
+        人々がイエスの復活を信じるようになる。←イエスの死は「
+        <span class="toggle-text" data-original-text="原罪" onclick="toggleText(this)"></span>
+        」を贖うため<br>
+    </p>
+    <p>
+        イエスが殉教者となり、キリスト教が成立<br>
+        神 <span class="toggle-text" data-original-text="エホバ" onclick="toggleText(this)"></span> 聖典
+        <span class="toggle-text" data-original-text="旧約聖書" onclick="toggleText(this)"></span>
+        ・
+        <span class="toggle-text" data-original-text="新約聖書" onclick="toggleText(this)"></span><br>
+        イエスの死後、
+        <span class="toggle-text" data-original-text="ペテロ" onclick="toggleText(this)"></span>
+        や
+        <span class="toggle-text" data-original-text="パウロ" onclick="toggleText(this)"></span>
+        などの使徒が布教活動を行うが、一神教である為、皇帝崇拝を拒否、皇帝による迫害を受ける。<br>
+        ペテロ・パウロ共に
+        <span class="toggle-text" data-original-text="ネロ" onclick="toggleText(this)"></span>
+        帝の迫害により殉教。<br>
+    </p>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

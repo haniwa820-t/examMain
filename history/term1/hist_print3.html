@@ -1,0 +1,295 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[ヨーロッパの変容]</h3>
+    ・西欧諸国を中心に自由主義が発展<br>
+    ・弱体化したオスマン帝国をめぐって有力国の間で対立が発生<br>
+    <h3>[東方問題とクリミア戦争]</h3>
+    <h4>〇東方問題</h4>
+    ・
+    <span class="toggle-text" data-original-text="東方問題" onclick="toggleText(this)"></span>
+    ＝19世紀にオスマン帝国領内(バルカン半島)で生じた国際対立に対する西欧側からの呼称オスマン帝国内の自由化の広がりと，勢力拡張をめざす列強の動き<br>
+    <h4>〇ロシアの南下政策</h4>
+    ・
+    <span class="toggle-text" data-original-text="南下政策" onclick="toggleText(this)"></span>
+    ＝農産物の市場と不凍港の獲得をめざして,地中海方面へ進出<br>
+    ・ギリシア独立支援<br>
+    ・エジプト=トルコ戦争(1831～33，39～40年)に参加→ロシア＝不凍港と地中海への出口の獲得(ダーダネルス<br>
+    ・ボスフォラス両海峡自由通航権)フランス,イギリス＝ロシアの地中海進出を警戒<br>
+    ・
+    <span class="toggle-text" data-original-text="クリミア戦争" onclick="toggleText(this)"></span>
+    (1853年)＝ロシアとオスマン=トルコの争いギリシア正教徒の保護を理由にオスマン=トルコと開戦vs.イギリス<br>
+    ・フランスなどへ拡大(南下を阻止したい)→ロシアの敗北
+    <span class="toggle-text" data-original-text="パリ条約" onclick="toggleText(this)"></span>
+    (1856年)＝黒海の中立化(ボスフォラス<br>
+    ・ダーダネルス両海峡の外国軍艦の通航禁止)<br>
+    <h3>[19世紀後半のロシア]</h3>
+    ・クリミア戦争の敗戦ショック→遅れたロシアを西欧なみに近代化する必要あり<br>
+    ・
+    <span class="toggle-text" data-original-text="農奴解放令" onclick="toggleText(this)"></span>
+    (1861年)＝
+    <span class="toggle-text" data-original-text="アレクサンドル2世" onclick="toggleText(this)"></span>
+    が，農奴に人格的自由を認める※土地は貴族領主から買い戻すが，支払い終了までは農村共同体(ミール)に引きわたされる<br>
+    ・ポーランドの反乱(1863年)→鎮定後，皇帝は再び専制政治を強化<br>
+    ・
+    <span class="toggle-text" data-original-text="ナロードニキ運動" onclick="toggleText(this)"></span>
+    ＝進歩的な知識人が
+    <span class="toggle-text" data-original-text="ヴ＝ナロード" onclick="toggleText(this)"></span>
+    (人民のなかへ)を合言葉に農民の啓蒙をめざす農民の支持を得られず，政府からも弾圧→一部がテロリズムへ⇒アレクサンドル2世を暗殺,ロシアの専制政治の強化<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[19世紀後半のイギリス]</h3>
+    <h4>〇ヴィクトリア時代</h4>
+    ・
+    <span class="toggle-text" data-original-text="ヴィクトリア女王" onclick="toggleText(this)"></span>
+    の治世(1837～1901年)＝イギリス繁栄の絶頂期
+    <span class="toggle-text" data-original-text="世界の工場" onclick="toggleText(this)"></span>
+    の工業生産力,通商・運輸・金融の面で世界の中心万国博覧会の開催(1851年)：近代工業力の成果を内外に誇示<br>
+    <h4>〇国民統合の進展</h4>
+    ・背景＝労働者の生活水準の向上,地主・貴族と有産市民層が労働者の諸権利を容認⇒国民統合が進展<br>
+    ・
+    <span class="toggle-text" data-original-text="選挙法改正" onclick="toggleText(this)"></span>
+    ＝第2回(1867年)：選挙権が都市労働者の多くに拡大第3回(1884年)：選挙権が農業労働者に拡大→成年男性の多くが獲得へ<br>
+    ・他の改革＝教育法の制定(1870年：公立小学校の増設)，労働組合法の制定(1871年)<br>
+    <h4>〇典型的な二大政党政治</h4>
+    ・1860年代に政党政治が成立,保守党：
+    <span class="toggle-text" data-original-text="ディズレーリ" onclick="toggleText(this)"></span>
+    ，自由党：
+    <span class="toggle-text" data-original-text="グラッドストン" onclick="toggleText(this)"></span>
+    が交代で政権を担当<br>
+    <h4>〇積極的対外政策</h4>
+    ・大英帝国と呼ばれる植民地帝国を建設＝香港の領有,スエズ運河の支配権の獲得,インド帝国の創設<br>
+    ・白人植民地の自治領化<br>
+    ・アイルランド問題は解決できず※アイルランド＝住民の多くは
+    <span class="toggle-text" data-original-text="ケルト系" onclick="toggleText(this)"></span>
+    で
+    <span class="toggle-text" data-original-text="カトリック" onclick="toggleText(this)"></span>
+    ,イギリス人不在地主の小作人による搾取1801年に正式に併合され,大ブリテン=アイルランド
+    <span class="toggle-text" data-original-text="連合王国" onclick="toggleText(this)"></span>
+    に組み込まれるジャガイモ飢饉(1840年代半ば)→100万人以上がアメリカ合衆国へ移民アイルランド自治法案(1880年代以降)＝グラッドストンが提出→議会を通過せず<br>
+    <h3>[19世紀後半のフランス]</h3>
+    <h4>〇フランス第二帝政</h4>
+    ・ルイ＝ナポレオンが国民投票で
+    <span class="toggle-text" data-original-text="ナポレオン3世" onclick="toggleText(this)"></span>
+    となり,
+    <span class="toggle-text" data-original-text="第二帝政" onclick="toggleText(this)"></span>
+    開始(1852年)<br>
+    ・内政＝自由貿易の原則のもとで国内産業を育成,パリ市街の改造<br>
+    ・積極的対外政策＝クリミア戦争,アロー戦争,イタリア統一戦争,インドシナ出兵レセップスによるスエズ運河建設(1869年開通)<br>
+    ・動揺＝メキシコ遠征の失敗(1861～67年)→国内での支持がゆらぐ<br>
+    ・崩壊＝
+    <span class="toggle-text" data-original-text="プロイセン＝フランス戦争" onclick="toggleText(this)"></span>
+    に敗北(1870年)→帝政崩壊→臨時国防政府が成立<br>
+    <h4>〇第三共和政</h4>
+    ・
+    <span class="toggle-text" data-original-text="パリ＝コミューン" onclick="toggleText(this)"></span>
+    ＝臨時国防政府がドイツ軍に降伏(1871年1月)講和条約に反対するパリ民衆が自治政府を樹立(同年3月)※史上初の労働者政権ティエール指導の臨時政府軍がコミューン政府を打倒(同年5月)<br>
+    ・共和国憲法の制定(1875年)＝
+    <span class="toggle-text" data-original-text="第三共和政" onclick="toggleText(this)"></span>
+    の基礎がすえられる<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[イタリアの統一]</h3>
+    <h4>〇統一運動の高揚</h4>
+    ・
+    <span class="toggle-text" data-original-text="分裂状態" onclick="toggleText(this)"></span>
+    のイタリア＝北部：オーストリア,中部：ローマ教皇領,南部：ナポリ王国<br>
+    ・ローマ共和国(1849年)＝ローマの自由主義者が教皇領に建設→
+    <span class="toggle-text" data-original-text="青年イタリア" onclick="toggleText(this)"></span>
+    を指導してきたマッツィーニも参加→フランス軍に倒される<br>
+    ・サルデーニャ王国＝オーストリアとたたかい敗北(1848年)<br>
+    <h4>〇イタリア王国の建設</h4>
+    ・サルデーニャ王国＝新国王
+    <span class="toggle-text" data-original-text="ヴィットーリオ＝エマヌエーレ2世" onclick="toggleText(this)"></span>
+    即位(1849年)新首相
+    <span class="toggle-text" data-original-text="カヴール" onclick="toggleText(this)"></span>
+    が近代化の諸改革を推進ナポレオン3世と密約を結び(1858年),オーストリアと開戦(
+    <span class="toggle-text" data-original-text="イタリア統一戦争" onclick="toggleText(this)"></span>
+    )→ロンバルディアを獲得(1859年)サヴォイアとニースをフランスに割譲→国民投票で中部イタリアを併合(1860年)<br>
+    ・
+    <span class="toggle-text" data-original-text="ガリバルディ" onclick="toggleText(this)"></span>
+    の活動＝両シチリア王国を占領(1860年)<br>
+    ・
+    <span class="toggle-text" data-original-text="イタリア王国" onclick="toggleText(this)"></span>
+    ＝ガリバルディが占領地をサルデーニャ王にゆずって成立(1861年)<br>
+    ・ヴェネツィア併合(1866年)＝プロイセン＝オーストリア戦争に便乗<br>
+    ・ローマ教皇領の占領(1870年)＝プロイセン＝フランス戦争に便乗<br>
+    ・残された課題＝①ヴァチカンにたてこもるローマ教皇とイタリア政府との対立②オーストリア領に残る
+    <span class="toggle-text" data-original-text="未回収のイタリア" onclick="toggleText(this)"></span>
+    問題③工業のすすんだ北部と貧しい南部との経済格差問題(
+    <span class="toggle-text" data-original-text="南北問題" onclick="toggleText(this)"></span>
+    )<br>
+
+    <h3>[ドイツの統一]</h3>
+    <h4>〇19世紀前半の動き</h4>
+    ・
+    <span class="toggle-text" data-original-text="ドイツ関税同盟" onclick="toggleText(this)"></span>
+    の発足(1834年)＝プロイセン中心に経済的統一をほぼ実現(オーストリアは除外)<br>
+    ・フランクフルト国民議会(1848年)＝統一方式で
+    <span class="toggle-text" data-original-text="大ドイツ主義" onclick="toggleText(this)"></span>
+    と
+    <span class="toggle-text" data-original-text="小ドイツ主義" onclick="toggleText(this)"></span>
+    が対立小ドイツ主義が勝利→皇帝に推挙されたプロイセン王が拒否<br>
+    <h4>〇ドイツ帝国の樹立</h4>
+    ・統一の主導権＝自由主義者からプロイセンの土地貴族(ユンカー)層へ<br>
+    ・
+    <span class="toggle-text" data-original-text="ヴィルヘルム１世" onclick="toggleText(this)"></span>
+    が,首相に
+    <span class="toggle-text" data-original-text="ビスマルク" onclick="toggleText(this)"></span>
+    を登用(1862年)→軍備を拡張(
+    <span class="toggle-text" data-original-text="鉄血政策" onclick="toggleText(this)"></span>
+    )<br>
+    ・デンマーク戦争(1864年)＝プロイセン・オーストリアが勝利→シュレスヴィヒ・ホルシュタイン両州を獲得<br>
+    ・
+    <span class="toggle-text" data-original-text="プロイセン＝オーストリア戦争" onclick="toggleText(this)"></span>
+    (1866年)＝獲得した両州の管理をめぐり開戦→勝者：プロイセン＝
+    <span class="toggle-text" data-original-text="北ドイツ連邦" onclick="toggleText(this)"></span>
+    を結成(1867年),南ドイツ諸邦とも同盟(ドイツ連邦解散)※ドイツ統一はプロイセンが中心へ敗者：オーストリア＝同君連合の
+    <span class="toggle-text" data-original-text="オーストリア＝ハンガリー帝国" onclick="toggleText(this)"></span>
+    (二重帝国)に再編<br>
+    ・
+    <span class="toggle-text" data-original-text="プロイセン＝フランス戦争" onclick="toggleText(this)"></span>
+    (1870年)＝スペイン王位継承問題でナポレオン3世と開戦→勝者：プロイセン＝きびしい条件の講和を強要(アルザス・ロレーヌ地方の割譲，莫大な賠償金)ドイツ帝国の成立敗者：フランス＝第二帝政崩壊<br>
+    <h4>〇ドイツ帝国の成立</h4>
+    ・
+    <span class="toggle-text" data-original-text="ドイツ帝国" onclick="toggleText(this)"></span>
+    ＝1871年1月：ヴィルヘルム1世がドイツ皇帝に即位(ヴェルサイユ宮殿にて)<br>
+    ・特色＝連邦国家,男性普通選挙制で選出された帝国議会(立憲君主政)(ただし権限は大幅に制限)プロイセン王が皇帝,プロイセン首相(ビスマルク)が宰相を兼任→独裁的権力を行使※皇帝権力の強い見せかけだけの立憲君主政<br>
+    <h4>〇ビスマルクの内政</h4>
+    ・
+    <span class="toggle-text" data-original-text="文化闘争" onclick="toggleText(this)"></span>
+    ＝南ドイツで有力な
+    <span class="toggle-text" data-original-text="カトリック" onclick="toggleText(this)"></span>
+    を警戒→抑圧<br>
+    ・
+    <span class="toggle-text" data-original-text="社会主義者鎮圧法" onclick="toggleText(this)"></span>
+    (1878年)＝皇帝狙撃事件発生(1878年)→社会主義政党を弾圧<br>
+    ・社会主義運動の伸張→社会主義労働者党が成立(1875年),90年に
+    <span class="toggle-text" data-original-text="社会民主党" onclick="toggleText(this)"></span>
+    と改称<br>
+    ・労働者の保護→社会保険制度＝災害保険・疾病保険・養老保険を実施保護関税政策＝工業化を推進<br>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>[ビスマルク外交]</h3>
+    ・
+    <span class="toggle-text" data-original-text="フランスの孤立" onclick="toggleText(this)"></span>
+    と
+    <span class="toggle-text" data-original-text="ドイツの安全" onclick="toggleText(this)"></span>
+    をはかる同盟政策＝
+    <span class="toggle-text" data-original-text="ビスマルク体制" onclick="toggleText(this)"></span>
+    <br>
+    ・
+    <span class="toggle-text" data-original-text="三帝同盟" onclick="toggleText(this)"></span>
+    (1873年)＝ドイツ・オーストリア・ロシアで結成⇔ロシアが
+    <span class="toggle-text" data-original-text="パン＝スラヴ主義" onclick="toggleText(this)"></span>
+    を利用しバルカンで勢力拡大オーストリアと対立し,一時中断(1878年)<br>
+    ・
+    <span class="toggle-text" data-original-text="ロシア＝トルコ戦争" onclick="toggleText(this)"></span>
+    ＝1875年：ボスニア・ヘルツェゴヴィナで農民反乱1877年：ロシアがオスマン帝国と開戦→勝利1878年：
+    <span class="toggle-text" data-original-text="サン＝ステファノ条約(すぐに破棄)" onclick="toggleText(this)"></span>
+    でロシアが勢力拡大(ブルガリアを保護下におく)<br>
+    ・
+    <span class="toggle-text" data-original-text="ベルリン会議" onclick="toggleText(this)"></span>
+    開催(1878年)＝ロシア=トルコ戦争に関する列強の利害を調停
+    <span class="toggle-text" data-original-text="ベルリン条約" onclick="toggleText(this)"></span>
+    を締結→ロシアの南下をおさえる<br>
+    ・新三帝同盟(1881年)＝アジア進出につとめるロシアがドイツ,オーストリアと再結成<br>
+    ・
+    <span class="toggle-text" data-original-text="三国同盟" onclick="toggleText(this)"></span>
+    (1882年)＝ドイツ,オーストリア,イタリアで結成(～1915年)背景：フランスのチュニジア保護国化(1881年)→イタリアの反発<br>
+    ・
+    <span class="toggle-text" data-original-text="再保証主義" onclick="toggleText(this)"></span>
+    (1887年)＝背景：ロシア<br>
+    ・オーストリアの対立激化→新三帝同盟消滅ドイツ<br>
+    ・ロシア間で締結(～1890年)→フランス包囲網の維持はかる<br>
+    <h3>[国際的諸運動の進展]</h3>
+    ・
+    <span class="toggle-text" data-original-text="第1インターナショナル" onclick="toggleText(this)"></span>
+    ＝1864年：マルクスが指導者となりロンドンで結成無政府主義者との対立，各国政府の弾圧→解散(1876年)<br>
+    ・第2インターナショナル＝1889年：ドイツ社会民主党を中心に各国の社会党<br>
+    ・労働党が協力平和運動や労働条件の改善に取り組む<br>
+    ・万国博覧会＝1851年にロンドンで初開催,その後も各地で開かれ,近代工業技術の普及や国際交流に貢献<br>
+    ・赤十字条約＝戦争犠牲者の救援が目的→1864年にデュナンの発案で締結,
+    <span class="toggle-text" data-original-text="国際赤十字" onclick="toggleText(this)"></span>
+    の発足<br>
+    ・
+    <span class="toggle-text" data-original-text="国際オリンピック大会" onclick="toggleText(this)"></span>
+    (1896年)＝スポーツをつうじて国際親善を提唱→現在へ<br>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

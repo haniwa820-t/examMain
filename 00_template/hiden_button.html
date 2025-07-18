@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>表示/非表示ボタンの例</title>
+    <style>
+        button {
+            background-color: #fff3cd;
+            /* 明るい黄色 */
+            color: #d35400;
+            /* 濃いオレンジ */
+            font-weight: bold;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffe8a1;
+            /* 少し濃い黄色（ホバー時） */
+        }
+    </style>
+    <script>
+        function toggleVisibility() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <button onclick="toggleVisibility()">表示/非表示</button>
+
+    <div id="myDIV">
+        これは表示または隠れる内容です。
+    </div>
+
+</body>
+
+</html>

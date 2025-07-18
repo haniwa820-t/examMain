@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>英単語クイズ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #fff3cd;
+            text-align: center;
+            padding: 50px;
+            color: #333;
+        }
+
+        h1 {
+            color: #d35400;
+        }
+
+        #word {
+            font-size: 2em;
+            margin: 30px 0 10px;
+            color: #d35400;
+        }
+
+        #meaning {
+            font-size: 1.8em;
+            color: #333;
+            margin: 20px 0;
+            min-height: 2em;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 12px 30px;
+            margin-top: 20px;
+            background-color: #d35400;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #b84300;
+        }
+
+        #answerBtn,
+        #restartBtn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>英単語クイズ</h1>
+    <div id="word"></div>
+    <div id="meaning"></div>
+    <button id="startBtn">開始</button>
+    <button id="answerBtn">答え</button>
+    <button id="restartBtn">もう一度</button>
+
+    <script>
+        const wordList = `replace,～を取り替える
+provide,～を提供する
+accept,～を受け入れる
+degree,程度
+increase,増える
+extra,余分な
+account,～を占める
+alike,よく似て
+identity,身元
+resemble,～に似ている
+neighborhood,近隣
+accustomed,慣れている
+aim,ねらい
+arrange,～を手配する
+confirm,～を確認する
+ensure,～を確保する
+launch,～を始める
+struggle,もがく
+accomplish,～を達成する
+acquire,～を獲得する
+characteristic,特徴
+chief,主要な
+neutral,中立の
+permanent,永久の
+content,満足して
+delight,喜び
+fortunate,幸運な
+generous,心の広い
+sympathy,同情
+forgive,～を許す
+available,利用できる
+contain,～を含む
+maintain,～を維持する
+obvious,明らかな
+occupy,～を占める
+require,～を必要とする
+steady,安定した
+differ,違う
+alternative,代わりの
+involve,～を伴う
+typical,特有の
+unite,～を統合させる
+various,さまざまな
+emphasize,～を強調する
+absolutely,絶対に
+fold,～を折りたたむ
+trigger,～を引き起こす
+remove,～を取り除く
+accompany,～といっしょに行く
+guarantee,～を保証する
+mutual,相互の
+brief,短い
+immediately,ただちに
+temporary,臨時の
+urgent,緊急の
+apparent,明らかな
+aspect,側面
+frequent,頻繁な
+slight,わずかな
+curious,知りたがる
+honest,正直な
+register,～を登録する
+reject,～を拒絶する
+gain,～を得る
+obtain,～を取得する`.split('\n').map(line => {
+            const [word, meaning] = line.split(',');
+            return { word, meaning };
+        });
+
+        let shuffledList = [];
+        let currentIndex = 0;
+        let isAnswered = false;
+
+        const wordDiv = document.getElementById('word');
+        const meaningDiv = document.getElementById('meaning');
+        const startBtn = document.getElementById('startBtn');
+        const answerBtn = document.getElementById('answerBtn');
+        const restartBtn = document.getElementById('restartBtn');
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function showNextWord() {
+            if (currentIndex < shuffledList.length) {
+                const current = shuffledList[currentIndex];
+                wordDiv.textContent = current.word;
+                meaningDiv.textContent = '';
+                isAnswered = false;
+            } else {
+                wordDiv.textContent = '終了しました！';
+                meaningDiv.textContent = '';
+                answerBtn.style.display = 'none';
+                restartBtn.style.display = 'inline-block';
+            }
+        }
+
+        answerBtn.onclick = () => {
+            if (isAnswered) return;
+            const current = shuffledList[currentIndex];
+            meaningDiv.textContent = current.meaning;
+            isAnswered = true;
+            currentIndex++;
+            setTimeout(showNextWord, 1000);
+        };
+
+        restartBtn.onclick = () => {
+            startQuiz();
+        };
+
+        startBtn.onclick = () => {
+            startBtn.style.display = 'none';
+            answerBtn.style.display = 'inline-block';
+            startQuiz();
+        };
+
+        function startQuiz() {
+            shuffledList = shuffle([...wordList]);
+            currentIndex = 0;
+            isAnswered = false;
+            answerBtn.style.display = 'inline-block';
+            restartBtn.style.display = 'none';
+            showNextWord();
+        }
+    </script>
+</body>
+
+</html>

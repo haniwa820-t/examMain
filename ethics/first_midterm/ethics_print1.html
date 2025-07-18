@@ -1,0 +1,193 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>I.人類の誕生 〜猿人から原人へ〜</h3>
+    <p>
+        約2000万年前、人類と類人猿の共通の祖先が
+        <span class="toggle-text" data-original-text="アフリカ" onclick="toggleText(this)"></span>
+        大陸で誕生。樹上生活を営む。<br>
+        ↓<br>
+        約700万年前、人類とチンパンジーとの分化が起こる。<br>
+        最初に現れた人類を総称して
+        <span class="toggle-text" data-original-text="猿人" onclick="toggleText(this)"></span>
+        と呼ぶ。<br>
+        猿人の一部が動物の骨を砕いたりする過程で
+        <span class="toggle-text" data-original-text="道具" onclick="toggleText(this)"></span>
+        の作成・使用を開始<br>
+    </p>
+    <p>
+        約100万年前、猿人の一部が進化、脳容積が肥大化。脳容積 約450ml→約900ml<br>
+        ホモ・エレクトス=
+        <span class="toggle-text" data-original-text="原人" onclick="toggleText(this)"></span>
+        が成立。 
+        <span class="toggle-text" data-original-text="火" onclick="toggleText(this)"></span>
+        の使用が始まる。<br>
+        ホモ・エレクトスがアフリカ大陸からユーラシア大陸に拡散。←
+        <span class="toggle-text" data-original-text="北京" onclick="toggleText(this)"></span>
+        原人など<br>
+    </p>
+    
+    
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h3>Ⅱ.現生人類の登場</h3>
+
+    <h4>(a)旧人の誕生</h4>
+    <p>
+        約60万年前、アフリカで原人から
+        <span class="toggle-text" data-original-text="旧人" onclick="toggleText(this)"></span>
+        への進化が起こる。<br>
+        アフリカからユーラシア大陸へ拡散。<br>
+        ↓<br>
+        約30万年前、ヨーロッパ〜中央アジアにかけて
+        <span class="toggle-text" data-original-text="ネアンデルタール" onclick="toggleText(this)"></span>
+        人が生活<br>
+        ネアンデルタール人の特徴 脳容積1500ml<br>
+        筋肉質で、
+        <span class="toggle-text" data-original-text="氷河" onclick="toggleText(this)"></span>
+        期に対応した骨格を持つ。<br>
+        精神文化が成立→イラクのシャニダールでは
+        <span class="toggle-text" data-original-text="死者の埋葬" onclick="toggleText(this)"></span>
+        など<br>
+    </p>
+
+    <h4>(b)新人の登場〜精神文化の発達と芸術・信仰の誕生〜</h4>
+    <p>
+        20万年前、エチオピアで現生人の先祖となるホモ・サピエンス類=
+        <span class="toggle-text" data-original-text="新人" onclick="toggleText(this)"></span>
+        が誕生<br>
+        さらに約45000年前には
+        <span class="toggle-text" data-original-text="オーストラリア" onclick="toggleText(this)"></span>
+        大陸に進出<br>
+        15000年前にはベーリング海峡を通って、
+        <span class="toggle-text" data-original-text="アメリカ" onclick="toggleText(this)"></span>
+        大陸に進出<br>
+    </p>
+    <p>
+        精神文化に更なる発達が見られるようになる。<br>
+        約7万5千年前にはアクセサリーの制作も始まる。<br>
+        ⇨
+        <span class="toggle-text" data-original-text="個人の認識が始まる" onclick="toggleText(this)"></span>
+    </p>
+    <p>
+        3万7千年前にはヨーロッパ各地で鳥や動物の骨を用いた楽器の制作も確認される<br>
+        ⇨
+        <span class="toggle-text" data-original-text="音楽の発明" onclick="toggleText(this)"></span>
+    </p>
+    <p>
+        洞窟壁画の制作や土偶・石偶の制作も始まる。⇨
+        <span class="toggle-text" data-original-text="信仰の誕生" onclick="toggleText(this)"></span><br>
+        洞窟壁画<br>
+        <span class="toggle-text" data-original-text="アルタミラ" onclick="toggleText(this)"></span>
+        ←スペイン<br>
+        <span class="toggle-text" data-original-text="ラスコー" onclick="toggleText(this)"></span>
+        ←フランス
+    </p>
+    <p>
+        新人と旧人の共存状況が生まれる。<br>
+        ↓<br>
+        4万年前、最後の氷河期に突入<br>
+        35000年前、ネアンデルタール人絶滅。人類は現生人類のみとなる。<br>
+    </p>
+
+    <h3>Ⅲ.信仰・宗教と哲学</h3>
+    <p>
+        ○旧石器時代後期には信仰・宗教が成立<br>
+        多産や食糧の確保を願う。←洞窟壁画や土偶・石棒などの製作<br>
+        宗教とは迷信か？<br>
+        <span class="toggle-text" data-original-text="科学登場以前の合理性から宗教信仰がうまれる" onclick="toggleText(this)"></span><br>
+    </p>
+    <p>
+        西欧において宗教(キリスト教)を迷信ととらえるようになるのは自然科学の発達が見られる18世紀以降の
+        <span class="toggle-text" data-original-text="啓蒙" onclick="toggleText(this)"></span>
+        思想以後。<br>
+        啓蒙思想←
+        <span class="toggle-text" data-original-text="理性" onclick="toggleText(this)"></span>
+        を重視して
+        <span class="toggle-text" data-original-text="信仰" onclick="toggleText(this)"></span>
+        を迷信ととらえる。<br>
+    </p>
+    <p>
+        ○哲学とは<br>
+        「フィロソフィー(philosophy)」=「知」を愛する<br>
+        「無知の知」 byソクラテス<br>
+        「哲学は我々がすでに知っていることを教える」 byデカルト<br>
+        「
+        <span class="toggle-text" data-original-text="常識" onclick="toggleText(this)"></span>
+        」を問い直す<br>
+    </p>
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = "　".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "　".repeat(original.length);
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "　".repeat(original.length); // 非表示に
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>
