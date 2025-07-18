@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>英単語クイズ</title>
+	<style>
+		body {
+			font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+			background-color: #1a1a1a;
+			color: #e0e0e0;
+			text-align: center;
+			padding: 50px;
+			transition: background-color 0.3s ease, color 0.3s ease;
+		}
+
+		body.light-mode {
+			background-color: #fff9e7;
+			color: #333;
+		}
+
+		@media (max-width: 768px) {
+			body {
+				padding: 20px;
+			}
+		}
+
+		.theme-toggle {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			background-color: #333333;
+			color: #e0e0e0;
+			border: 2px solid #555555;
+			padding: 10px 16px;
+			border-radius: 8px;
+			cursor: pointer;
+			font-weight: bold;
+			transition: all 0.3s ease;
+			z-index: 1000;
+		}
+
+		.light-mode .theme-toggle {
+			background-color: #f0f0f0;
+			color: #333333;
+			border-color: #cccccc;
+		}
+
+		.theme-toggle:hover {
+			transform: scale(1.05);
+		}
+
+		h1 {
+			color: #ffa500;
+			text-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+			transition: color 0.3s ease;
+		}
+
+		.light-mode h1 {
+			color: #d35400;
+			text-shadow: none;
+		}
+
+		#word {
+			font-size: 2em;
+			margin: 30px 0 10px;
+			color: #ffa500;
+			transition: color 0.3s ease;
+		}
+
+		.light-mode #word {
+			color: #d35400;
+		}
+
+		#meaning {
+			font-size: 1.8em;
+			color: #e0e0e0;
+			margin: 20px 0;
+			min-height: 2em;
+			transition: color 0.3s ease;
+		}
+
+		.light-mode #meaning {
+			color: #333;
+		}
+
+		button {
+			font-size: 1.2em;
+			padding: 12px 30px;
+			margin-top: 20px;
+			background-color: #2d2d2d;
+			color: #ffa500;
+			font-weight: bold;
+			border: 2px solid #555555;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+		}
+
+		.light-mode button {
+			background-color: #fff3cd;
+			color: #d35400;
+			border-color: #d35400;
+		}
+
+		button:hover {
+			transform: scale(1.05);
+		}
+
+		#answerBtn,
+		#restartBtn {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+	<h1>英単語クイズ</h1>
+	<div id="word"></div>
+	<div id="meaning"></div>
+	<button id="startBtn">開始</button>
+	<button id="answerBtn">答え</button>
+	<button id="restartBtn">もう一度</button>
+
+	<script>
+		const wordList = `afford,～を持つ余裕がある
+charge,料金、責任、非難、～を請求する
+inform,～に知らせる
+instance,（事）例
+prove,～を証明する
+accurate,正確な
+holy,神聖な
+luxury,ぜいたく
+stable,安定した
+angle,角度
+conduct,～を行う
+era,時代
+primitive,原始の
+civilization,文明
+declare,～を宣言する
+shift,～を移す
+adapt,適応する
+convey,運搬する
+distribute,～を配る（分配する）
+capture,～を捕らえる
+affect,～に影響を与える
+interrupt,～をさえぎる
+discourage,～を思いとどまらせる
+eliminate,～を排除する
+punish,～を罰する
+scare,～を怖がらせる
+waste,～を浪費する
+demand,～を要求する
+command,～を命じる
+assign,～を割り当てる
+closely,密接に
+entire,全体の
+rapid,急速な
+rare,まれな
+sufficient,十分な
+vast,莫大な、広大な
+widespread,広範囲にわたる
+approach,近づく
+chase,追いかける
+proceed,進む
+career,経歴
+duty,義務
+engage,従事する
+firm,会社
+merchant,商人
+profession,職業
+professor,教授
+climate,気候
+forecast,予報
+humid,湿気の多い
+summit,頂上
+stream,小川
+calm,おだやかな、落ち着いた
+arise,生じる、起こる
+burst,破裂する
+collapse,崩壊
+emerge,現れる
+fade,消えていく
+generate,～を発生させる
+melt,溶ける
+occur,発生する、起こる
+humanity,人類
+individual,個人の
+household,所帯、世帯
+legal,法律（上）の
+religion,宗教
+trend,傾向
+Atlantic,大西洋
+tropical,熱帯の
+distance,距離
+horizon,水平線、地平線
+layer,層、重なり、を取得する`.split('\n').map(line => {
+			const [word, meaning] = line.split(',');
+			return { word, meaning };
+		});
+
+		let shuffledList = [];
+		let currentIndex = 0;
+		let isAnswered = false;
+
+		const wordDiv = document.getElementById('word');
+		const meaningDiv = document.getElementById('meaning');
+		const startBtn = document.getElementById('startBtn');
+		const answerBtn = document.getElementById('answerBtn');
+		const restartBtn = document.getElementById('restartBtn');
+
+		function shuffle(array) {
+			return array.sort(() => Math.random() - 0.5);
+		}
+
+		function showNextWord() {
+			if (currentIndex < shuffledList.length) {
+				const current = shuffledList[currentIndex];
+				wordDiv.textContent = current.word;
+				meaningDiv.textContent = '';
+				isAnswered = false;
+			} else {
+				wordDiv.textContent = '終了しました！';
+				meaningDiv.textContent = '';
+				answerBtn.style.display = 'none';
+				restartBtn.style.display = 'inline-block';
+			}
+		}
+
+		answerBtn.onclick = () => {
+			if (isAnswered) return;
+			const current = shuffledList[currentIndex];
+			meaningDiv.textContent = current.meaning;
+			isAnswered = true;
+			currentIndex++;
+			setTimeout(showNextWord, 1000);
+		};
+
+		restartBtn.onclick = () => {
+			startQuiz();
+		};
+
+		startBtn.onclick = () => {
+			startBtn.style.display = 'none';
+			answerBtn.style.display = 'inline-block';
+			startQuiz();
+		};
+
+		function startQuiz() {
+			shuffledList = shuffle([...wordList]);
+			currentIndex = 0;
+			isAnswered = false;
+			answerBtn.style.display = 'inline-block';
+			restartBtn.style.display = 'none';
+			showNextWord();
+		}
+
+		// ダーク/ライトモードの切り替え
+		function toggleTheme() {
+			const body = document.body;
+			const themeBtn = document.querySelector('.theme-toggle');
+
+			if (body.classList.contains('light-mode')) {
+				body.classList.remove('light-mode');
+				themeBtn.textContent = '🌙';
+			} else {
+				body.classList.add('light-mode');
+				themeBtn.textContent = '☀️';
+			}
+		}
+	</script>
+</body>
+
+</html>
