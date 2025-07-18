@@ -5,4 +5,8 @@
 
 ああ$formula \qquad \displaystyle\frac{1}{2}$ああ。
 
+\\[
+formula \qquad \displaystyle\frac{1}{2}
+\\]
+
 表示されてなさそう
