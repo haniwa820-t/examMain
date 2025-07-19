@@ -1,13 +1,22 @@
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>すべて表示／非表示切り替え</title>
     <style>
+        * {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
         body {
             max-width: 80%;
             margin: 0 auto 50 auto;
             padding: 20px;
             box-sizing: border-box;
             background-color: #1a1a1a;
+            font-size: 16px;
             color: #e0e0e0;
             font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -155,209 +164,177 @@
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-<h2>帝国主義の成立と列強の情勢</h2>
-<h4>〇ポイント</h4>
-・第2次産業革命をむかえて重化学工業が発展すると,地下資源の開発をめぐる競争がはげしくなった</br>
-・投資先,資源,安価な労働力が求められ,世界は分割された</br>
-・アフリカの分割ではイギリスとフランスが先行し,ドイツやイタリアなどが遅れて進出した</br>
-・イギリスとフランスは対立しながらも妥協して既得権を保持した</br>
-・太平洋の分割にはアメリカ合衆国が参入していった</br>
-・中国は独立を保ちつつも列強に利権を譲渡し,経済的に従属した</br>
+    <h2>帝国主義の成立と列強の情勢</h2>
+    <h4>〇ポイント</h4>
+    ・第2次産業革命をむかえて重化学工業が発展すると,地下資源の開発をめぐる競争がはげしくなった</br>
+    ・投資先,資源,安価な労働力が求められ,世界は分割された</br>
+    ・アフリカの分割ではイギリスとフランスが先行し,ドイツやイタリアなどが遅れて進出した</br>
+    ・イギリスとフランスは対立しながらも妥協して既得権を保持した</br>
+    ・太平洋の分割にはアメリカ合衆国が参入していった</br>
+    ・中国は独立を保ちつつも列強に利権を譲渡し,経済的に従属した</br>
 
-<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
-<h3>[工業化の進展と帝国主義の成立]</h3>
-<h4>〇第2次産業革命とその影響</h4>
-・
-<span class="toggle-text" data-original-text="第2次産業革命" onclick="toggleText(this)"></span>
-(19世紀半ば～)</br>
-＝新しい動力源：
-<span class="toggle-text" data-original-text="石油" onclick="toggleText(this)"></span>
-と
-<span class="toggle-text" data-original-text="電力" onclick="toggleText(this)"></span>
-,新しい工業分野：
-<span class="toggle-text" data-original-text="重化学工業。電気工業・非鉄金属部門" onclick="toggleText(this)"></span>
-</br>
-<h4>〇帝国主義の成立</h4>
-・新工業分野は高度な技術と設備建設に巨額の資本が必要</br>
-→銀行と結びついた少数の巨大企業が市場を支配</br>
-・
-<span class="toggle-text" data-original-text="原料供給地" onclick="toggleText(this)"></span>
-や
-<span class="toggle-text" data-original-text="輸出市場" onclick="toggleText(this)"></span>
-としての植民地の重要性が高まる→未植民地占有の動きへ(1870年代)</br>
-・1880年代＝投資先,資源,安価な労働力を求めてアジア・アフリカに殺到</br>
-→植民地,保護国(領),勢力圏を構築＝
-<span class="toggle-text" data-original-text="帝国主義" onclick="toggleText(this)"></span>
-を展開</br>
-帝国主義＝</br>
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <h3>[工業化の進展と帝国主義の成立]</h3>
+    <h4>〇第2次産業革命とその影響</h4>
+    ・<span class="toggle-text" data-original-text="第2次産業革命" onclick="toggleText(this)"></span>(19世紀半ば～)</br>
+    ＝新しい動力源：<span class="toggle-text" data-original-text="石油" onclick="toggleText(this)"></span>と<span
+        class="toggle-text" data-original-text="電力" onclick="toggleText(this)"></span>,新しい工業分野：<span class="toggle-text"
+        data-original-text="重化学工業・電気工業・非鉄金属部門" onclick="toggleText(this)"></span></br>
+    <h4>〇帝国主義の成立</h4>
+    ・新工業分野は高度な技術と設備建設に巨額の資本が必要</br>
+    →銀行と結びついた少数の巨大企業が市場を支配</br>
+    ・<span class="toggle-text" data-original-text="原料供給地" onclick="toggleText(this)"></span>や<span class="toggle-text"
+        data-original-text="輸出市場" onclick="toggleText(this)"></span>としての植民地の重要性が高まる→未植民地占有の動きへ(1870年代)</br>
+    ・1880年代＝投資先,資源,安価な労働力を求めてアジア・アフリカに殺到</br>
+    →植民地,保護国(領),勢力圏を構築＝<span class="toggle-text" data-original-text="帝国主義" onclick="toggleText(this)"></span>を展開</br>
+    帝国主義＝</br>
 
-<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
-<h3>[アフリカ分割]</h3>
-<h4>〇ヨーロッパ列強のアフリカ侵略</h4>
-・19世紀前半＝ヨーロッパ人の知識はアフリカ北部とインド航路の港などのアフリカ沿岸部のみ</br>
-・19世紀半ば＝リヴィングストンやスタンリーの中央アフリカ探検→列強が関心</br>
-・
-<span class="toggle-text" data-original-text="ベルリン会議" onclick="toggleText(this)"></span>
-(1884～85年)</br>
-＝コンゴ地域をめぐりヨーロッパ諸国が対立</br>
-→ビスマルクの調停,ベルギー国王の
-<span class="toggle-text" data-original-text="コンゴ自由国" onclick="toggleText(this)"></span>
-所有を承認,アフリカ植民地化の原則制定</br>
-：列強の分割が激化,現地の人々の抵抗…やがて民族主義運動や民族解放運動へ成長</br>
-<h4>〇イギリスの動き</h4>
-・植民地政策＝
-<span class="toggle-text" data-original-text="アフリカ縦断政策(3C政策)" onclick="toggleText(this)"></span>
-と,インド洋の安全確保</br>
-※ケープタウンとカイロをつなぎ,カルカッタと結びつける</br>
-・北部＝エジプト：ウラービー運動を武力制圧(1881～82年)→事実上の保護国化</br>
-スーダン：マフディー派の抵抗(1881～98年)に苦戦→1899年征服</br>
-・南部＝ケープ植民地から周辺への侵攻政策</br>
-：ブール人との南アフリカ戦争(1899～1902年)</br>
-→トランスヴァール・オレンジ両国を併合(1910年：自治領南アフリカ連邦を形成)</br>
-<h4>〇フランスの動き</h4>
-・1881年＝チュニジアを保護国化(→イタリアの反発をまねく)</br>
-・
-<span class="toggle-text" data-original-text="アフリカ横断政策" onclick="toggleText(this)"></span>
-＝サハラ地域と,ジブチ・マダガスカルとの連結をめざす</br>
-・
-<span class="toggle-text" data-original-text="ファショダ事件" onclick="toggleText(this)"></span>
-(1898年)＝スーダンでイギリスと衝突→フランスの譲歩で解決</br>
-・
-<span class="toggle-text" data-original-text="英仏協商" onclick="toggleText(this)"></span>
-の成立(1904年)＝エジプトに対するイギリスの、</br>
-モロッコに対するフランスの支配権を相互承認→ドイツに対抗</br>
-<h4>〇ドイツの動き</h4>
-・1880年代半ば＝カメルーン・南西アフリカ・東アフリカを獲得(しかし、経済的価値に乏しい)</br>
-→新植民地獲得めざす</br>
-・2度の
-<span class="toggle-text" data-original-text="モロッコ事件" onclick="toggleText(this)"></span>
-＝フランスの支配に対抗</br>
-1905年：ヴィルヘルム2世がタンジールに上陸,1911年：砲艦をアガディールに派遣</br>
-いずれもイギリスがフランスを支援→ドイツの挑戦は失敗</br>
-(1912年：モロッコはフランスの保護国となる)</br>
-<h4>〇イタリアの動き</h4>
-・1880年代＝ソマリランド・エリトリアを獲得</br>
-・1890年代＝エチオピアに侵入→アドワの戦いで敗北(1896年)</br>
-・
-<span class="toggle-text" data-original-text="イタリア=トルコ戦争" onclick="toggleText(this)"></span>
-(1911～12年)＝リビア(トリポリ・キレナイカ)を獲得</br>
-<h4>〇分割の結果</h4>
-・20世紀初め＝
-<span class="toggle-text" data-original-text="エチオピア" onclick="toggleText(this)"></span>
-と
-<span class="toggle-text" data-original-text="リベリア" onclick="toggleText(this)"></span>
-を除く全域が植民地化</br>
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <h3>[アフリカ分割]</h3>
+    <h4>〇ヨーロッパ列強のアフリカ侵略</h4>
+    ・19世紀前半＝ヨーロッパ人の知識はアフリカ北部とインド航路の港などのアフリカ沿岸部のみ</br>
+    ・19世紀半ば＝リヴィングストンやスタンリーの中央アフリカ探検→列強が関心</br>
+    ・<span class="toggle-text" data-original-text="ベルリン会議" onclick="toggleText(this)"></span>(1884～85年)</br>
+    ＝コンゴ地域をめぐりヨーロッパ諸国が対立</br>
+    →ビスマルクの調停,ベルギー国王の<span class="toggle-text" data-original-text="コンゴ自由国"
+        onclick="toggleText(this)"></span>所有を承認,アフリカ植民地化の原則制定</br>
+    ：列強の分割が激化,現地の人々の抵抗…やがて民族主義運動や民族解放運動へ成長</br>
+    <h4>〇イギリスの動き</h4>
+    ・植民地政策＝<span class="toggle-text" data-original-text="アフリカ縦断政策(3C政策)"
+        onclick="toggleText(this)"></span>と,インド洋の安全確保</br>
+    ※ケープタウンとカイロをつなぎ,カルカッタと結びつける</br>
+    ・北部＝エジプト：ウラービー運動を武力制圧(1881～82年)→事実上の保護国化</br>
+    スーダン：マフディー派の抵抗(1881～98年)に苦戦→1899年征服</br>
+    ・南部＝ケープ植民地から周辺への侵攻政策</br>
+    ：ブール人との南アフリカ戦争(1899～1902年)</br>
+    →トランスヴァール・オレンジ両国を併合(1910年：自治領南アフリカ連邦を形成)</br>
+    <h4>〇フランスの動き</h4>
+    ・1881年＝チュニジアを保護国化(→イタリアの反発をまねく)</br>
+    ・<span class="toggle-text" data-original-text="アフリカ横断政策"
+        onclick="toggleText(this)"></span>＝サハラ地域と,ジブチ・マダガスカルとの連結をめざす</br>
+    ・<span class="toggle-text" data-original-text="ファショダ事件"
+        onclick="toggleText(this)"></span>(1898年)＝スーダンでイギリスと衝突→フランスの譲歩で解決</br>
+    ・<span class="toggle-text" data-original-text="英仏協商"
+        onclick="toggleText(this)"></span>の成立(1904年)＝エジプトに対するイギリスの、</br>
+    モロッコに対するフランスの支配権を相互承認→ドイツに対抗</br>
+    <h4>〇ドイツの動き</h4>
+    ・1880年代半ば＝カメルーン・南西アフリカ・東アフリカを獲得(しかし、経済的価値に乏しい)</br>
+    →新植民地獲得めざす</br>
+    ・2度の<span class="toggle-text" data-original-text="モロッコ事件" onclick="toggleText(this)"></span>＝フランスの支配に対抗</br>
+    1905年：ヴィルヘルム2世がタンジールに上陸,1911年：砲艦をアガディールに派遣</br>
+    いずれもイギリスがフランスを支援→ドイツの挑戦は失敗</br>
+    (1912年：モロッコはフランスの保護国となる)</br>
+    <h4>〇イタリアの動き</h4>
+    ・1880年代＝ソマリランド・エリトリアを獲得</br>
+    ・1890年代＝エチオピアに侵入→アドワの戦いで敗北(1896年)</br>
+    ・<span class="toggle-text" data-original-text="イタリア=トルコ戦争"
+        onclick="toggleText(this)"></span>(1911～12年)＝リビア(トリポリ・キレナイカ)を獲得</br>
+    <h4>〇分割の結果</h4>
+    ・20世紀初め＝<span class="toggle-text" data-original-text="エチオピア" onclick="toggleText(this)"></span>と<span
+        class="toggle-text" data-original-text="リベリア" onclick="toggleText(this)"></span>を除く全域が植民地化</br>
 
-<button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
-<h3>[太平洋諸島の分割]</h3>
-<h4>〇ヨーロッパ人の進出</h4>
-・16世紀以降＝スペイン・ポルトガル・オランダが進出</br>
-・18世紀＝イギリスが参入</br>
-・19世紀＝フランス・ドイツ・アメリカ合衆国が進出</br>
-<h4>〇イギリス</h4>
-・オーストラリア＝18世紀後半：クックの探検でイギリス領→流刑植民地</br>
-19世紀前半：自由移民→同世紀半ばの金鉱発見→移民が急増</br>
-この間、先住民アボリジニーは奥地に追われ、人口が急減</br>
-1901年：自治領
-<span class="toggle-text" data-original-text="オーストラリア連邦" onclick="toggleText(this)"></span>
-が成立</br>
-・ニュージーランド＝1840年代：先住民マオリ人の抵抗が敗北→イギリス領</br>
-1907年：自治領
-<span class="toggle-text" data-original-text="ニュージーランド" onclick="toggleText(this)"></span>
-が成立</br>
-・その他＝北ボルネオ・ニューギニアの一部も領有</br>
-<h4>〇ドイツ</h4>
-・1880年代以降＝ビスマルク諸島・赤道以北のミクロネシアの諸島を領有</br>
-<h4>〇アメリカ合衆国</h4>
-・
-<span class="toggle-text" data-original-text="フィリピン" onclick="toggleText(this)"></span>
-と
-<span class="toggle-text" data-original-text="グアム" onclick="toggleText(this)"></span>
-＝1898年：アメリカ=スペイン戦争の勝利で獲得</br>
-・
-<span class="toggle-text" data-original-text="ハワイ" onclick="toggleText(this)"></span>
-＝1898年：ハワイ王国の女王を退位させた(1893年)のちに併合</br>
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <h3>[太平洋諸島の分割]</h3>
+    <h4>〇ヨーロッパ人の進出</h4>
+    ・16世紀以降＝スペイン・ポルトガル・オランダが進出</br>
+    ・18世紀＝イギリスが参入</br>
+    ・19世紀＝フランス・ドイツ・アメリカ合衆国が進出</br>
+    <h4>〇イギリス</h4>
+    ・オーストラリア＝18世紀後半：クックの探検でイギリス領→流刑植民地</br>
+    19世紀前半：自由移民→同世紀半ばの金鉱発見→移民が急増</br>
+    この間、先住民アボリジニーは奥地に追われ、人口が急減</br>
+    1901年：自治領<span class="toggle-text" data-original-text="オーストラリア連邦" onclick="toggleText(this)"></span>が成立</br>
+    ・ニュージーランド＝1840年代：先住民マオリ人の抵抗が敗北→イギリス領</br>
+    1907年：自治領<span class="toggle-text" data-original-text="ニュージーランド" onclick="toggleText(this)"></span>が成立</br>
+    ・その他＝北ボルネオ・ニューギニアの一部も領有</br>
+    <h4>〇ドイツ</h4>
+    ・1880年代以降＝ビスマルク諸島・赤道以北のミクロネシアの諸島を領有</br>
+    <h4>〇アメリカ合衆国</h4>
+    ・<span class="toggle-text" data-original-text="フィリピン" onclick="toggleText(this)"></span>と<span class="toggle-text"
+        data-original-text="グアム" onclick="toggleText(this)"></span>＝1898年：アメリカ=スペイン戦争の勝利で獲得</br>
+    ・<span class="toggle-text" data-original-text="ハワイ"
+        onclick="toggleText(this)"></span>＝1898年：ハワイ王国の女王を退位させた(1893年)のちに併合</br>
 
-<p>
-	<a href="print1.html">⑫革命の時代の到来</a>・
-	<a href="print2.html">④自由主義と国民主義の進展</a>・
-	<a href="print3.html">⑤帝国主義の成立と列強の情勢</a>・
-	<a href="print4.html">日本史前提知識</a>・
-	<a href="print5.html">①開国と開港</a>
-</p>
+    <p>
+        <a href="print1.html">⑫革命の時代の到来</a>・
+        <a href="print2.html">④自由主義と国民主義の進展</a>・
+        <a href="print3.html">⑤帝国主義の成立と列強の情勢</a>・
+        <a href="print4.html">日本史前提知識</a>・
+        <a href="print5.html">①開国と開港</a>
+    </p>
 
-<script>
-	// 初期化：全てを非表示（空白）に
-	document.addEventListener("DOMContentLoaded", () => {
-		document.querySelectorAll(".toggle-text").forEach(el => {
-			const original = el.dataset.originalText;
-			for (let hitomoji of original) {
-				if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
-					el.textContent += "　";
-				} else {
-					el.textContent += " ";
-				}
-			}
-		});
-	});
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                for (let hitomoji of original) {
+                    if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                        el.textContent += "　";
+                    } else {
+                        el.textContent += " ";
+                    }
+                }
+            });
+        });
 
-	// 個別トグル
-	function toggleText(el) {
-		const original = el.dataset.originalText;
-		if (el.textContent.trim() === "") {
-			el.textContent = original;
-		} else {
-			el.textContent = "";
-			for (let hitomoji of original) {
-				if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
-					el.textContent += "　";
-				} else {
-					el.textContent += " ";
-				}
-			}
-		}
-	}
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "";
+                for (let hitomoji of original) {
+                    if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                        el.textContent += "　";
+                    } else {
+                        el.textContent += " ";
+                    }
+                }
+            }
+        }
 
-	// 全体の表示状態を保持
-	let allVisible = false;
+        // 全体の表示状態を保持
+        let allVisible = false;
 
-	// 一括表示/非表示トグル
-	function toggleAll() {
-		const elements = document.querySelectorAll(".toggle-text");
-		const button = document.getElementById("toggleAllButton");
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
 
-		elements.forEach(el => {
-			const original = el.dataset.originalText;
-			if (allVisible) {
-				el.textContent = "";
-				for (let hitomoji of original) {
-					if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
-						el.textContent += "　";
-					} else {
-						el.textContent += " ";
-					}
-				}
-			} else {
-				el.textContent = original; // 表示に
-			}
-		});
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "";
+                    for (let hitomoji of original) {
+                        if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                            el.textContent += "　";
+                        } else {
+                            el.textContent += " ";
+                        }
+                    }
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
 
-		allVisible = !allVisible;
-		button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
-	}
-	//ダーク/ライトモード
-	function toggleTheme() {
-		const body = document.body;
-		const themeBtn = document.querySelector('.theme-toggle');
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+        //ダーク/ライトモード
+        function toggleTheme() {
+            const body = document.body;
+            const themeBtn = document.querySelector('.theme-toggle');
 
-		if (body.classList.contains('light-mode')) {
-			body.classList.remove('light-mode');
-			themeBtn.textContent = '🌙';
-		} else {
-			body.classList.add('light-mode');
-			themeBtn.textContent = '☀️';
-		}
-	}
-</script>
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                themeBtn.textContent = '🌙';
+            } else {
+                body.classList.add('light-mode');
+                themeBtn.textContent = '☀️';
+            }
+        }
+    </script>
 
 </body>

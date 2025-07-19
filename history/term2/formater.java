@@ -80,8 +80,8 @@ public class formater {
 		BufferedWriter fout = null;
 		index++;
 		String fileName = "print" + index + ".html";
-		String hideFront = "\n<span class=\"toggle-text\" data-original-text=\"";
-		String hideBack = "\" onclick=\"toggleText(this)\"></span>\n";
+		String hideFront = "<span class=\"toggle-text\" data-original-text=\"";
+		String hideBack = "\" onclick=\"toggleText(this)\"></span>";
 		try {
 			fout = new BufferedWriter(new FileWriter(fileName));
 
