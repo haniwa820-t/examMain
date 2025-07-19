@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class formater {
+public class formatter {
 	public static void main(String[] args) {
 		final int numberOfFiles = 5;
 		String[] txtName = new String[numberOfFiles];
