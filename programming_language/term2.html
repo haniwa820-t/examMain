@@ -1,0 +1,122 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>すべて表示／非表示切り替え</title>
+    <style>
+        .toggle-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 2px 4px;
+            white-space: pre;
+            /* 空白の幅を維持 */
+            user-select: none;
+            font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+        }
+
+        button {
+            background-color: #fff3cd;
+            color: #d35400;
+            font-weight: bold;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: solid 2px orange;
+            /*表全体を線で囲う*/
+            font-size: 18px;
+        }
+
+        table th,
+        table td {
+            border: dashed 1px orange;
+            /**/
+            /*破線 1px オレンジ*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+
+    <h2>クラスとインスタンス</h2>
+
+    <table aligin="center">
+        <tr>
+            <td><span class="toggle-text" data-original-text="new" onclick="toggleText(this)"></span></td>
+            <td>インスタンス生成のための演算子</td>
+        </tr>
+
+        <tr>
+            <td><span class="toggle-text" data-original-text="BufferedReader" onclick="toggleText(this)"></span></td>
+            <td></td><!--TODO ファイル入出力関連のもの-->
+        </tr>
+        
+    </table>
+
+
+    <script>
+        // 初期化：全てを非表示（空白）に
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".toggle-text").forEach(el => {
+                const original = el.dataset.originalText;
+                el.textContent = " ".repeat(original.length);
+            });
+        });
+
+        // 個別トグル
+        function toggleText(el) {
+            const original = el.dataset.originalText;
+            if (el.textContent.trim() === "") {
+                el.textContent = original;
+            } else {
+                el.textContent = "";
+                for (let hitomoji of original) {
+                    if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                        el.textContent += "　";
+                    } else {
+                        el.textContent += " ";
+                    }
+                }
+            }
+        }
+
+        // 全体の表示状態を保持
+        let allVisible = false;
+
+        // 一括表示/非表示トグル
+        function toggleAll() {
+            const elements = document.querySelectorAll(".toggle-text");
+            const button = document.getElementById("toggleAllButton");
+
+            elements.forEach(el => {
+                const original = el.dataset.originalText;
+                if (allVisible) {
+                    el.textContent = "";
+                    for (let hitomoji of original) {
+                        if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                            el.textContent += "　";
+                        } else {
+                            el.textContent += " ";
+                        }
+                    }
+                } else {
+                    el.textContent = original; // 表示に
+                }
+            });
+
+            allVisible = !allVisible;
+            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+        }
+    </script>
+
+</body>

@@ -5,6 +5,7 @@
 	- [テスト日程](#テスト日程)
 	- [歴史](#歴史)
 	- [英語IR](#英語ir)
+	- [プロ言](#プログラミング言語)
 	- [テスト](#テスト)
 
 ## 今週の日課
@@ -56,6 +57,12 @@
 
 - [試験範囲単語一覧](english/term2/wordlist.html)
 - [ランダム英単語](english/term2/tangotyou.html)
+
+## プログラミング言語
+
+- [前期中間](programming_language/term1.html)
+- [前期期末](programming_language/term2.html)
+- [メソッドの使用例](programming_language/method_example/method_example.html)
 
 ## テスト
 [テスト](test.md)
