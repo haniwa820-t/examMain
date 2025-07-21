@@ -166,7 +166,7 @@
 
     <h2>歴史(日本史)前提知識プリント</h2>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[アジアの国際秩序]</h3>
     ・清中心の国際秩序</br>
     ＝東アジア，東南アジアの各国・各民族は<span class="toggle-text" data-original-text="中国"
@@ -175,14 +175,14 @@
     ：<span class="toggle-text" data-original-text="朝貢貿易"
         onclick="toggleText(this)"></span>の形式,国内支配のよりどころ(ベトナム・朝鮮・琉球)</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[列強のアジア進出]</h3>
     ・背景に<span class="toggle-text" data-original-text="産業革命" onclick="toggleText(this)"></span>の進展</br>
     ＝製品を大量生産するため大量の<span class="toggle-text" data-original-text="原料" onclick="toggleText(this)"></span>が必要</br>
     大量生産した製品を売るため大規模な<span class="toggle-text" data-original-text="市場" onclick="toggleText(this)"></span>が必要</br>
     →南アジア，東南アジア，東アジアに進出</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[アヘン戦争と清の危機]</h3>
     ・1840年,<span class="toggle-text" data-original-text="アヘン戦争"
         onclick="toggleText(this)"></span>開始(清vs.イギリス),イギリスが勝利</br>
@@ -197,7 +197,7 @@
     ・1860年,北京条約</br>
     ＝清はイギリスに九竜半島を割譲</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[列強のアジアでの勢力(19世紀)]</h3>
     ・イギリス</br>
     ＝<span class="toggle-text" data-original-text="インド"
@@ -207,7 +207,7 @@
     ・ロシア</br>
     ＝<span class="toggle-text" data-original-text="沿海州" onclick="toggleText(this)"></span>，黒竜江以北</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[「内憂外患」の情勢]</h3>
     ・1830年代,凶作→深刻な飢饉,百姓一揆も増加</br>
     ・1837年,<span class="toggle-text" data-original-text="大塩平八郎の乱"
@@ -223,7 +223,7 @@
     内憂＝飢饉，百姓一揆，反乱が続く危機</br>
     外患＝外国船が開国をせまる危機</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[天保の改革]</h3>
     ・1841～43年,老中<span class="toggle-text" data-original-text="水野忠邦" onclick="toggleText(this)"></span>の<span
         class="toggle-text" data-original-text="天保の改革" onclick="toggleText(this)"></span>＝厳しい倹約令</br>
@@ -233,7 +233,7 @@
     ・上知令＝江戸・大坂周辺の幕府直轄化が目的→強い批判のために撤回</br>
     ※改革は失敗，幕府の権威が衰退へ</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[雄藩の登場]</h3>
     ・<span class="toggle-text" data-original-text="雄藩" onclick="toggleText(this)"></span>(勢力の強い藩)は財政難の克服と領地の防衛に苦慮</br>
     ・薩摩藩</br>
@@ -247,7 +247,7 @@
         data-original-text="土佐" onclick="toggleText(this)"></span>藩など</br>
     →雄藩として幕末政治で指導的な役割</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[対外危機の深まり]</h3>
     ・アヘン戦争での清の敗北→幕府に衝撃</br>
     ・1842年，<span class="toggle-text" data-original-text="薪水給与令"
@@ -301,7 +301,7 @@
         // 一括表示/非表示トグル
         function toggleAll() {
             const elements = document.querySelectorAll(".toggle-text");
-            const button = document.getElementById("toggleAllButton");
+            const buttons = document.querySelectorAll(".toggle-all-btn"); // 複数のボタンを取得
 
             elements.forEach(el => {
                 const original = el.dataset.originalText;
@@ -320,8 +320,13 @@
             });
 
             allVisible = !allVisible;
-            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+
+            // すべてのボタンのテキストを更新
+            buttons.forEach(button => {
+                button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+            });
         }
+
         //ダーク/ライトモード
         function toggleTheme() {
             const body = document.body;

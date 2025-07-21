@@ -126,7 +126,7 @@ public class formatter {
 
 	static ArrayList<String> formatHtml(ArrayList<String> txt) {
 		ArrayList<String> result = new ArrayList<String>();
-		String buttonAll = "\n<button id=\"toggleAllButton\" onclick=\"toggleAll()\">すべて表示する</button>\n";
+		String buttonAll = "\n<button class=\"toggle-all-btn\" onclick=\"toggleAll()\">すべて表示する</button>\n";
 		for (int i = 0; i < txt.size(); i++) {
 			String line = txt.get(i);
 			if (line.length() == 0) {

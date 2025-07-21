@@ -171,7 +171,7 @@
     ・独立戦争がヨーロッパの国際関係にも影響し,孤立したイギリスが敗れてアメリカの独立が認められた</br>
     ・独立宣言の採択,合衆国憲法の制定などを通して,近代民主主義の原理が確立された</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[アメリカの独立]</h3>
     <h4>〇北アメリカの13植民地の形成</h4>
     ・経済上の利益や政治,宗教上の自由を求めて大西洋岸に建設</br>
@@ -214,7 +214,7 @@
         onclick="toggleText(this)"></span>(1783年)＝イギリスがアメリカ合衆国の独立を承認</br>
     ミシシッピ川以東のルイジアナを合衆国に割譲</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[アメリカ合衆国憲法の制定]</h3>
     <h4>〇合衆国憲法の制定</h4>
     ・アメリカ合衆国＝中央政府の権力が弱い，13州のゆるやかな連合国家</br>
@@ -286,7 +286,7 @@
         // 一括表示/非表示トグル
         function toggleAll() {
             const elements = document.querySelectorAll(".toggle-text");
-            const button = document.getElementById("toggleAllButton");
+            const buttons = document.querySelectorAll(".toggle-all-btn"); // 複数のボタンを取得
 
             elements.forEach(el => {
                 const original = el.dataset.originalText;
@@ -305,8 +305,13 @@
             });
 
             allVisible = !allVisible;
-            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+
+            // すべてのボタンのテキストを更新
+            buttons.forEach(button => {
+                button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+            });
         }
+
         //ダーク/ライトモード
         function toggleTheme() {
             const body = document.body;

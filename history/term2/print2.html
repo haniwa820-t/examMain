@@ -171,7 +171,7 @@
     ・1861年にアメリカ合衆国では南北戦争がおこったが,北部が勝利し,分裂の危機は回避された</br>
     ・南北戦争後のアメリカの資本主義は発展し,多様な人的構成をみせるアメリカ社会が形成された</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[ラテンアメリカ諸国の独立]</h3>
     <h4>〇ハイチの独立</h4>
     ・イスパニョーラ島＝17世紀末フランス領,18世紀からサトウキビ栽培</br>
@@ -196,7 +196,7 @@
     →英米に経済的従属(<span class="toggle-text" data-original-text="原料・食料"
         onclick="toggleText(this)"></span>の輸出地域へ)：ラテンアメリカ諸国の工業化の大幅な遅れ</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[アメリカ合衆国の領土拡張]</h3>
     <h4>〇1820年代までのアメリカ合衆国</h4>
     ・<span class="toggle-text" data-original-text="ジェファソン"
@@ -229,7 +229,7 @@
     日本進出＝ペリーの来航(1853年),日米和親条約の締結(54年)：日本の開国</br>
     アラスカ＝1867年にロシアから買収</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[南北戦争と19世紀のアメリカ合衆国]</h3>
     <h4>〇南北戦争の背景</h4>
     ・奴隷制をめぐる動き＝1820年：ミズーリ協定(北緯36度30分以北の新州は自由州)</br>
@@ -298,7 +298,7 @@
         // 一括表示/非表示トグル
         function toggleAll() {
             const elements = document.querySelectorAll(".toggle-text");
-            const button = document.getElementById("toggleAllButton");
+            const buttons = document.querySelectorAll(".toggle-all-btn"); // 複数のボタンを取得
 
             elements.forEach(el => {
                 const original = el.dataset.originalText;
@@ -317,8 +317,13 @@
             });
 
             allVisible = !allVisible;
-            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+
+            // すべてのボタンのテキストを更新
+            buttons.forEach(button => {
+                button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+            });
         }
+
         //ダーク/ライトモード
         function toggleTheme() {
             const body = document.body;

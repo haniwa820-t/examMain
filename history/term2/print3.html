@@ -173,7 +173,7 @@
     ・太平洋の分割にはアメリカ合衆国が参入していった</br>
     ・中国は独立を保ちつつも列強に利権を譲渡し,経済的に従属した</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[工業化の進展と帝国主義の成立]</h3>
     <h4>〇第2次産業革命とその影響</h4>
     ・<span class="toggle-text" data-original-text="第2次産業革命" onclick="toggleText(this)"></span>(19世紀半ば～)</br>
@@ -189,7 +189,7 @@
     →植民地,保護国(領),勢力圏を構築＝<span class="toggle-text" data-original-text="帝国主義" onclick="toggleText(this)"></span>を展開</br>
     帝国主義＝</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[アフリカ分割]</h3>
     <h4>〇ヨーロッパ列強のアフリカ侵略</h4>
     ・19世紀前半＝ヨーロッパ人の知識はアフリカ北部とインド航路の港などのアフリカ沿岸部のみ</br>
@@ -233,7 +233,7 @@
     ・20世紀初め＝<span class="toggle-text" data-original-text="エチオピア" onclick="toggleText(this)"></span>と<span
         class="toggle-text" data-original-text="リベリア" onclick="toggleText(this)"></span>を除く全域が植民地化</br>
 
-    <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
+    <button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
     <h3>[太平洋諸島の分割]</h3>
     <h4>〇ヨーロッパ人の進出</h4>
     ・16世紀以降＝スペイン・ポルトガル・オランダが進出</br>
@@ -301,7 +301,7 @@
         // 一括表示/非表示トグル
         function toggleAll() {
             const elements = document.querySelectorAll(".toggle-text");
-            const button = document.getElementById("toggleAllButton");
+            const buttons = document.querySelectorAll(".toggle-all-btn"); // 複数のボタンを取得
 
             elements.forEach(el => {
                 const original = el.dataset.originalText;
@@ -320,8 +320,13 @@
             });
 
             allVisible = !allVisible;
-            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+
+            // すべてのボタンのテキストを更新
+            buttons.forEach(button => {
+                button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+            });
         }
+
         //ダーク/ライトモード
         function toggleTheme() {
             const body = document.body;

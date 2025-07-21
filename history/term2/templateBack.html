@@ -44,7 +44,7 @@
 	// 一括表示/非表示トグル
 	function toggleAll() {
 		const elements = document.querySelectorAll(".toggle-text");
-		const button = document.getElementById("toggleAllButton");
+		const buttons = document.querySelectorAll(".toggle-all-btn"); // 複数のボタンを取得
 
 		elements.forEach(el => {
 			const original = el.dataset.originalText;
@@ -63,8 +63,13 @@
 		});
 
 		allVisible = !allVisible;
-		button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+
+		// すべてのボタンのテキストを更新
+		buttons.forEach(button => {
+			button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+		});
 	}
+
 	//ダーク/ライトモード
 	function toggleTheme() {
 		const body = document.body;
