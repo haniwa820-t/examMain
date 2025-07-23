@@ -1,0 +1,7 @@
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.10.5)  22 JUL 2025 14:19
+ system commands enabled.
+ file:line:error style messages enabled.
+**"/Users/yamanetakeru/テスト対策委員の集い - General/paper/term1/main"
+(
+/Users/yamanetakeru/テスト対策委員の集い - General/paper/term1/main.tex:0: error:  (file io): fflush() failed (Broken pipe)
+/Users/yamanetakeru/テスト対策委員の集い - General/paper/term1/main.tex:0:  ==> Fatal error occurred, no output PDF file produced!
