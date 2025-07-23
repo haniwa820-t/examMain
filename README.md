@@ -5,6 +5,7 @@
 	- [テスト日程](#テスト日程)
 	- [歴史](#歴史)
 	- [英語IR](#英語ir)
+	- [国語](#国語)
 	- [プログラミング言語](#プログラミング言語)
 
 ## 今週の日課
@@ -56,6 +57,14 @@
 
 - [試験範囲単語一覧](english/term2/wordlist.html)
 - [ランダム英単語](english/term2/tangotyou.html)
+
+## 国語
+
+- [漢字テスト①](japanese/term2/kanji_1.html)
+- [漢字テスト②](japanese/term2/kanji_2.html)
+- [漢字テスト③](japanese/term2/kanji_3.html)
+- [漢字テスト④](japanese/term2/kanji_4.html)
+- [漢字テスト⑤](japanese/term2/kanji_5.html)
 
 ## プログラミング言語
 
