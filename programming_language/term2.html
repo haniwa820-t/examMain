@@ -1,11 +1,67 @@
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>すべて表示／非表示切り替え</title>
     <style>
+        * {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            max-width: 80%;
+            margin: 0 auto 50 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #1a1a1a;
+            font-size: 16px;
+            color: #e0e0e0;
+            font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                max-width: 95%;
+                padding: 10px;
+            }
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333333;
+            color: #e0e0e0;
+            border: 2px solid #555555;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .light-mode .theme-toggle {
+            background-color: #f0f0f0;
+            color: #333333;
+            border-color: #cccccc;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+        }
+
         .toggle-text {
             display: inline-block;
-            background-color: #fff3cd;
-            color: #d35400;
+            background-color: #2d2d2d;
+            color: #ffa500;
             font-weight: bold;
             text-decoration: underline;
             cursor: pointer;
@@ -15,36 +71,97 @@
             /* 空白の幅を維持 */
             user-select: none;
             font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .light-mode .toggle-text {
+            background-color: #fff3cd;
+            color: #d35400;
         }
 
         button {
-            background-color: #fff3cd;
-            color: #d35400;
+            background-color: #2d2d2d;
+            color: #ffa500;
             font-weight: bold;
-            border: none;
+            border: 2px solid #555555;
             padding: 8px 16px;
             border-radius: 6px;
             cursor: pointer;
             margin-top: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .light-mode button {
+            background-color: #fff3cd;
+            color: #d35400;
+            border-color: #d35400;
+        }
+
+        button:hover {
+            transform: scale(1.05);
         }
 
         table {
             border-collapse: collapse;
-            border: solid 2px orange;
+            border: solid 2px #ffa500;
             /*表全体を線で囲う*/
             font-size: 18px;
+            background-color: #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .light-mode table {
+            border-color: orange;
+            background-color: #ffffff;
         }
 
         table th,
         table td {
-            border: dashed 1px orange;
-            /**/
+            border: dashed 1px #ffa500;
             /*破線 1px オレンジ*/
+            padding: 8px 12px;
+            transition: border-color 0.3s ease;
+        }
+
+        .light-mode table th,
+        .light-mode table td {
+            border-color: orange;
+        }
+
+        table th {
+            background-color: #333333;
+            color: #ffa500;
+            font-weight: bold;
+        }
+
+        .light-mode table th {
+            background-color: #f8f8f8;
+            color: #d35400;
+        }
+
+        h1 {
+            color: #ffa500;
+            text-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+            transition: color 0.3s ease;
+        }
+
+        .light-mode h1 {
+            color: #d35400;
+            text-shadow: none;
+        }
+
+        a {
+            color: #ffa500;
+        }
+
+        .light-mode a {
+            color: #93c400;
         }
     </style>
 </head>
 
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
     <button id="toggleAllButton" onclick="toggleAll()">すべて表示する</button>
 
@@ -60,7 +177,7 @@
             <td><span class="toggle-text" data-original-text="BufferedReader" onclick="toggleText(this)"></span></td>
             <td></td><!--TODO ファイル入出力関連のもの-->
         </tr>
-        
+
     </table>
 
 
@@ -69,7 +186,13 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".toggle-text").forEach(el => {
                 const original = el.dataset.originalText;
-                el.textContent = " ".repeat(original.length);
+                for (let hitomoji of original) {
+                    if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+                        el.textContent += "　";
+                    } else {
+                        el.textContent += " ";
+                    }
+                }
             });
         });
 
@@ -96,7 +219,7 @@
         // 一括表示/非表示トグル
         function toggleAll() {
             const elements = document.querySelectorAll(".toggle-text");
-            const button = document.getElementById("toggleAllButton");
+            const buttons = document.querySelectorAll(".toggle-all-btn"); // 複数のボタンを取得
 
             elements.forEach(el => {
                 const original = el.dataset.originalText;
@@ -115,7 +238,25 @@
             });
 
             allVisible = !allVisible;
-            button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+
+            // すべてのボタンのテキストを更新
+            buttons.forEach(button => {
+                button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+            });
+        }
+
+        //ダーク/ライトモード
+        function toggleTheme() {
+            const body = document.body;
+            const themeBtn = document.querySelector('.theme-toggle');
+
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                themeBtn.textContent = '🌙';
+            } else {
+                body.classList.add('light-mode');
+                themeBtn.textContent = '☀️';
+            }
         }
     </script>
 
