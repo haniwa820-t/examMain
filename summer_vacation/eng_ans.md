@@ -1,6 +1,112 @@
-# 英語問題集 完全解答
+# 英語夏休み課題 解答
 
-## Exercise 1 (基本動詞・語順問題)
+- [英語夏休み課題 解答](#英語夏休み課題-解答)
+  - [Exercise 1 文型1](#exercise-1-文型1)
+    - [1. 動詞選択問題](#1-動詞選択問題)
+    - [2. 語順整序問題](#2-語順整序問題)
+    - [3. 動詞選択問題](#3-動詞選択問題)
+    - [4. 動詞選択問題](#4-動詞選択問題)
+    - [英作文](#英作文)
+  - [Exercise 2 分型2](#exercise-2-分型2)
+    - [1. 空所補充](#1-空所補充)
+    - [2. 同義文作成](#2-同義文作成)
+    - [3. 語順整序](#3-語順整序)
+    - [4. 語順整序（不要語含む）](#4-語順整序不要語含む)
+    - [英作文](#英作文-1)
+  - [Exercise 3 文型3](#exercise-3-文型3)
+    - [1. 空所補充問題](#1-空所補充問題)
+    - [2. 状況に合う文選択](#2-状況に合う文選択)
+    - [3. 語順整序問題](#3-語順整序問題)
+    - [4. 語順整序問題](#4-語順整序問題)
+    - [英作文 (Context writing)](#英作文-context-writing)
+  - [Exercise + 文型](#exercise--文型)
+    - [1. 空所補充](#1-空所補充-1)
+    - [2. 空所補充](#2-空所補充)
+    - [3. 動詞選択](#3-動詞選択)
+    - [4. 語順整序](#4-語順整序)
+    - [5. 語順整序](#5-語順整序)
+    - [英作文](#英作文-2)
+  - [Exercise 4 時制1](#exercise-4-時制1)
+    - [1. 空所補充](#1-空所補充-2)
+    - [2. 動詞選択](#2-動詞選択)
+    - [3. 動詞選択](#3-動詞選択-1)
+    - [4. 動詞選択](#4-動詞選択)
+    - [5. 動詞変化](#5-動詞変化)
+    - [英作文](#英作文-3)
+  - [Exercise 5 時制2](#exercise-5-時制2)
+    - [1. 空所補充](#1-空所補充-3)
+    - [2. 適語選択](#2-適語選択)
+    - [3. 空所補充](#3-空所補充)
+    - [4. 語順整序](#4-語順整序-1)
+    - [英作文](#英作文-4)
+  - [Exercise 6 完了形1](#exercise-6-完了形1)
+    - [1. 現在完了文作成](#1-現在完了文作成)
+    - [2. 同義文作成](#2-同義文作成-1)
+    - [3. 空所補充](#3-空所補充-1)
+    - [4. 動詞選択](#4-動詞選択-1)
+    - [英作文](#英作文-5)
+  - [Exercise 7 完了形2](#exercise-7-完了形2)
+    - [1. 動詞変化](#1-動詞変化)
+    - [2. 動詞変化](#2-動詞変化)
+    - [3. 動詞変化](#3-動詞変化)
+    - [4. 動詞選択](#4-動詞選択-2)
+    - [5. 語順整序](#5-語順整序-1)
+    - [英作文](#英作文-6)
+  - [Exercise 8 法助動詞1](#exercise-8-法助動詞1)
+    - [1. 適語選択](#1-適語選択)
+    - [2. 語順整序（不要語含む）](#2-語順整序不要語含む)
+    - [3. 空所補充](#3-空所補充-2)
+    - [4. 空所補充](#4-空所補充)
+    - [英作文](#英作文-7)
+  - [Exercise 9 助動詞2](#exercise-9-助動詞2)
+    - [1. 空所補充](#1-空所補充-4)
+    - [2. 空所補充](#2-空所補充-1)
+    - [3. 空所補充](#3-空所補充-3)
+    - [4. 語順整序](#4-語順整序-2)
+    - [英作文](#英作文-8)
+  - [Exercise 10 助動詞3](#exercise-10-助動詞3)
+    - [1. 空所補充](#1-空所補充-5)
+    - [2. 空所補充](#2-空所補充-2)
+    - [3. 適語選択](#3-適語選択)
+    - [4. 語順整序](#4-語順整序-3)
+    - [英作文](#英作文-9)
+  - [Exercise 11 受動態1](#exercise-11-受動態1)
+    - [1. 同義文作成](#1-同義文作成)
+    - [2. 書き換え問題](#2-書き換え問題)
+    - [3. 動詞変化](#3-動詞変化-1)
+    - [4. 空所補充](#4-空所補充-1)
+    - [英作文](#英作文-10)
+  - [Exercise 12 受動態2](#exercise-12-受動態2)
+    - [1. 空所補充](#1-空所補充-6)
+    - [2. 同義文作成](#2-同義文作成-2)
+    - [3. 同義文作成](#3-同義文作成)
+    - [英作文](#英作文-11)
+  - [Exercise 13　不定詞1](#exercise-13不定詞1)
+    - [1. 語順整序](#1-語順整序)
+    - [2. 空所補充](#2-空所補充-3)
+    - [3. 適語選択](#3-適語選択-1)
+    - [4. 語順整序](#4-語順整序-4)
+    - [英作文](#英作文-12)
+  - [Exercise 14 不定詞2](#exercise-14-不定詞2)
+    - [1. 語順整序](#1-語順整序-1)
+    - [2. 同用法選択](#2-同用法選択)
+    - [3. 同義文作成](#3-同義文作成-1)
+    - [4. 空所補充](#4-空所補充-2)
+    - [英作文](#英作文-13)
+  - [Exercise 15 不定詞3](#exercise-15-不定詞3)
+    - [1. 語順整序](#1-語順整序-2)
+    - [2. 同義文作成](#2-同義文作成-3)
+    - [3. 空所補充](#3-空所補充-4)
+    - [4. 語順整序](#4-語順整序-5)
+    - [英作文](#英作文-14)
+  - [Exercise + 不定詞](#exercise--不定詞)
+    - [1. 語順整序問題](#1-語順整序問題)
+    - [2. 空所補充問題](#2-空所補充問題)
+    - [3. 語順整序問題](#3-語順整序問題-1)
+    - [4. 同義文作成](#4-同義文作成)
+    - [英作文 (Context writing)](#英作文-context-writing-1)
+
+## Exercise 1 文型1
 
 ### 1. 動詞選択問題
 1) happen  
@@ -18,7 +124,7 @@
 
 ### 3. 動詞選択問題
 1) turned  
-2) drove  
+2) drove
 3) enjoying  
 4) produce  
 
@@ -36,7 +142,7 @@
 4) Thank you for telling me.  
 5) You're welcome.
 
-## Exercise 2 (授与動詞・語順問題)
+## Exercise 2 分型2
 
 ### 1. 空所補充
 1) get  
@@ -70,7 +176,46 @@
 3) When she looks sad, he approaches her.  
 4) He always makes her happy.
 
-## Exercise 3 (知覚動詞・使役動詞)
+## Exercise 3 文型3
+
+### 1. 空所補充問題
+1) Turn left
+2) stay
+3) Don’t eat
+4) Don’t make noise
+5) Let’s , shall we?  
+
+### 2. 状況に合う文選択
+1) f) Look both ways.  
+2) d) Come in. Make yourself at home.  
+3) e) Don’t miss the last train.  
+4) a) Hurry up!  
+5) b) Don’t move, please.  
+6) c) Never give up!  
+
+### 3. 語順整序問題
+1) There were terrible earthquakes in Mexico last year.  
+2) There is some apple juice in the fridge if you are thirsty.  
+3) How many people are there in your family?  
+4) There was a good movie on TV last night.  
+5) She was in her room at that time. (不要語: there)  
+
+### 4. 語順整序問題
+1) A long time ago, people believed that the sun went around the earth.  
+2) She says that she wants to be a novelist in the future.  
+3) I’m afraid the two countries will start a war.  
+4) Ben thought spaghetti grew on trees when he was a small boy.  
+5) She told me that she was angry with me for the mistake.  
+6) I’m sure my son will succeed as a soccer player.  
+
+### 英作文 (Context writing)
+1) There is an old painting on the wall of this room.  
+2) Please look at the painting.  
+3) I believe it is very valuable.  
+4) My grandfather told me that the painter was a famous artist.  
+5) Don’t touch it.  
+
+## Exercise + 文型
 
 ### 1. 空所補充
 1) felt, touch  
@@ -109,7 +254,7 @@
 4) She made him clean the dining room and kitchen.  
 5) I heard my father singing in the kitchen.
 
-## Exercise 4 (時制問題)
+## Exercise 4 時制1
 
 ### 1. 空所補充
 1) belong  
@@ -146,7 +291,7 @@
 3) She belongs to the track and field club.  
 4) All the students in her school know her name.
 
-## Exercise 5 (未来表現)
+## Exercise 5 時制2
 
 ### 1. 空所補充
 1) will  
@@ -180,7 +325,7 @@
 4) What time will your train arrive?  
 5) I'm having lunch with my brother, so let's meet at 2.
 
-## Exercise 6 (現在完了)
+## Exercise 6 完了形1
 
 ### 1. 現在完了文作成
 1) has just arrived  
@@ -215,7 +360,7 @@
 4) I have eaten it many times.  
 5) But I have never eaten takoyaki.
 
-## Exercise 7 (時制総合)
+## Exercise 7 完了形2
 
 ### 1. 動詞変化
 1) arrived, had already started  
@@ -253,7 +398,7 @@
 3) When he arrived at the bus stop, the last bus had already left.  
 4) He had never walked home before that night.
 
-## Exercise 8 (法助動詞)
+## Exercise 8 法助動詞1
 
 ### 1. 適語選択
 1) May  
@@ -285,7 +430,7 @@ Mark: You may be right, but I don't have much money with me now.
 Sue: You needn't worry. It's on me this time.  
 Mark: That's OK. I'll pay you back.
 
-## Exercise 9 (助動詞・can/could)
+## Exercise 9 助動詞2
 
 ### 1. 空所補充
 1) can speak  
@@ -321,7 +466,7 @@ Dad: OK, but you should drive carefully. It's a big car.
 Sue: Don't worry, I could drive it yesterday.  
 Dad: You can never be too careful when driving a car.
 
-## Exercise 10 (助動詞過去形)
+## Exercise 10 助動詞3
 
 ### 1. 空所補充
 1) used to  
@@ -355,7 +500,7 @@ John: Really? You may be able to play some songs now. Would you play one for me?
 Alice: You'd better not hear my guitar. It's terrible.  
 John: You should have continued the lessons.
 
-## Exercise 11 (受動態)
+## Exercise 11 受動態1
 
 ### 1. 同義文作成
 1) was written  
@@ -391,7 +536,7 @@ Lisa: Look at these photos. I was amazed at the beauty of Himeji Castle.
 John: Great! When was the castle built?  
 Lisa: In the 17th century. It was being repaired when I first visited Japan.
 
-## Exercise 12 (受動態応用)
+## Exercise 12 受動態2
 
 ### 1. 空所補充
 1) killed in  
@@ -423,7 +568,7 @@ Lisa: In the 17th century. It was being repaired when I first visited Japan.
 4) Many flowers were sent to him by his fans.  
 5) His room must be full of flowers.
 
-## Exercise 13 (不定詞)
+## Exercise 13　不定詞1
 
 ### 1. 語順整序
 1) It is our duty to protect nature.  
@@ -458,7 +603,7 @@ Lisa: In the 17th century. It was being repaired when I first visited Japan.
 4) I'm studying English hard to realize my dream.  
 5) It's fun for me to learn English in this class.
 
-## Exercise 14 (不定詞応用)
+## Exercise 14 不定詞2
 
 ### 1. 語順整序
 1) They don't think they'll get to like city life.  
@@ -489,7 +634,7 @@ d) Please fill out this form if you are to apply for a passport.
 3) He likes being invited to parties and will probably go out tonight.  
 4) He promised not to eat too much tonight.
 
-## Exercise 15 (疑問詞+不定詞)
+## Exercise 15 不定詞3
 
 ### 1. 語順整序
 1) My brother taught me how to ride a bike when I was a child.  
@@ -524,7 +669,7 @@ d) Please fill out this form if you are to apply for a passport.
 3) She often says, "Be careful not to drop it."  
 4) To tell the truth, I have broken the screen twice.
 
-## Exercise (知覚動詞・使役動詞)
+## Exercise + 不定詞
 
 ### 1. 語順整序問題
 1) I like to **listen to the birds sing** when I get up early in the morning.  
@@ -551,52 +696,9 @@ d) Please fill out this form if you are to apply for a passport.
 3) Something **was heard to fall** on the floor.  
 4) You **are not allowed to use** shampoo or soap here.  
 
----
-
 ### 英作文 (Context writing)
 1) I saw my father buy a birthday present for my mother.  
 2) He asked me to keep it secret from her.  
 3) After that, my father let me go shopping with him.  
 4) The present made my mother smile.  
 5) I was told to take their photo.  
-
-## Exercise 3 (命令文・語順問題)
-
-### 1. 空所補充問題
-1) **Turn left** at the next traffic light.  
-2) Please **stay** relaxed.  
-3) **Don’t eat** anything tonight.  
-4) **Don’t make noise**. The baby is sleeping.  
-5) **Let’s** go shopping, **shall we**?  
-
-### 2. 状況に合う文選択
-1) f) Look both ways.  
-2) d) Come in. Make yourself at home.  
-3) e) Don’t miss the last train.  
-4) a) Hurry up!  
-5) b) Don’t move, please.  
-6) c) Never give up!  
-
-### 3. 語順整序問題
-1) There were terrible earthquakes in Mexico last year.  
-2) There is some apple juice in the fridge if you are thirsty.  
-3) How many people are there in your family?  
-4) There was a good movie on TV last night.  
-5) She was in her room at that time. (不要語: there)  
-
-### 4. 語順整序問題
-1) A long time ago, people believed that the sun went around the earth.  
-2) She says that she wants to be a novelist in the future.  
-3) I’m afraid the two countries will start a war.  
-4) Ben thought spaghetti grew on trees when he was a small boy.  
-5) She told me that she was angry with me for the mistake.  
-6) I’m sure my son will succeed as a soccer player.  
-
----
-
-### 英作文 (Context writing)
-1) There is an old painting on the wall of this room.  
-2) Please look at the painting.  
-3) I believe it is very valuable.  
-4) My grandfather told me that the painter was a famous artist.  
-5) Don’t touch it.  
