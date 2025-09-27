@@ -145,7 +145,7 @@
 ## Exercise 2 分型2
 
 ### 1. 空所補充
-1) get  
+1) get  ?
 2) paid  
 3) showed  
 4) sent  
@@ -183,14 +183,14 @@
 2) stay
 3) Don’t eat
 4) Don’t make noise
-5) Let’s , shall we?  
+5) Let’s / shall we?  
 
 ### 2. 状況に合う文選択
 1) f) Look both ways.  
 2) d) Come in. Make yourself at home.  
 3) e) Don’t miss the last train.  
 4) a) Hurry up!  
-5) b) Don’t move, please.  
+5) b) Don’tmove, please.  
 6) c) Never give up!  
 
 ### 3. 語順整序問題
