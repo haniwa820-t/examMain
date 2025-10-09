@@ -1,4 +1,5 @@
 {
+    "files.autoSave": "afterDelay",
     "editor.insertSpaces": false, //タブをスペースにしない
     "latex-workshop.formatting.latex": "latexindent", //latexフォーマット定義
     //latex_実行系
