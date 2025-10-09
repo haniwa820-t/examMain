@@ -19,6 +19,7 @@
 
 - 歴史
 > [ホーム](history/term3/printM.md)
+
 ---
 
 ## 日課
