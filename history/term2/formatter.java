@@ -29,6 +29,7 @@ public class formatter {
 			System.out.print("ファイルを作成します。");
 			for (int i = 0; i < numberOfFiles; i++) {
 				createFile(txtName[i]);
+				
 				createFile(tsvName[i]);
 			}
 		}

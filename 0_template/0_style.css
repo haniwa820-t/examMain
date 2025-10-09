@@ -152,3 +152,8 @@ a {
 .light-mode a {
 	color: #93c400;
 }
+
+.nav {
+	display: flex;
+	flex-direction: column;
+}
