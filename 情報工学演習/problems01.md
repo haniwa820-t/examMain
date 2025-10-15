@@ -160,6 +160,22 @@ def pro17():
 	print(str(a+b) if c=='+' else str(a-b) if c=='-' else str(a*b) if c=='*' else str(int(a/b)) if c=='/' else str(a%b))
 
 def pro18():
-	# coming soon
-	return
+	numbers = [int(x) for x in input().split(" ")]
+	for i in range(len(numbers)):
+		for j in range(len(numbers)-(i+1)):
+			j+=i+1
+			if numbers[i] > numbers[j]:
+				numbers[i],numbers[j] = numbers[j],numbers[i]
+		print(numbers[i],end=" ")
+
+def pro19():
+	numbers = [int(x) for x in input().split(" ")]
+	for x in numbers:
+		if x%2==0:
+			print(x,end=" ")
+
+def pro20():
+	strings = [x for x in input().split(" ")]
+	for x in strings:
+		print(len(x),end=" ")
 ```
