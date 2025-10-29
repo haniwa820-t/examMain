@@ -9,16 +9,16 @@ body {
 	margin: 0 auto 50 auto;
 	padding: 20px;
 	box-sizing: border-box;
-	background-color: #f7f7f7; 
+	background-color: #1a1a1a;
 	font-size: 16px;
-	color: #333333; 
+	color: #e0e0e0;
 	font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode { 
-	background-color: #1a1a1a; 
-	color: #e0e0e0; 
+body.light-mode {
+	background-color: #f7f7f7;
+	color: #333333;
 }
 
 @media (max-width: 768px) {
@@ -32,9 +32,9 @@ body.dark-mode {
 	position: fixed;
 	top: 20px;
 	right: 20px;
-	background-color: #f0f0f0; 
-	color: #333333; 
-	border: 2px solid #cccccc; 
+	background-color: #333333;
+	color: #e0e0e0;
+	border: 2px solid #555555;
 	padding: 10px 16px;
 	border-radius: 8px;
 	cursor: pointer;
@@ -43,10 +43,10 @@ body.dark-mode {
 	z-index: 1000;
 }
 
-.dark-mode .theme-toggle { 
-	background-color: #333333; 
-	color: #e0e0e0; 
-	border-color: #555555; 
+.light-mode .theme-toggle {
+	background-color: #f0f0f0;
+	color: #333333;
+	border-color: #cccccc;
 }
 
 .theme-toggle:hover {
@@ -55,29 +55,30 @@ body.dark-mode {
 
 .toggle-text {
 	display: inline-block;
-	background-color: #fff3cd; 
-	color: #d35400; 
+	background-color: #2d2d2d;
+	color: #ffa500;
 	font-weight: bold;
 	text-decoration: underline;
 	cursor: pointer;
 	border-radius: 4px;
 	padding: 2px 4px;
 	white-space: pre;
+	/* 空白の幅を維持 */
 	user-select: none;
 	font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dark-mode .toggle-text { 
-	background-color: #2d2d2d; 
-	color: #ffa500; 
+.light-mode .toggle-text {
+	background-color: #fff3cd;
+	color: #d35400;
 }
 
 button {
-	background-color: #fff3cd; 
-	color: #d35400; 
+	background-color: #2d2d2d;
+	color: #ffa500;
 	font-weight: bold;
-	border: 2px solid #d35400; 
+	border: 2px solid #555555;
 	padding: 8px 16px;
 	border-radius: 6px;
 	cursor: pointer;
@@ -85,10 +86,10 @@ button {
 	transition: all 0.3s ease;
 }
 
-.dark-mode button { 
-	background-color: #2d2d2d; 
-	color: #ffa500; 
-	border-color: #555555; 
+.light-mode button {
+	background-color: #fff3cd;
+	color: #d35400;
+	border-color: #d35400;
 }
 
 button:hover {
@@ -97,49 +98,51 @@ button:hover {
 
 table {
 	border-collapse: collapse;
-	border: solid 2px orange; 
+	border: solid 2px #ffa500;
+	/*表全体を線で囲う*/
 	font-size: 18px;
-	background-color: #ffffff; 
+	background-color: #2a2a2a;
 	transition: all 0.3s ease;
 }
 
-.dark-mode table { 
-	border-color: #ffa500; 
-	background-color: #2a2a2a; 
+.light-mode table {
+	border-color: orange;
+	background-color: #ffffff;
 }
 
 table th,
 table td {
-	border: dashed 1px orange; 
+	border: dashed 1px #ffa500;
+	/*破線 1px オレンジ*/
 	padding: 8px 12px;
 	transition: border-color 0.3s ease;
 }
 
-.dark-mode table th,
-.dark-mode table td { 
-	border-color: #ffa500; 
+.light-mode table th,
+.light-mode table td {
+	border-color: orange;
 }
 
 table th {
-	background-color: #f8f8f8; 
-	color: #d35400; 
+	background-color: #333333;
+	color: #ffa500;
 	font-weight: bold;
 }
 
-.dark-mode table th { 
-	background-color: #333333; 
-	color: #ffa500; 
+.light-mode table th {
+	background-color: #f8f8f8;
+	color: #d35400;
 }
 
 h1 {
-	color: #d35400; 
-	text-shadow: none; 
+	color: #ffa500;
+	text-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
 	transition: color 0.3s ease;
 }
 
-.dark-mode h1 { 
-	color: #ffa500; 
-	text-shadow: 0 0 10px rgba(255, 165, 0, 0.3); 
+.light-mode h1 {
+	color: #d35400;
+	text-shadow: none;
 }
 
 h3::before {
@@ -211,11 +214,11 @@ h3::before {
 	background-image: url(はにわ_fill.jpg);
 	background-size: contain;
 	vertical-align: middle;
-	filter: invert(0%); 
+	filter: invert(100%);
 }
 
-.dark-mode .hist-main ul li::before { 
-	filter: invert(100%); 
+.light-mode .hist-main ul li::before {
+	filter: invert(0%);
 }
 
 .hist-main ul li ul {
@@ -258,3 +261,20 @@ h3::before {
     transform: rotate(35deg);
     transform-origin: left top;
 }
+
+
+/*
+.example{
+    display: block;
+    width: 300px;
+    padding: 15px 0;
+    margin: auto;
+    background: #569f3c;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+}
+.example:hover{
+    background: #225f0d;
+}
+*/

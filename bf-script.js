@@ -1,37 +1,3 @@
-// ダーク/ライトモード
-function toggleTheme() {
-	const body = document.body;
-	const themeBtn = document.querySelector('.theme-toggle');
-
-	if (body.classList.contains('dark-mode')) {
-		body.classList.remove('dark-mode');
-		themeBtn.textContent = '🌙';
-		localStorage.setItem('theme', 'light');
-	} else {
-		body.classList.add('dark-mode');
-		themeBtn.textContent = '☀️';
-		localStorage.setItem('theme', 'dark');
-	}
-}
-
-// ページ読み込み時にテーマを設定
-document.addEventListener('DOMContentLoaded', function () {
-	const body = document.body;
-	const themeBtn = document.querySelector('.theme-toggle');
-	const savedTheme = localStorage.getItem('theme');
-
-	// 保存されたテーマがあればそれを使い、なければライトモードをデフォルトに
-	if (savedTheme === 'dark') {
-		body.classList.add('dark-mode');
-		themeBtn.textContent = '☀️';
-	} else {
-		// 初回訪問時またはテーマが未設定の場合はライトモードを強制
-		body.classList.remove('dark-mode');
-		themeBtn.textContent = '🌙';
-		localStorage.setItem('theme', 'light');
-	}
-});
-
 // 初期化：全てを非表示（空白）に
 document.addEventListener("DOMContentLoaded", () => {
 	document.querySelectorAll(".toggle-text").forEach(el => {
@@ -95,6 +61,40 @@ function toggleAll() {
 	});
 }
 
+//ダーク/ライトモード
+function toggleTheme() {
+	const body = document.body;
+	const themeBtn = document.querySelector('.theme-toggle');
+
+	if (body.classList.contains('light-mode')) {
+		body.classList.remove('light-mode');
+		themeBtn.textContent = '☀️';
+		localStorage.setItem('theme', 'dark');//追加
+	} else {
+		body.classList.add('light-mode');
+		themeBtn.textContent = '🌙';
+		localStorage.setItem('theme', 'light');//追加
+	}
+}
+
+// ページ読み込み時にテーマを設定
+document.addEventListener('DOMContentLoaded', function () {
+	const body = document.body;
+	const themeBtn = document.querySelector('.theme-toggle');
+	const savedTheme = localStorage.getItem('theme');
+
+	// 保存されたテーマがあればそれを使い、なければライトモードをデフォルトに
+	if (savedTheme === 'dark') {
+		body.classList.remove('light-mode');
+		themeBtn.textContent = '☀️';
+	} else {
+		// 初回訪問時またはテーマが未設定の場合はライトモードを強制
+		body.classList.add('light-mode');
+		themeBtn.textContent = '🌙';
+		localStorage.setItem('theme', 'light'); // 明示的にライトモードを保存
+	}
+});
+
 // テーブルを生成
 function generateTable() {
 	const table = document.getElementById('wordTable');
@@ -114,3 +114,4 @@ function generateTable() {
 		cell2.appendChild(span);
 	});
 }
+
