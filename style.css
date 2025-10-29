@@ -12,7 +12,8 @@ body {
 	background-color: #f7f7f7;
 	font-size: 16px;
 	color: #333333;
-	font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+	/*font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;*/
+	font-family: "游明朝", "YuMincho", "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
