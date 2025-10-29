@@ -1,0 +1,125 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>template</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body>
+	<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+	<h1 id="-">東アジア世界のなかの明治政府</h1>
+
+	<div class="nav-box">
+		<nav class="nav-header">
+			<ul class="nav-ul">
+				<li><a class="nav-link" href="print1.html">幕府崩壊と<br>明治維新</a></li>
+				<li><a class="nav-link" href="print2.html">制度改革と<br>殖産興業政策</a></li>
+				<li><a class="nav-link" href="print3.html">文明開化と<br>教育制度の整備</a></li>
+				<li><a class="nav-link" href="print4.html">東アジア世界のなかの明治政府</a></li>
+				<li><a class="nav-link" href="print5.html">政府専制への批判</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<h2 id="-">■課題</h2>
+	<p>日本の近代化はどのような国際関係のなかで進められたのだろうか。</p>
+
+	<button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
+
+	<div class="hist-main">
+		<h3 id="-">列強の海外進出</h3>
+		<ul>
+			<li>イギリスをはじめとする西ヨーロッパ諸国にドイツやロシアも加えた<span class="toggle-text" data-original-text="列強"
+					onclick="toggleText(this)"></span>は，軍事力や経済力を背景に世界に進出していった</li>
+			<li>汽船や鉄道が国際的な交通手段として発達し，人や商品の動き，情報の伝達がいっそう活発になった</li>
+		</ul>
+		<h3 id="-">交通ルートの短縮</h3>
+		<ul>
+			<li>1867年，日本の開国をきっかけに，太平洋を定期的に横断する航路が開設<ul>
+					<li>→世界を一周する交通ルートができあがった</li>
+				</ul>
+			</li>
+			<li>1869年，北米大陸を横断する鉄道が完成，地中海と紅海を結ぶ<span class="toggle-text" data-original-text="スエズ運河"
+					onclick="toggleText(this)"></span>が開通<ul>
+					<li>→交通ルートはさらに短縮され，世界の結びつきは急速に強まった</li>
+				</ul>
+			</li>
+		</ul>
+		<h3 id="-">東アジア</h3>
+		<ul>
+			<li>中国が列強を中心とする世界の結びつきのなかに組みこまれつつあった</li>
+			<li>清は，西洋式の工場の建設や軍隊の整備を進める一方，華夷秩序の論理を維持しながら，東アジアでの影響力を確保しようとした
+				…明治政府は，こうした国際環境のなかで，新しい外交関係を模索していった</li>
+		</ul>
+		<h3 id="-">岩倉使節団の派遣</h3>
+		<ul>
+			<li>新政府の最大の外交課題は，不平等条約を改正し，欧米との対等な関係を築くことであった</li>
+			<li>1871年，政府は右大臣の岩倉具視を全権大使とし，木戸孝允，<span class="toggle-text" data-original-text="大久保利通"
+					onclick="toggleText(this)"></span>らを副使とする<span class="toggle-text" data-original-text="岩倉使節団"
+					onclick="toggleText(this)"></span>を欧米に派遣<ul>
+					<li>→成果をえられなかった</li>
+				</ul>
+			</li>
+			<li>岩倉使節団は２年近くにわたって欧米社会を直接体験し，その体験をもとに欧化政策，法典整備をすすめた</li>
+		</ul>
+		<h3 id="-">朝鮮への国交要求</h3>
+		<ul>
+			<li>1871年，日本と清は対等な立場での<span class="toggle-text" data-original-text="日清修好条規"
+					onclick="toggleText(this)"></span>を結んだ</li>
+			<li>朝鮮は，華夷秩序に反するとしてフランスやアメリカからの通商要求を拒否していた<ul>
+					<li>→新政府としての国交を求める日本の要求も拒否</li>
+				</ul>
+			</li>
+		</ul>
+		<h3 id="-">明治六年の政変</h3>
+		<ul>
+			<li>1873年，<span class="toggle-text" data-original-text="西郷隆盛"
+					onclick="toggleText(this)"></span>や板垣退助らの留守政府は，朝鮮に西郷を派遣して開国を強く求めることを決定</li>
+			<li>大久保利通らは，国内の整備改良を優先するとしてこれに反対し，決定済みの朝鮮への使節派遣を強引にくつがえした<ul>
+					<li>→西郷や板垣ら５人の参議は，大久保らを批判</li>
+					<li>→政府は分裂し，５人の参議はいっせいに辞職した<h3 id="-">江華島事件</h3>
+						…1875年，朝鮮の江華島付近に示威行動を行った日本軍艦への砲撃事件</li>
+				</ul>
+			</li>
+		</ul>
+		<h3 id="-">日朝修好条規</h3>
+		<ul>
+			<li>西郷らが去ったのち，政府の中心となった大久保は，<span class="toggle-text" data-original-text="江華島事件"
+					onclick="toggleText(this)"></span>を機に，朝鮮に強硬な態度で迫った<ul>
+					<li>→翌年，<span class="toggle-text" data-original-text="日朝修好条規"
+							onclick="toggleText(this)"></span>（江華条約）を締結</li>
+				</ul>
+			</li>
+			<li>日本の領事裁判権や関税免除を朝鮮に認めさせる不平等なもので，日本は清とも対立を深めた</li>
+		</ul>
+		<h3 id="-">琉球処分</h3>
+		<ul>
+			<li>琉球は薩摩藩に事実上支配されながら，清にも朝貢し，清から冊封される国際関係を結んでいた</li>
+			<li>1872年，政府は琉球国王を琉球藩王に任じ，日本に帰属するとしたが，清は認めなかった<ul>
+					<li>→政府は琉球の漂流民が台湾で殺害された事件を理由に，1874年台湾に出兵，清から賠償金をえた</li>
+				</ul>
+			</li>
+			<li>日本の行動を清が公認したことで政府は，1879年に琉球藩を廃止して
+				<span class="toggle-text" data-original-text="沖縄県" onclick="toggleText(this)"></span>を設置した（<span
+					class="toggle-text" data-original-text="琉球処分" onclick="toggleText(this)"></span>）
+			</li>
+		</ul>
+		<h3 id="-">日本の領土</h3>
+		<ul>
+			<li>近代国家としての重要な課題に国境の画定があった</li>
+			<li>開国以来，樺太（サハリン）は日本とロシアのどちらに属するか不明だった<ul>
+					<li>→1875年，<span class="toggle-text" data-original-text="樺太・千島交換条約"
+							onclick="toggleText(this)"></span>を結び，ロシアに樺太の領有を認め，千島全島を日本領とした</li>
+				</ul>
+			</li>
+			<li>太平洋方面では，いくつかの国が<span class="toggle-text" data-original-text="小笠原諸島"
+					onclick="toggleText(this)"></span>の領有を主張したが，1876年に日本への帰属が決定した</li>
+		</ul>
+	</div>
+
+
+	<script src="../../script.js"></script>
+
+</body>

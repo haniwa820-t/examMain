@@ -17,7 +17,7 @@ body {
 }
 
 body.light-mode {
-	background-color: #ffffff;
+	background-color: #f7f7f7;
 	color: #333333;
 }
 
@@ -30,7 +30,7 @@ body.light-mode {
 
 .theme-toggle {
 	position: fixed;
-	top: 20px;
+	bottom: 20px;
 	right: 20px;
 	background-color: #333333;
 	color: #e0e0e0;
@@ -82,7 +82,7 @@ button {
 	padding: 8px 16px;
 	border-radius: 6px;
 	cursor: pointer;
-	margin-top: 16px;
+	margin-top: 0px;
 	transition: all 0.3s ease;
 }
 
@@ -145,6 +145,10 @@ h1 {
 	text-shadow: none;
 }
 
+h3::before {
+	content: "♦";
+}
+
 .nav-box {
 	overflow-x: auto;
 }
@@ -156,7 +160,8 @@ h1 {
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
-	border-radius: 5px;
+	border-radius: 10px;
+	padding-left: 1em;
 }
 
 .nav-ul {
@@ -183,11 +188,52 @@ h1 {
 }
 
 .nav-link:hover {
-	transform: scale(1.05);
-	transition: all 0.3s ease;
+	transform: scale(1.1);
+	transition: all 0.5s ease;
 	color: #fff3cd;
 	background-color: #d35400;
 }
+
+.hist-main ul {
+	list-style: none;
+	padding-left: 0em;
+}
+
+.hist-main ul li {
+	border-top: 1px dashed #a1a1a1;
+}
+
+.hist-main ul li::before {
+	content: '';
+	display: inline-block;
+	margin-right: 0.5em;
+	width: 20px;
+	height: 20px;
+	background-image: url(はにわ_fill.jpg);
+	background-size: contain;
+	vertical-align: middle;
+	filter: invert(100%);
+}
+
+.light-mode .hist-main ul li::before {
+	filter: invert(0%);
+}
+
+.hist-main ul li ul {
+	list-style: none;
+	padding-left: 2em;
+}
+
+.hist-main ul li ul li::before {
+	content: '';
+	display: inline-block;
+	width: auto;
+	height: auto;
+	background-image: none;
+	vertical-align: middle;
+	margin-right: 0;
+}
+
 
 /*
 .example{
