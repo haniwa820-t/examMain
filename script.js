@@ -114,3 +114,4 @@ function generateTable() {
 		cell2.appendChild(span);
 	});
 }
+
