@@ -5,7 +5,6 @@
 	- [後期前半](#後期前半)
 	- [日課](#日課)
 	- [行事予定](#行事予定)
-	- [テスト](#テスト)
 
 ## 更新情報
 
@@ -16,12 +15,11 @@
 ## 後期前半
 
 - **情報工学演習I**
-> [問題1~20の回答](情報工学演習/problems01.md)
+	- [問題1~20の回答](情報工学演習/problems01.md)
 
 - **歴史**
-> [暗記用](history/term3/print1.html)
-
-> [元データ](history/term3/)
+	- [暗記用](history/term3/print1.html)
+	- [元データ](history/term3/)
 
 ---
 
@@ -42,10 +40,6 @@
 タップすると拡大します
 
 [![行事予定](2025gyouziyoteihyou_02.jpg)](yotei.html)
-
-## テスト
-
-[tmp.html](tmp.html)
 
 <!--
 
