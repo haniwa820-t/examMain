@@ -4,9 +4,13 @@
 	text-size-adjust: 100%;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	max-width: 80%;
-	margin: 0 auto 50 auto;
+	margin: 70 auto 50 auto;
 	padding: 20px;
 	box-sizing: border-box;
 	background-color: #f7f7f7;
@@ -27,31 +31,6 @@ body.dark-mode {
 		max-width: 95%;
 		padding: 10px;
 	}
-}
-
-.theme-toggle {
-	position: fixed;
-	top: 20px;
-	right: 20px;
-	background-color: #f0f0f0;
-	color: #333333;
-	border: 2px solid #cccccc;
-	padding: 10px 16px;
-	border-radius: 8px;
-	cursor: pointer;
-	font-weight: bold;
-	transition: all 0.3s ease;
-	z-index: 1000;
-}
-
-.dark-mode .theme-toggle {
-	background-color: #333333;
-	color: #e0e0e0;
-	border-color: #555555;
-}
-
-.theme-toggle:hover {
-	transform: scale(1.05);
 }
 
 .toggle-text {
@@ -184,7 +163,7 @@ h3::before {
 	padding: 1px 0.5em;
 	border: 2px solid #d35400;
 	border-radius: 5px;
-	background-color: #fff3cd ;
+	background-color: #fff3cd;
 }
 
 .nav-link:hover {
@@ -234,6 +213,7 @@ h3::before {
 	margin-right: 0;
 }
 
+/*ページトップボタン*/
 #page-top {
 	position: fixed;
 	right: 20px;
@@ -259,4 +239,152 @@ h3::before {
 	border-top: solid 1px;
 	transform: rotate(35deg);
 	transform-origin: left top;
+}
+
+#page-top:hover {
+	border-top: solid 2px;
+}
+
+
+.top-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: rgba(142, 142, 142, 0.21);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+	flex: auto;
+}
+
+.theme-toggle {
+	position: fixed;
+	top: 16px;
+	right: 5%;
+	background-color: #f0f0f0;
+	color: #333333;
+	border: 2px solid #cccccc;
+	padding: 10px 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.dark-mode .theme-toggle {
+	background-color: #333333;
+	color: #e0e0e0;
+	border-color: #555555;
+}
+
+.theme-toggle:hover {
+	transform: scale(1.05);
+}
+
+/*ハンバーガーメニュー*/
+.menu-wrapper {
+	position: relative;
+}
+
+.menu-icon {
+	width: 40px;
+	height: 30px;
+	position: fixed;
+	/*← fixedにして常に左上固定*/
+	top: 20px;
+	left: 5%;
+	cursor: pointer;
+	z-index: 3;
+	display: inline-block;
+}
+
+.menu-icon span {
+	display: block;
+	height: 4px;
+	margin: 6px 0;
+	background: #333;
+	border-radius: 2px;
+	transition: 0.4s;
+}
+
+.dark-mode .menu-icon span {
+	background: #e0e0e0;
+}
+
+/* ハンバーガーがXに変形 */
+#menu-toggle:checked+.menu-icon span:nth-child(1) {
+	transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle:checked+.menu-icon span:nth-child(2) {
+	opacity: 0;
+}
+
+#menu-toggle:checked+.menu-icon span:nth-child(3) {
+	transform: translateY(-10px) rotate(-45deg);
+}
+
+/* オーバーレイ背景 */
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+	z-index: 1;
+}
+
+#menu-toggle:checked~.overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* メニュー本体（左から出す） */
+.menu {
+	position: fixed;
+	top: 0;
+	left: -250px;
+	/* ← 初期位置を左へ */
+	width: 250px;
+	height: 100%;
+	background: #fff;
+	box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+	transition: left 0.4s ease;
+	z-index: 2;
+}
+
+.dark-mode .menu {
+	background: #2a2a2a;
+}
+
+#menu-toggle:checked~.menu {
+	left: 0;
+	/* ← 開いたときは左0へ */
+}
+
+.menu ul {
+	list-style: none;
+	padding: 60px 20px;
+}
+
+.menu li {
+	margin: 20px 0;
+}
+
+.menu a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.2rem;
+	transition: color 0.3s;
+}
+
+.dark-mode .menu a {
+	color: #e0e0e0;
+}
+
+.menu a:hover {
+	color: #007bff;
 }
