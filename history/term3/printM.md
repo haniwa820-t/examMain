@@ -1,11 +1,7 @@
-## 暗記
+# 元データファイル
 
-- [幕府の崩壊と明治維新](print1.html)
-- [制度改革と殖産興業政策](print2.html)
-- [文明開化と教育制度の整備](print3.html)
-
-## 原文
-
-- [幕府の崩壊と明治維新](print1.md)
-- [制度改革と殖産興業政策](print2.md)
-- [文明開化と教育制度の整備](print3.md)
+- [print1](print1.md)
+- [print2](print2.md)
+- [print3](print3.md)
+- [print4](print4.md)
+- [print5](print5.md)

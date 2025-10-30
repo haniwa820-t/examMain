@@ -18,7 +18,8 @@
 > [問題1~20の回答](情報工学演習/problems01.md)
 
 - **歴史**
-> [ホーム](history/term3/printM.md)
+> [暗記用](history/term3/print1.html)
+> [元データ](history/term3/)
 
 ---
 
@@ -36,7 +37,9 @@
 
 ## 行事予定
 
-![行事予定](2025gyouziyoteihyou_02.jpg)
+タップすると拡大します
+
+[![行事予定](2025gyouziyoteihyou_02.jpg)](yotei.html)
 
 <!--
 
