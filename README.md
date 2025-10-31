@@ -15,11 +15,14 @@
 ## 後期前半
 
 - **情報工学演習I**
-	- [問題1~20の回答](情報工学演習/problems01.md)
+  - [問題1~20の回答](情報工学演習/problems01.md)
 
 - **歴史**
-	- [暗記用](history/term3/print1.html)
-	- [元データ](history/term3/)
+  - [暗記用](history/term3/print1.html)
+  - [元データ](history/term3/)
+
+- **英語**
+  - [print⑫英単語](english/term3/print-test/print12.html)
 
 ---
 

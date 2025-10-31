@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>英単語クイズ</title>
+	<link rel="stylesheet" href="../../../style.css" />
+	<style>
+		body {
+			margin: 60px auto 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		@media (max-width: 768px) {
+			body {
+				padding: 20px;
+			}
+		}
+
+		#word {
+			font-size: 2em;
+			margin: 30px 0 10px;
+			color: #d35400;
+			transition: color 0.3s ease;
+		}
+
+		.dark-mode #word {
+			color: #ffa500;
+		}
+
+		#meaning {
+			font-size: 1.8em;
+			color: #333;
+			margin: 20px 0;
+			min-height: 2em;
+			transition: color 0.3s ease;
+		}
+
+		.dark-mode #meaning {
+			color: #e0e0e0;
+		}
+
+		button {
+			font-size: 1.2em;
+			padding: 12px 30px;
+			margin-top: 20px;
+			background-color: #fff3cd;
+			color: #d35400;
+			font-weight: bold;
+			border: 2px solid #d35400;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+		}
+
+		.dark-mode button {
+			background-color: #2d2d2d;
+			color: #ffa500;
+			border-color: #555555;
+		}
+
+		button:hover {
+			transform: scale(1.05);
+		}
+
+		#answerBtn,
+		#restartBtn {
+			display: none;
+		}
+
+		#toggleModeBtn {
+			position: fixed;
+			top: 16px;
+			left: 5%;
+			background-color: #f0f0f0;
+			color: #333333;
+			border: 2px solid #cccccc;
+			padding: 10px 16px;
+			border-radius: 8px;
+			cursor: pointer;
+			font-weight: bold;
+			transition: all 0.3s ease;
+			z-index: 1000;
+		}
+
+		.dark-mode #toggleModeBtn {
+			background-color: #333333;
+			color: #e0e0e0;
+			border-color: #555555;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>英単語print⑫</h1>
+	<div class="mode-info" id="modeDisplay"></div>
+
+	<div class="word-display" id="word"></div>
+	<div class="meaning-display" id="meaning"></div>
+
+	<div class="controls">
+		<button id="startBtn">スタート</button>
+		<button id="answerBtn" style="display: none;">答えを表示</button>
+		<button id="restartBtn" style="display: none;">もう一度</button>
+	</div>
+	<button id="toggleModeBtn">モード切り替え</button>
+	<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+	<script>
+		const wordList = `
+eldarly,高齢の
+disability,障害
+retirement,退職
+workforce,総労働人口
+require,要求する
+earn,稼ぐ
+connect,つながる
+encourage,奨励する
+document,書類
+measure,措置・対策
+range,範囲
+`
+			.split('\n')
+			.filter(line => line.trim())
+			.map(line => {
+				const parts = line.split(',');
+				if (parts.length >= 2) {
+					return {
+						word: parts[0].trim(),
+						meaning: parts[1].trim()
+					};
+				}
+				return null;
+			})
+			.filter(item => item !== null && item.word && item.meaning);
+
+		// 状態管理
+		const state = {
+			shuffledList: [],
+			currentIndex: 0,
+			isAnswered: false,
+			isQuizRunning: false,
+			mode: 'en-to-ja' // 'en-to-ja' or 'ja-to-en'
+		};
+
+		// DOM要素の取得
+		const wordDiv = document.getElementById('word');
+		const meaningDiv = document.getElementById('meaning');
+		const startBtn = document.getElementById('startBtn');
+		const answerBtn = document.getElementById('answerBtn');
+		const restartBtn = document.getElementById('restartBtn');
+		const toggleModeBtn = document.getElementById('toggleModeBtn');
+		const modeDisplay = document.getElementById('modeDisplay');
+
+		// 初期化関数
+		function initializeQuiz() {
+			answerBtn.style.display = 'none';
+			restartBtn.style.display = 'none';
+			wordDiv.textContent = '単語集';
+			meaningDiv.textContent = 'スタートを押して開始';
+			updateModeDisplay();
+		}
+
+		// モード表示の更新
+		function updateModeDisplay() {
+			if (state.mode === 'en-to-ja') {
+				modeDisplay.textContent = 'モード: 英→日';
+				toggleModeBtn.textContent = '日→英に切り替え';
+			} else {
+				modeDisplay.textContent = 'モード: 日→英';
+				toggleModeBtn.textContent = '英→日に切り替え';
+			}
+		}
+
+		// モード切り替え
+		function toggleMode() {
+			state.mode = state.mode === 'en-to-ja' ? 'ja-to-en' : 'en-to-ja';
+			updateModeDisplay();
+
+			// クイズ実行中なら現在の問題をモードに合わせて再表示
+			if (state.isQuizRunning && state.currentIndex < state.shuffledList.length) {
+				showCurrentWord();
+			}
+		}
+
+		// 現在の単語を表示（モードに応じて）
+		function showCurrentWord() {
+			if (state.currentIndex < state.shuffledList.length) {
+				const current = state.shuffledList[state.currentIndex];
+				if (state.mode === 'en-to-ja') {
+					wordDiv.textContent = current.word;
+					meaningDiv.textContent = '';
+				} else {
+					wordDiv.textContent = current.meaning;
+					meaningDiv.textContent = '';
+				}
+				state.isAnswered = false;
+			}
+		}
+
+		// Fisher-Yatesシャッフルアルゴリズム
+		function shuffle(array) {
+			const shuffled = [...array];
+			for (let i = shuffled.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+			}
+			return shuffled;
+		}
+
+		// 次の単語を表示
+		function showNextWord() {
+			if (state.currentIndex < state.shuffledList.length) {
+				showCurrentWord();
+			} else {
+				endQuiz();
+			}
+		}
+
+		// クイズ終了処理
+		function endQuiz() {
+			wordDiv.textContent = '終了！';
+			meaningDiv.textContent = `全${state.shuffledList.length}問`;
+			answerBtn.style.display = 'none';
+			restartBtn.style.display = 'inline-block';
+			state.isQuizRunning = false;
+		}
+
+		// クイズ開始
+		function startQuiz() {
+			if (wordList.length === 0) {
+				wordDiv.textContent = '単語リストが空です';
+				meaningDiv.textContent = '';
+				return;
+			}
+
+			state.shuffledList = shuffle([...wordList]);
+			state.currentIndex = 0;
+			state.isAnswered = false;
+			state.isQuizRunning = true;
+
+			startBtn.style.display = 'none';
+			answerBtn.style.display = 'inline-block';
+			restartBtn.style.display = 'none';
+
+			showNextWord();
+		}
+
+		// 答えを表示
+		function showAnswer() {
+			if (!state.isQuizRunning || state.isAnswered) return;
+
+			const current = state.shuffledList[state.currentIndex];
+
+			// モードに応じて答えを表示
+			if (state.mode === 'en-to-ja') {
+				meaningDiv.textContent = current.meaning;
+			} else {
+				meaningDiv.textContent = current.word;
+			}
+
+			state.isAnswered = true;
+			state.currentIndex++;
+
+			setTimeout(showNextWord, 1500);
+		}
+
+		// イベントリスナーの設定
+		function setupEventListeners() {
+			startBtn.addEventListener('click', startQuiz);
+			answerBtn.addEventListener('click', showAnswer);
+			restartBtn.addEventListener('click', startQuiz);
+			toggleModeBtn.addEventListener('click', toggleMode);
+		}
+
+		// ページ読み込み時の初期化
+		document.addEventListener('DOMContentLoaded', function () {
+			initializeQuiz();
+			setupEventListeners();
+		});
+	</script>
+	<script src="../../../script.js"></script>
+</body>
+
+</html>
