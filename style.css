@@ -404,3 +404,6 @@ a {
 .dark-mode a {
 	color: #b6d9ff;
 }
+.dark-mode img {
+	filter: invert(90%);
+}
