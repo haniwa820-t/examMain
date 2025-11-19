@@ -102,11 +102,20 @@ table td {
 
 table th {
 	background-color: #f8f8f8;
-	color: #d35400;
+	color: hsl(24, 93%, 47%);
 	font-weight: bold;
 }
 
 .dark-mode table th {
+	background-color: #333333;
+	color: #ffa500;
+}
+
+table td {
+	color: hsl(24, 93%, 47%);
+}
+
+.dark-mode table td {
 	background-color: #333333;
 	color: #ffa500;
 }
@@ -188,7 +197,7 @@ h3::before {
 	margin-right: 0.5em;
 	width: 20px;
 	height: 20px;
-	background-image: url(はにわ_fill.jpg);
+	background-image: url(img/はにわ_fill.jpg);
 	background-size: contain;
 	vertical-align: middle;
 	filter: invert(0%);
@@ -387,4 +396,11 @@ h3::before {
 
 .menu a:hover {
 	color: #007bff;
+}
+
+a {
+	color: #001b54;
+}
+.dark-mode a {
+	color: #b6d9ff;
 }

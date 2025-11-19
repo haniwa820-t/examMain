@@ -25,7 +25,7 @@ def file_replace_asterisk(file_path,replacement):
 
 if __name__ == '__main__':
 	try:
-		for i in range (1,6):
+		for i in range (6,8):
 			file_name = 'print' + str(i) + '.html'
 			file_replace_asterisk(file_name,r'<span class="toggle-text" data-original-text="\1" onclick="toggleText(this)"></span>')
 	except Exception as e:

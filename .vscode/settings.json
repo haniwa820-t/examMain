@@ -80,4 +80,7 @@
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "python-envs.pythonProjects": [],
+    "chat.sendElementsToChat.attachCSS": false,
+    "chat.sendElementsToChat.attachImages": false,
+    "chat.sendElementsToChat.enabled": false,
 }

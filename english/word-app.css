@@ -1,0 +1,85 @@
+body {
+	margin: 60px auto 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media (max-width: 768px) {
+	body {
+		padding: 20px;
+	}
+}
+
+#word {
+	font-size: 2em;
+	margin: 30px 0 10px;
+	color: #d35400;
+	transition: color 0.3s ease;
+}
+
+.dark-mode #word {
+	color: #ffa500;
+}
+
+#meaning {
+	font-size: 1.8em;
+	color: #333;
+	margin: 20px 0;
+	min-height: 2em;
+	transition: color 0.3s ease;
+}
+
+.dark-mode #meaning {
+	color: #e0e0e0;
+}
+
+button {
+	font-size: 1.2em;
+	padding: 12px 30px;
+	margin-top: 20px;
+	background-color: #fff3cd;
+	color: #d35400;
+	font-weight: bold;
+	border: 2px solid #d35400;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-family: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+}
+
+.dark-mode button {
+	background-color: #2d2d2d;
+	color: #ffa500;
+	border-color: #555555;
+}
+
+button:hover {
+	transform: scale(1.05);
+}
+
+#answerBtn,
+#restartBtn {
+	display: none;
+}
+
+#toggleModeBtn {
+	position: fixed;
+	top: 16px;
+	left: 5%;
+	background-color: #f0f0f0;
+	color: #333333;
+	border: 2px solid #cccccc;
+	padding: 10px 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.dark-mode #toggleModeBtn {
+	background-color: #333333;
+	color: #e0e0e0;
+	border-color: #555555;
+}

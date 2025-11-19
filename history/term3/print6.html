@@ -1,0 +1,158 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>template</title>
+	<link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body>
+	<div class="hist-main">
+
+		<h1 id="-">立憲政治の成立</h1>
+		<h2 id="-">■課題</h2>
+		<p>大日本帝国憲法はどのような内容だったのだろうか。</p>
+
+		<button class="toggle-all-btn" onclick="toggleAll()">すべて表示する</button>
+
+		<h3 id="-">伊藤博文の憲法調査</h3>
+		<ul>
+			<li>1882年３月，政府は<span class="toggle-text" data-original-text="伊藤博文"
+					onclick="toggleText(this)"></span>らをヨーロッパに派遣，近代国家の憲法や諸制度について調査させた<ul>
+					<li>→伊藤は，ドイツのグナイストやオーストリアのシュタインに学んで帰国</li>
+				</ul>
+			</li>
+			<li>1886年ごろから，ドイツの法学者ロエスレルを顧問とし，井上毅，金子堅太郎らとともに，非公開で<span class="toggle-text" data-original-text="憲法草案"
+					onclick="toggleText(this)"></span>などの作成に着手</li>
+		</ul>
+		<h3 id="-">立憲制のための諸改革</h3>
+		<ul>
+			<li>1884年，<span class="toggle-text" data-original-text="華族令"
+					onclick="toggleText(this)"></span>を制定，華族を公・侯・伯・子・男の５爵位に分け，貴族院を設ける準備を行った</li>
+			<li>1885年，太政官制にかわる<span class="toggle-text" data-original-text="内閣制度" onclick="toggleText(this)"></span>を創設，
+				初代の<span class="toggle-text" data-original-text="内閣総理大臣" onclick="toggleText(this)"></span>に伊藤博文が就任</li>
+		</ul>
+		<h3 id="-">地方制度では</h3>
+		<ul>
+			<li>ドイツ人顧問モッセと，山県有朋を中心に1888年に<span class="toggle-text" data-original-text="市制・町村制"
+					onclick="toggleText(this)"></span>，
+				1890年に<span class="toggle-text" data-original-text="府県制・郡制" onclick="toggleText(this)"></span>を制定</li>
+		</ul>
+		<h3 id="-">民権運動の再燃</h3>
+		<ul>
+			<li>沈滞していた旧民権派の活動は，国会開設の時期が近づくと，ふたたび盛り上がりをみせた</li>
+			<li>1886年には旧民権派の<span class="toggle-text" data-original-text="大同団結運動"
+					onclick="toggleText(this)"></span>がおこった</li>
+			<li>翌年には，地租の軽減，言論・集会の自由，対等条約締結の要求をかかげる
+				<span class="toggle-text" data-original-text="三大事件建白運動" onclick="toggleText(this)"></span>が展開<ul>
+					<li>→政府は，12月に<span class="toggle-text" data-original-text="保安条例"
+							onclick="toggleText(this)"></span>を制定，中江兆民や星亨ら民権論者570余名を皇居から３里外の地に追放した</li>
+				</ul>
+			</li>
+		</ul>
+		<h3 id="-">大日本帝国憲法</h3>
+		<ul>
+			<li>伊藤博文らの憲法草案は，<span class="toggle-text" data-original-text="枢密院"
+					onclick="toggleText(this)"></span>で審議が進められ，1889年２月11日，<span class="toggle-text"
+					data-original-text="大日本帝国憲法" onclick="toggleText(this)"></span>（明治憲法）として発布</li>
+			<li><span class="toggle-text" data-original-text="欽定憲法"
+					onclick="toggleText(this)"></span>であり，天皇が国の元首として統治権のすべてをにぎると定めていた（天皇主権）</li>
+			<li>国務大臣の補佐だけで，法律にかわって制定できる緊急勅令，議会の召集・解散，陸海軍の統帥，条約の締結や宣戦・講和などは天皇の大権とされた</li>
+		</ul>
+		<h3 id="-">統治組織では</h3>
+		<ul>
+			<li>行政・立法・司法の<span class="toggle-text" data-original-text="三権分立" onclick="toggleText(this)"></span>がとられた
+				…行政権が強く，内閣の各大臣は天皇に対して責任を持つとされ，議会に対する責任は不明確であった</li>
+			<li>帝国議会は，皇族・華族や勅選議員，多額納税者の互選でえらばれる議員などで構成される<span class="toggle-text" data-original-text="貴族院"
+					onclick="toggleText(this)"></span>と，公選の議員で構成される<span class="toggle-text" data-original-text="衆議院"
+					onclick="toggleText(this)"></span>との二院制がとられた</li>
+		</ul>
+		<h3 id="-">二院制について</h3>
+		<ul>
+			<li>両院は対等で，衆議院の決議は，政府の意向を反映する貴族院に否定されることもあった</li>
+			<li>議会の同意なしに法律は制定できず，予算も成立しなかったため，政府は議会の意向を無視することはできなかった</li>
+		</ul>
+		<h3 id="-">憲法における自由と権利</h3>
+		<ul>
+			<li>信教・言論・結社などの自由が憲法に明文化され，国民の権利がある程度保障されることとなった</li>
+		</ul>
+		<h3 id="-">衆議院議員選挙法</h3>
+		<ul>
+			<li>帝國憲法の制定と同時に公布</li>
+			<li>選挙人は，直接国税15円以上をおさめる満25歳以上の男性にかぎられた
+				…議会を通して国民が国政に参加する道が開かれ，日本は憲法と議会をそなえた立憲国家となった</li>
+		</ul>
+		<h3 id="-">皇室典範</h3>
+		<ul>
+			<li>憲法の発布と同時に制定</li>
+			<li>皇位の継承などについて規定された</li>
+		</ul>
+		<h3 id="-">近代法治国家としての日本</h3>
+		<ul>
+			<li>条約改正の交渉を進めるうえでも政府にとって緊急の課題である法典の制定は，フランス人法学者ボアソナードを顧問に進められた</li>
+			<li>1880年の<span class="toggle-text" data-original-text="刑法"
+					onclick="toggleText(this)"></span>をはじめ，民法，商法などが1899年までに制定され，近代法治国家の体裁がととのえられた</li>
+		</ul>
+		<h3 id="-">民法をめぐる論争</h3>
+		<ul>
+			<li>1890年，<span class="toggle-text" data-original-text="旧民法"
+					onclick="toggleText(this)"></span>公布，フランス民法典をモデルとしつつ従来の日本の法制度を反映させたものだった<ul>
+					<li>→日本の伝統に反すると非難をあびた（<span class="toggle-text" data-original-text="民法典論争"
+							onclick="toggleText(this)"></span>）</li>
+				</ul>
+			</li>
+			<li>その後，新しく公布された民法では，「家」を重視して強い<span class="toggle-text" data-original-text="戸主権"
+					onclick="toggleText(this)"></span>を認め，相続や，夫権・親権における男女の不平等が顕著であった</li>
+		</ul>
+		<h3 id="-">初期議会における対立</h3>
+		<ul>
+			<li>議会開会以前の政府は，超然主義を表明</li>
+			<li>1890年の第１回<span class="toggle-text" data-original-text="衆議院議員総選挙"
+					onclick="toggleText(this)"></span>では，旧民権派(<span class="toggle-text" data-original-text="民党"
+					onclick="toggleText(this)"></span>)が大勝し，立憲自由党や立憲改進党などの議席数が政府系勢力(<span class="toggle-text"
+					data-original-text="吏党" onclick="toggleText(this)"></span>)を上まわり，衆議院の過半数をしめた
+				<ul>
+					<li>→第１回帝国議会では，民党と政府が激しく対立
+						…こうした状況がつづいた時期の議会を<span class="toggle-text" data-original-text="初期議会"
+							onclick="toggleText(this)"></span>とよぶ</li>
+				</ul>
+			</li>
+		</ul>
+		<h3 id="-">政府と政党の歩み寄り</h3>
+		<ul>
+			<li>松方正義内閣や第２次伊藤内閣のもとで，民党は政府提出の予算案を大幅に削減<ul>
+					<li>→政府は衆議院の解散で対抗した</li>
+				</ul>
+			</li>
+			<li>政府は議会で予算を通すために，しだいに民党を無視できなくなった</li>
+			<li>民党側でも政府に反対するだけでは政策を実現できないと考えるようになり，歩み寄りをみせ始めた</li>
+		</ul>
+	</div>
+	<a href="#" id="page-top">TOP</a>
+
+	<div class="top-bar">
+		<div class="menu-wrapper">
+			<input type="checkbox" id="menu-toggle" hidden>
+			<label class="menu-icon" for="menu-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</label>
+			<div class="overlay"></div>
+			<nav class="menu">
+				<ul>
+					<li><a href="print1.html">幕府崩壊と明治維新</a></li>
+					<li><a href="print2.html">制度改革と殖産興業政策</a></li>
+					<li><a href="print3.html">文明開化と教育制度の整備</a></li>
+					<li><a href="print4.html">東アジア世界のなかの明治政府</a></li>
+					<li><a href="print5.html">政府専制への批判</a></li>
+					<li><a href="print6.html">立憲政治の成立</a></li>
+					<li><a href="print7.html">対外関係の変容と日清戦争</a></li>
+				</ul>
+			</nav>
+		</div>
+		<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+	</div>
+
+	<script src="../../script.js"></script>
+</body>

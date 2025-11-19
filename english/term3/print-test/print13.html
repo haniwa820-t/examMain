@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>英単語クイズ</title>
+	<link rel="stylesheet" href="../../word-app.css"/>
+	<link rel="stylesheet" href="../../../style.css" />
+</head>
+
+<body>
+	<h1>英単語print⑫</h1>
+	<div class="mode-info" id="modeDisplay"></div>
+
+	<div class="word-display" id="word"></div>
+	<div class="meaning-display" id="meaning"></div>
+	<div id="wordData" data-words="elderly,高齢の
+disability,障害
+retirement,退職
+workforce,総労働人口
+require,要求する
+earn,稼ぐ
+connect,つながる
+encourage,奨励する
+document,書類
+measure,措置・対策
+range,範囲"></div>
+
+	<div class="controls">
+		<button id="startBtn">スタート</button>
+		<button id="answerBtn" style="display: none;">答え</button>
+		<button id="restartBtn" style="display: none;">もう一度</button>
+	</div>
+	<button id="toggleModeBtn">モード切り替え</button>
+	<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+	<script src="../../word-app.js"></script>
+	<script src="../../../script.js"></script>
+</body>
+
+</html>
