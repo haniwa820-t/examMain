@@ -1,0 +1,39 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>template</title>
+	<link rel="stylesheet" href="../../style.css" />
+	<link rel="stylesheet" href="../word-app.css">
+</head>
+<body>
+        <h1>単語クイズ</h1>
+        
+        <!-- 単語データを保持する要素 -->
+        <div id="wordData" data-words="
+apple,りんご
+banana,バナナ
+computer,コンピューター
+hello,こんにちは
+goodbye,さようなら
+cat,猫
+dog,犬
+book,本
+water,水
+sun,太陽
+        "></div>
+
+        <div id="modeDisplay">モード: 英→日</div>
+        
+        <div id="word">単語集</div>
+        <div id="meaning">スタートを押して開始</div>
+        
+        <div class="buttons">
+            <button id="startBtn">スタート</button>
+            <button id="answerBtn" style="display:none;">答えを表示</button>
+            <button id="restartBtn" style="display:none;">もう一度</button>
+            <button id="toggleModeBtn">日→英に切り替え</button>
+        </div>
+	<script src="../../script.js"></script>
+	<script src="../word-app.js"></script>
+</body>
