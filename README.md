@@ -20,6 +20,7 @@
 - **歴史**
   - [暗記用](history/term3/print1.html)
   - [元データ](history/term3/)
+  - [おまけ：フラッシュカード](history/term3/flashcard/tangotyou.html)
 
 - **英語**
   - [print⑫英単語](english/term3/print-test/print12.html)
