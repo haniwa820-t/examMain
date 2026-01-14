@@ -1,0 +1,413 @@
+* {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	--main-tcolor: #232323;
+	--main-bcolor: #ffffff;
+	--accent-tcolor: #000040;
+	--accent-bcolor: #f0f7fe;
+	--main-font: "游明朝", "YuMincho", "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+	--accent-font: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+}
+
+html {
+	scroll-behavior: smooth;
+	container-type: scroll-state;
+}
+
+body {
+	max-width: 90%;
+	margin: 80px auto;
+	box-sizing: border-box;
+	background-color: var(--main-bcolor);
+	font-size: 16px;
+	color: var(--main-tcolor);
+	font-family: var(--main-font);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+	body {
+		max-width: 95%;
+	}
+}
+
+button {
+	background-color: var(--accent-bcolor);
+	color: var(--accent-tcolor);
+	font-weight: bold;
+	border: 1.5px solid var(--accent-tcolor);
+	padding: 8px 16px;
+	border-radius: 6px;
+	cursor: pointer;
+	margin-top: 0px;
+	transition: all 0.3s ease;
+}
+
+.dark-mode button {
+	background-color: #2d2d2d;
+	color: #b1bae0;
+	border-color: #555555;
+}
+
+button:hover {
+	transform: scale(1.01);
+}
+
+.toggle-text {
+	display: inline-block;
+	background-color: var(--accent-bcolor);
+	color: var(--accent-tcolor);
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 2px 4px;
+	white-space: pre;
+	user-select: none;
+	font-family: var(--accent-font);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .toggle-text {
+	background-color: #2d2d2d;
+	color: #b1bae0;
+}
+
+table {
+	border-collapse: collapse;
+	border: solid 2px var(--accent-tcolor);
+	font-size: 18px;
+	background-color: var(--main-bcolor);
+	transition: all 0.3s ease;
+}
+
+.dark-mode table {
+	border-color: #b1bae0;
+	background-color: #2a2a2a;
+}
+
+table th,
+table td {
+	border: dashed 1px var(--accent-tcolor);
+	padding: 8px 12px;
+	transition: border-color 0.3s ease;
+}
+
+.dark-mode table th,
+.dark-mode table td {
+	border-color: #b1bae0;
+}
+
+table th {
+	background-color: var(--accent-bcolor);
+	color: var(--accent-tcolor);
+	font-weight: bold;
+}
+
+.dark-mode table th {
+	background-color: #333333;
+	color: #b1bae0;
+}
+
+table td {
+	color: var(--main-tcolor);
+}
+
+.dark-mode table td {
+	background-color: #333333;
+	color: #b1bae0;
+}
+
+h1 {
+	color: var(--accent-tcolor);
+	transition: color 0.3s ease;
+}
+
+.dark-mode h1 {
+	color: #b1bae0;
+}
+
+h3::before {
+	content: "♦";
+}
+
+.nav-box {
+	overflow-x: auto;
+}
+
+.nav-header {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	width: fit-content;
+	height: auto;
+	background-color: rgba(142, 142, 142, 0.1);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	padding-left: 1em;
+}
+
+.nav-ul {
+	padding: 0 1em;
+	display: flex;
+}
+
+.nav-ul li {
+	list-style: none;
+	text-align: center;
+}
+
+.nav-link {
+	display: block;
+	width: 7em;
+	text-decoration: none;
+	margin-right: 1em;
+	font-weight: bold;
+	color: var(--main-tcolor);
+	padding: 1px 0.5em;
+	border: 2px solid var(--main-tcolor);
+	border-radius: 5px;
+	background-color: var(--accent-bcolor);
+}
+
+.nav-link:hover {
+	transform: scale(1.1);
+	transition: all 0.5s ease;
+	color: var(--accent-bcolor);
+	background-color: var(--main-tcolor);
+}
+
+.hist-main ul {
+	list-style: none;
+	padding-left: 0em;
+}
+
+.hist-main ul li {
+	border-top: 1px dashed #a1a1a1;
+}
+
+.hist-main ul li::before {
+	content: '';
+	display: inline-block;
+	margin-right: 0.5em;
+	width: 20px;
+	height: 20px;
+	background-image: url(img/はにわ_fill.jpg);
+	background-size: contain;
+	vertical-align: middle;
+	filter: invert(0%);
+}
+
+.dark-mode .hist-main ul li::before {
+	filter: invert(100%);
+}
+
+.hist-main ul li ul {
+	list-style: none;
+	padding-left: 2em;
+}
+
+.hist-main ul li ul li::before {
+	content: '';
+	display: inline-block;
+	width: auto;
+	height: auto;
+	background-image: none;
+	vertical-align: middle;
+	margin-right: 0;
+}
+
+/*ページトップボタン*/
+#page-top {
+	position: fixed;
+	right: 20px;
+	bottom: 30px;
+	height: 50px;
+	text-decoration: none;
+	font-weight: bold;
+	transform: rotate(90deg);
+	font-size: 90%;
+	line-height: 1.5rem;
+	color: #737373;
+	padding: 0 0 0 35px;
+	border-top: solid 1px;
+}
+
+#page-top::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -1px;
+	left: 0px;
+	width: 15px;
+	border-top: solid 1px;
+	transform: rotate(35deg);
+	transform-origin: left top;
+}
+
+#page-top:hover {
+	border-top: solid 2px;
+}
+
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: rgba(142, 142, 142, 0.21);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+	flex: auto;
+}
+
+.theme-toggle {
+	position: fixed;
+	top: 16px;
+	left: 20px;
+	background-color: #f0f0f0;
+	color: #333333;
+	border: 2px solid #cccccc;
+	padding: 10px 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.dark-mode .theme-toggle {
+	background-color: #333333;
+	color: #e0e0e0;
+	border-color: #555555;
+}
+
+.theme-toggle:hover {
+	transform: scale(1.05);
+}
+
+/*ハンバーガーメニュー*/
+.menu-wrapper {
+	position: relative;
+}
+
+.menu-icon {
+	width: 40px;
+	height: 30px;
+	position: absolute;
+	/*← fixedにして常に左上固定*/
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 3;
+	display: inline-block;
+}
+
+.menu-icon span {
+	display: block;
+	height: 4px;
+	margin: 6px 0;
+	background: #333;
+	border-radius: 2px;
+	transition: 0.4s;
+}
+
+.dark-mode .menu-icon span {
+	background: #e0e0e0;
+}
+
+/* ハンバーガーがXに変形 */
+#menu-toggle:checked+.menu-icon span:nth-child(1) {
+	transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle:checked+.menu-icon span:nth-child(2) {
+	opacity: 0;
+}
+
+#menu-toggle:checked+.menu-icon span:nth-child(3) {
+	transform: translateY(-10px) rotate(-45deg);
+}
+
+/* オーバーレイ背景 */
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+	z-index: 1;
+}
+
+#menu-toggle:checked~.overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* メニュー本体（左から出す） */
+.menu {
+	position: fixed;
+	top: 0;
+	right: -250px;
+	/* ← 初期位置を左へ */
+	width: 250px;
+	height: 100%;
+	background: #fff;
+	box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+	transition: right 0.4s ease;
+	z-index: 2;
+}
+
+.dark-mode .menu {
+	background: #2a2a2a;
+}
+
+#menu-toggle:checked~.menu {
+	right: 0;
+	/* ← 開いたときは左0へ */
+}
+
+.menu ul {
+	list-style: none;
+	padding: 60px 20px;
+}
+
+.menu li {
+	margin: 20px 0;
+}
+
+.menu a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.2rem;
+	transition: color 0.3s;
+}
+
+.dark-mode .menu a {
+	color: #e0e0e0;
+}
+
+.menu a:hover {
+	color: #007bff;
+}
+
+a {
+	color: #001b54;
+}
+
+.dark-mode a {
+	color: #b6d9ff;
+}
+
+.dark-mode img {
+	filter: invert(90%);
+}
