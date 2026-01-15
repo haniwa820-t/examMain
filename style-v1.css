@@ -119,17 +119,20 @@ button:hover {
 
 .theme-toggle {
 	font-family: var(--main-font);
+	display: block;
 	position: fixed;
 	top: 12px;
 	left: 20px;
 	background-color: var(--main-bcolor);
 	border: 2px solid var(--accent-bcolor);
-	padding: 12px;
+	height: 45px;
+	width: 45px;
+	padding: 0;
 	border-radius: 50%;
 	cursor: pointer;
 	font-weight: bold;
 	transition: all 0.3s ease;
-	z-index: 1000;
+	/* z-index: 1000; */
 }
 
 .dark-mode .theme-toggle {
