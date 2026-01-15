@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	} else {
 		// 初回訪問時またはテーマが未設定の場合はライトモードを強制
 		body.classList.remove('dark-mode');
-		themeBtn.textContent = '🌙';
+		themeBtn.textContent = '🌓';
 		localStorage.setItem('theme', 'light');
 	}
 });
@@ -42,6 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // 空白に置き換え
         el.textContent = convertToBlank(el.dataset.originalText || originalText);
+    });
+});
+
+document.querySelector('.toggle-all-btn').addEventListener('click', function() {
+    toggleAll();
+});
+
+document.querySelectorAll('.toggle-text').forEach(button => {
+    button.addEventListener('click', function() {
+        toggleText(this);
     });
 });
 

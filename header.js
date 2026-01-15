@@ -37,16 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// メニュー項目を追加
 	const menuItems = [
-		{ text: 'HOME', href: '../../index.html'},
-		{ text: '産業革命と資本主義の定着', href: 'print1.html' },
-		{ text: '教育制度の整備と新しい文化', href: 'print2.html' },
-		{ text: '日露戦争と帝国日本', href: 'print3.html' },
-		{ text: '日露戦争後の社会と政治', href: 'print4.html' },
-		{ text: '都市化重工業化と生活の変化', href: 'print5.html' },
-		{ text: '国際社会のなかの日本', href: 'print6.html' },
-		{ text: '中国侵略と戦時体制への移行', href: 'print7.html' },
-		{ text: '戦時体制の強化と第二次世界大戦の展開', href: 'print8.html' },
-		{ text: '占領と日本国憲法の成立', href: 'print9.html' }
+		{ text: 'ホーム', href: 'index.html'},
+		{ text: '歴史', href: 'history/term4/print1.html' },
 	];
 
 	menuItems.forEach(item => {
