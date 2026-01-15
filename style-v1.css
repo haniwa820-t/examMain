@@ -124,7 +124,7 @@ button:hover {
 	left: 20px;
 	background-color: var(--main-bcolor);
 	border: 2px solid var(--accent-bcolor);
-	padding: 10px 12px;
+	padding: 12px;
 	border-radius: 50%;
 	cursor: pointer;
 	font-weight: bold;
