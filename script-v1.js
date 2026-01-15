@@ -5,7 +5,7 @@ function toggleTheme() {
 
 	if (body.classList.contains('dark-mode')) {
 		body.classList.remove('dark-mode');
-		themeBtn.textContent = '🌙';
+		themeBtn.textContent = '🌓';
 		localStorage.setItem('theme', 'light');
 	} else {
 		body.classList.add('dark-mode');

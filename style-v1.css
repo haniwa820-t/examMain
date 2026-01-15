@@ -1,3 +1,10 @@
+/* ---本体設定--- */
+@font-face {
+  font-family: 'taisho';
+  src: url('fonts/taisyokatujippoi7T5.ttf') format('truetype');
+  font-display: swap; /* 読み込み中もテキストを表示させる */
+}
+
 * {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -6,8 +13,9 @@
 	--main-bcolor: #ffffff;
 	--accent-tcolor: #000040;
 	--accent-bcolor: #f0f7fe;
-	--main-font: "游明朝", "YuMincho", "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-	--accent-font: 'MS Gothic', 'Menlo', 'ヒラギノ角ゴ ProN', monospace;
+	/* --main-font: "游明朝", "YuMincho", "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif; */
+	--main-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+	--accent-font: "YuMincho", "Hiragino Mincho ProN W3", "Hiragino Mincho ProN",serif;;
 }
 
 html {
@@ -31,12 +39,42 @@ body.dark-mode {
 	color: #e0e0e0;
 }
 
+.hist-main {
+	margin: 5px;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: rgba(142, 142, 142, 0.21);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+	flex: auto;
+}
+
 @media (max-width: 768px) {
 	body {
 		max-width: 95%;
+		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 24px;
+	}
+
+	h2 {
+		font-size: 20px;
+	}
+
+	h3 {
+		font-size: 18px;
 	}
 }
 
+/* ---ボタン設定--- */
 button {
 	background-color: var(--accent-bcolor);
 	color: var(--accent-tcolor);
@@ -79,6 +117,32 @@ button:hover {
 	color: #b1bae0;
 }
 
+.theme-toggle {
+	font-family: var(--main-font);
+	position: fixed;
+	top: 16px;
+	left: 20px;
+	background-color: var(--main-bcolor);
+	border: 2px solid var(--accent-bcolor);
+	padding: 10px 12px;
+	border-radius: 50%;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.dark-mode .theme-toggle {
+	background-color: #333333;
+	color: #e0e0e0;
+	border-color: #555555;
+}
+
+.theme-toggle:hover {
+	transform: scale(1.05);
+}
+
+/* ---表設定--- */
 table {
 	border-collapse: collapse;
 	border: solid 2px var(--accent-tcolor);
@@ -124,8 +188,11 @@ table td {
 	color: #b1bae0;
 }
 
+/* ---見出し設定--- */
+
 h1 {
 	color: var(--accent-tcolor);
+	font-family: var(--accent-font);
 	transition: color 0.3s ease;
 }
 
@@ -134,8 +201,24 @@ h1 {
 }
 
 h3::before {
-	content: "♦";
+	content: '';
+	display: inline-block;
+	margin-right: 0.1em;
+	padding-bottom: 4;
+	width: 20px;
+	height: 20px;
+	background-image: url(img/はにわ_fill.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	filter: invert(0%);
 }
+
+.dark-mode h3::before {
+	filter: invert(100%);
+}
+
+/* ---リンクナビ設定--- */
 
 .nav-box {
 	overflow-x: auto;
@@ -184,34 +267,20 @@ h3::before {
 	background-color: var(--main-tcolor);
 }
 
+/* ---箇条書き設定--- */
 .hist-main ul {
 	list-style: none;
-	padding-left: 0em;
+	padding-left: 0;
 }
 
 .hist-main ul li {
-	border-top: 1px dashed #a1a1a1;
-}
-
-.hist-main ul li::before {
-	content: '';
-	display: inline-block;
-	margin-right: 0.5em;
-	width: 20px;
-	height: 20px;
-	background-image: url(img/はにわ_fill.jpg);
-	background-size: contain;
-	vertical-align: middle;
-	filter: invert(0%);
-}
-
-.dark-mode .hist-main ul li::before {
-	filter: invert(100%);
+	border-top:1px dashed #a1a1a1;
+	padding-top: 5px;
 }
 
 .hist-main ul li ul {
 	list-style: none;
-	padding-left: 2em;
+	padding-left: 1.5em;
 }
 
 .hist-main ul li ul li::before {
@@ -225,6 +294,7 @@ h3::before {
 }
 
 /*ページトップボタン*/
+
 #page-top {
 	position: fixed;
 	right: 20px;
@@ -256,45 +326,7 @@ h3::before {
 	border-top: solid 2px;
 }
 
-
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 70px;
-	background-color: rgba(142, 142, 142, 0.21);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	z-index: 999;
-	flex: auto;
-}
-
-.theme-toggle {
-	position: fixed;
-	top: 16px;
-	left: 20px;
-	background-color: #f0f0f0;
-	color: #333333;
-	border: 2px solid #cccccc;
-	padding: 10px 16px;
-	border-radius: 8px;
-	cursor: pointer;
-	font-weight: bold;
-	transition: all 0.3s ease;
-	z-index: 1000;
-}
-
-.dark-mode .theme-toggle {
-	background-color: #333333;
-	color: #e0e0e0;
-	border-color: #555555;
-}
-
-.theme-toggle:hover {
-	transform: scale(1.05);
-}
-
-/*ハンバーガーメニュー*/
+/* ---ハンバーガーメニュー--- */
 .menu-wrapper {
 	position: relative;
 }
@@ -324,7 +356,6 @@ header {
 	background: #e0e0e0;
 }
 
-/* ハンバーガーがXに変形 */
 #menu-toggle:checked+.menu-icon span:nth-child(1) {
 	transform: translateY(10px) rotate(45deg);
 }
@@ -337,7 +368,6 @@ header {
 	transform: translateY(-10px) rotate(-45deg);
 }
 
-/* オーバーレイ背景 */
 .overlay {
 	position: fixed;
 	inset: 0;
@@ -353,7 +383,6 @@ header {
 	pointer-events: auto;
 }
 
-/* メニュー本体（左から出す） */
 .menu {
 	position: fixed;
 	top: 0;
@@ -399,6 +428,8 @@ header {
 .menu a:hover {
 	color: #007bff;
 }
+
+/* ---その他--- */
 
 a {
 	color: #001b54;
