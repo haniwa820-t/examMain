@@ -5,7 +5,7 @@ function toggleTheme() {
 
 	if (body.classList.contains('dark-mode')) {
 		body.classList.remove('dark-mode');
-		themeBtn.textContent = '🌙';
+		themeBtn.textContent = '🌓';
 		localStorage.setItem('theme', 'light');
 	} else {
 		body.classList.add('dark-mode');
@@ -27,40 +27,58 @@ document.addEventListener('DOMContentLoaded', function () {
 	} else {
 		// 初回訪問時またはテーマが未設定の場合はライトモードを強制
 		body.classList.remove('dark-mode');
-		themeBtn.textContent = '🌙';
+		themeBtn.textContent = '🌓';
 		localStorage.setItem('theme', 'light');
 	}
 });
 
 // 初期化：全てを非表示（空白）に
 document.addEventListener("DOMContentLoaded", () => {
-	document.querySelectorAll(".toggle-text").forEach(el => {
-		const original = el.dataset.originalText;
-		for (let hitomoji of original) {
-			if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
-				el.textContent += "　";
-			} else {
-				el.textContent += " ";
-			}
-		}
-	});
+    document.querySelectorAll(".toggle-text").forEach(el => {
+        // 現在のテキストを data-original-text に保存
+        const originalText = el.textContent.trim();
+        if (originalText) {
+            el.dataset.originalText = originalText;
+        }
+        // 空白に置き換え
+        el.textContent = convertToBlank(el.dataset.originalText || originalText);
+    });
 });
+
+document.querySelector('.toggle-all-btn').addEventListener('click', function() {
+    toggleAll();
+});
+
+document.querySelectorAll('.toggle-text').forEach(button => {
+    button.addEventListener('click', function() {
+        toggleText(this);
+    });
+});
+
+// 文字列を空白に変換する関数
+function convertToBlank(text) {
+    let result = "";
+    for (let char of text) {
+        if (char.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
+            result += "　"; // 全角スペース
+        } else {
+            result += " ";  // 半角スペース
+        }
+    }
+    return result;
+}
 
 // 個別トグル
 function toggleText(el) {
-	const original = el.dataset.originalText;
-	if (el.textContent.trim() === "") {
-		el.textContent = original;
-	} else {
-		el.textContent = "";
-		for (let hitomoji of original) {
-			if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
-				el.textContent += "　";
-			} else {
-				el.textContent += " ";
-			}
-		}
-	}
+    const original = el.dataset.originalText;
+    if (!original) return;
+
+    const isBlank = el.textContent.trim() === "";
+    if (isBlank) {
+        el.textContent = original;
+    } else {
+        el.textContent = convertToBlank(original);
+    }
 }
 
 // 全体の表示状態を保持
@@ -68,50 +86,42 @@ let allVisible = false;
 
 // 一括表示/非表示トグル
 function toggleAll() {
-	const elements = document.querySelectorAll(".toggle-text");
-	const buttons = document.querySelectorAll(".toggle-all-btn"); // 複数のボタンを取得
+    const elements = document.querySelectorAll(".toggle-text");
+    const buttons = document.querySelectorAll(".toggle-all-btn");
 
-	elements.forEach(el => {
-		const original = el.dataset.originalText;
-		if (allVisible) {
-			el.textContent = "";
-			for (let hitomoji of original) {
-				if (hitomoji.match(/^[^\x01-\x7E\xA1-\xDF]+$/)) {
-					el.textContent += "　";
-				} else {
-					el.textContent += " ";
-				}
-			}
-		} else {
-			el.textContent = original; // 表示に
-		}
-	});
+    elements.forEach(el => {
+        const original = el.dataset.originalText;
+        if (!original) return;
+        el.textContent = allVisible ? convertToBlank(original) : original;
+    });
 
-	allVisible = !allVisible;
+    allVisible = !allVisible;
 
-	// すべてのボタンのテキストを更新
-	buttons.forEach(button => {
-		button.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
-	});
+    buttons.forEach(btn => {
+        btn.textContent = allVisible ? "すべて非表示にする" : "すべて表示する";
+    });
 }
 
-// テーブルを生成
-function generateTable() {
-	const table = document.getElementById('wordTable');
-
-	wordList.forEach((item, index) => {
-		const row = table.insertRow();
-		const cell1 = row.insertCell(0);
-		const cell2 = row.insertCell(1);
-
-		cell1.textContent = `${index + 1}.${item.word}`;
-
-		const span = document.createElement('span');
-		span.className = 'toggle-text';
-		span.dataset.originalText = item.meaning;
-		span.onclick = () => toggleText(span);
-
-		cell2.appendChild(span);
-	});
+// 一括表示
+function toggleAllOriginal() {
+    document.querySelectorAll(".toggle-text").forEach(el => {
+        const original = el.dataset.originalText;
+        if (original) el.textContent = original;
+    });
+    allVisible = true;
+    document.querySelectorAll(".toggle-all-btn").forEach(btn => {
+        btn.textContent = "すべて非表示にする";
+    });
 }
 
+// 一括非表示
+function toggleAllDelate() {
+    document.querySelectorAll(".toggle-text").forEach(el => {
+        const original = el.dataset.originalText;
+        if (original) el.textContent = convertToBlank(original);
+    });
+    allVisible = false;
+    document.querySelectorAll(".toggle-all-btn").forEach(btn => {
+        btn.textContent = "すべて表示する";
+    });
+}
