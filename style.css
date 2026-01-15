@@ -1,8 +1,9 @@
 /* ---本体設定--- */
 @font-face {
-  font-family: 'taisho';
-  src: url('fonts/taisyokatujippoi7T5.ttf') format('truetype');
-  font-display: swap; /* 読み込み中もテキストを表示させる */
+	font-family: 'taisho';
+	src: url('fonts/taisyokatujippoi7T5.ttf') format('truetype');
+	font-display: swap;
+	/* 読み込み中もテキストを表示させる */
 }
 
 * {
@@ -15,7 +16,8 @@
 	--accent-bcolor: #f0f7fe;
 	/* --main-font: "游明朝", "YuMincho", "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif; */
 	--main-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
-	--accent-font: "YuMincho", "Hiragino Mincho ProN W3", "Hiragino Mincho ProN",serif;;
+	--accent-font: "YuMincho", "Hiragino Mincho ProN W3", "Hiragino Mincho ProN", serif;
+	;
 }
 
 html {
@@ -148,7 +150,7 @@ button:hover {
 /* ---表設定--- */
 table {
 	border-collapse: collapse;
-	border: solid 2px var(--accent-tcolor);
+	/* border: solid 2px var(--accent-tcolor); */
 	font-size: 18px;
 	background-color: var(--main-bcolor);
 	transition: all 0.3s ease;
@@ -161,7 +163,7 @@ table {
 
 table th,
 table td {
-	border: dashed 1px var(--accent-tcolor);
+	/* border: dashed 1px var(--accent-tcolor); */
 	padding: 8px 12px;
 	transition: border-color 0.3s ease;
 }
@@ -189,6 +191,10 @@ table td {
 .dark-mode table td {
 	background-color: #333333;
 	color: #b1bae0;
+}
+
+table tr:nth-child(odd) {
+	background-color: #eee
 }
 
 /* ---見出し設定--- */
@@ -247,7 +253,6 @@ h3::before {
 
 .nav-ul li {
 	list-style: none;
-	text-align: center;
 }
 
 .nav-link {
@@ -277,7 +282,7 @@ h3::before {
 }
 
 .hist-main ul li {
-	border-top:1px dashed #a1a1a1;
+	border-top: 1px dashed #a1a1a1;
 	padding-top: 5px;
 }
 
@@ -436,6 +441,7 @@ h3::before {
 
 a {
 	color: #001b54;
+	text-decoration: none;
 }
 
 .dark-mode a {
