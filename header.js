@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// メニュー項目を追加
 	const menuItems = [
-		{ text: 'ホーム', href: 'index.html'},
+		{ text: 'HOME', href: 'index.html'},
 		{ text: '歴史', href: 'history/term4/print1.html' },
 	];
 

@@ -14,9 +14,10 @@
 	--main-bcolor: #ffffff;
 	--accent-tcolor: #000040;
 	--accent-bcolor: #f0f7fe;
-	/* --main-font: "游明朝", "YuMincho", "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif; */
-	--main-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
-	--accent-font: "YuMincho", "Hiragino Mincho ProN W3", "Hiragino Mincho ProN", serif;
+	--main-font: "YuMincho", "Hiragino Mincho ProN W3", "Hiragino Mincho ProN", serif;
+	--accent-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+	/* --main-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+	--accent-font: "YuMincho", "Hiragino Mincho ProN W3", "Hiragino Mincho ProN", serif; */
 	;
 }
 
