@@ -12,8 +12,10 @@
 	text-size-adjust: 100%;
 	--main-tcolor: #232323;
 	--main-bcolor: #ffffff;
-	--accent-tcolor: #000040;
-	--accent-bcolor: #f0f7fe;
+	/* --accent-tcolor: #000040; */
+	--accent-tcolor: #a20000;
+	/* --accent-bcolor: #f0f7fe;*/
+	--accent-bcolor:#fff4f4;
 	--main-font: "YuMincho", "Hiragino Mincho ProN W3", "Hiragino Mincho ProN", serif;
 	--accent-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
 	/* --main-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
