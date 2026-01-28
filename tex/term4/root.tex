@@ -1,0 +1,25 @@
+\documentclass[a4paper]{jlreq}     % または \documentclass[a4paper]{ltjarticle} 日本語用
+\usepackage{luatexja}              % LuaLaTeXで日本語を使用する場合（LuaLaTeX使用時）
+\usepackage[utf8]{inputenc}        % または \usepackage[utf8]{luainputenc}（LuaLaTeX使用時）
+\usepackage{amsmath}               % 数式環境用
+\usepackage{listings}              % コードブロック用
+\usepackage{color}                 % 色指定用
+\usepackage{fancyvrb}              % 整形されたテキスト用
+\usepackage[hidelinks]{hyperref}   % ハイパーリンク用
+\usepackage{framed}
+\def\tightlist{}
+%
+%
+\title{}
+\author{}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+%
+%
+\input{branch/ethics.tex}
+\input{branch/history.tex}
+%
+%
+\end{document}
