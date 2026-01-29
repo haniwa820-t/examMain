@@ -119,6 +119,17 @@ header {
 		z-index: 999;
 		flex: auto;
 	}
+
+	.test-table {
+		margin: 0 auto;
+		width: 95%;
+		border-collapse: collapse;
+		/* border: solid 2px var(--accent-tcolor); */
+		font-size: 18px;
+		background-color: var(--main-bcolor);
+		transition: all 0.3s ease;
+		text-align: center;
+	}
 }
 
 /* ---ボタン設定--- */
@@ -261,7 +272,7 @@ button:hover {
 	/* border: dashed 1px var(--accent-tcolor); */
 	padding: 8px 12px;
 	transition: border-color 0.3s ease;
-	border:1px rgb(170, 170, 170) solid;
+	border: 1px rgb(170, 170, 170) solid;
 }
 
 .dark-mode .test-table th,
