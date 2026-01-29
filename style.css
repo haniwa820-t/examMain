@@ -522,6 +522,8 @@ h3::before {
 }
 
 .menu ul {
+	overflow-y: auto;
+	height: 80%;
 	list-style: none;
 	padding: 60px 20px;
 }
