@@ -267,6 +267,11 @@ button:hover {
 	background-color: #2a2a2a;
 }
 
+.test-table thead tr th {
+	background-color: var(--accent-tcolor);
+	color: var(--accent-bcolor);
+}
+
 .test-table th,
 .test-table td {
 	/* border: dashed 1px var(--accent-tcolor); */
