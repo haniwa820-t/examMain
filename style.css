@@ -130,6 +130,17 @@ header {
 		transition: all 0.3s ease;
 		text-align: center;
 	}
+
+	.nikka-table {
+		margin: 0 auto;
+		width: 95%;
+		border-collapse: collapse;
+		/* border: solid 2px var(--accent-tcolor); */
+		font-size: 18px;
+		background-color: var(--main-bcolor);
+		transition: all 0.3s ease;
+	}
+
 }
 
 /* ---ボタン設定--- */
