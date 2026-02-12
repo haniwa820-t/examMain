@@ -216,6 +216,8 @@ button:hover {
 
 /* ---表設定--- */
 .nikka-table {
+	margin: 0 auto;
+	width: 80%;
 	border-collapse: collapse;
 	/* border: solid 2px var(--accent-tcolor); */
 	font-size: 18px;
